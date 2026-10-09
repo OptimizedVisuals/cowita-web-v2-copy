@@ -1,0 +1,360 @@
+[33mcommit 99fd7e2747b26c020272dab34b6c7432a09cd1bd[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: spockeyvin <mwaskelvoh9@.com>
+Date:   Fri Oct 9 23:57:06 2026 +0300
+
+    Save my local updates
+
+ .env.example                                       |   47 [32m+[m
+ .github/workflows/ci.yml                           |   46 [32m+[m
+ .gitignore                                         |   27 [32m+[m
+ 404.html                                           |  100 [32m+[m
+ README.md                                          |  128 [32m+[m
+ about/focus-areas.html                             |  558 [32m+[m[31m--[m
+ about/index.html                                   | 1004 [32m+[m[31m---[m
+ about/our-approach.html                            |  826 [32m+[m[31m---[m
+ about/our-story.html                               |  593 [32m+[m[31m--[m
+ about/our-values.html                              |  543 [32m+[m[31m--[m
+ about/who-we-work-with.html                        |  944 [32m+[m[31m---[m
+ about/why-cowita.html                              |  806 [32m+[m[31m---[m
+ admin/admin.css                                    |  393 [32m++[m
+ admin/admin.js                                     |  737 [32m+++[m
+ admin/config.js                                    |   17 [32m+[m
+ admin/index.html                                   |  234 [32m+[m
+ admin/vendor/supabase.js                           |   11 [32m+[m
+ api/README.md                                      |  127 [32m+[m
+ api/_lib/auth.mjs                                  |  168 [32m+[m
+ api/_lib/config.mjs                                |  405 [32m++[m
+ api/_lib/email.mjs                                 |  222 [32m+[m
+ api/_lib/http.mjs                                  |  154 [32m+[m
+ api/_lib/logger.mjs                                |   40 [32m+[m
+ api/_lib/ratelimit.mjs                             |   55 [32m+[m
+ api/_lib/sanitize.mjs                              |  104 [32m+[m
+ api/_lib/supabase.mjs                              |   59 [32m+[m
+ api/_lib/turnstile.mjs                             |   63 [32m+[m
+ api/_lib/validation.mjs                            |  283 [32m++[m
+ api/admin/export.mjs                               |  130 [32m+[m
+ api/admin/me.mjs                                   |   35 [32m+[m
+ api/admin/retention.mjs                            |   76 [32m+[m
+ api/admin/submissions.mjs                          |  109 [32m+[m
+ api/admin/submissions/[id].mjs                     |  196 [32m+[m
+ api/forms/[type].mjs                               |  253 [32m++[m
+ api/health.mjs                                     |   57 [32m+[m
+ apps-script/Code.gs                                |    6 [32m+[m[31m-[m
+ assets/fonts/inter-400-normal-latin-ext.woff2      |  Bin [31m0[m -> [32m85068[m bytes
+ assets/fonts/inter-400-normal-latin.woff2          |  Bin [31m0[m -> [32m48256[m bytes
+ assets/fonts/inter-500-normal-latin-ext.woff2      |  Bin [31m0[m -> [32m85068[m bytes
+ assets/fonts/inter-500-normal-latin.woff2          |  Bin [31m0[m -> [32m48256[m bytes
+ assets/fonts/inter-600-normal-latin-ext.woff2      |  Bin [31m0[m -> [32m85068[m bytes
+ assets/fonts/inter-600-normal-latin.woff2          |  Bin [31m0[m -> [32m48256[m bytes
+ assets/fonts/inter-700-normal-latin-ext.woff2      |  Bin [31m0[m -> [32m85068[m bytes
+ assets/fonts/inter-700-normal-latin.woff2          |  Bin [31m0[m -> [32m48256[m bytes
+ assets/fonts/lora-400-normal-latin-ext.woff2       |  Bin [31m0[m -> [32m20088[m bytes
+ assets/fonts/lora-400-normal-latin.woff2           |  Bin [31m0[m -> [32m37788[m bytes
+ assets/fonts/lora-500-normal-latin-ext.woff2       |  Bin [31m0[m -> [32m20088[m bytes
+ assets/fonts/lora-500-normal-latin.woff2           |  Bin [31m0[m -> [32m37788[m bytes
+ assets/fonts/lora-600-normal-latin-ext.woff2       |  Bin [31m0[m -> [32m20088[m bytes
+ assets/fonts/lora-600-normal-latin.woff2           |  Bin [31m0[m -> [32m37788[m bytes
+ assets/images/about/about-hero-youth-creative.jpg  |  Bin [31m785318[m -> [32m0[m bytes
+ assets/images/about/about-hero-youth-creative.webp |  Bin [31m0[m -> [32m129694[m bytes
+ assets/images/about/about-our-story-youth.jpg      |  Bin [31m782793[m -> [32m0[m bytes
+ assets/images/about/about-our-story-youth.webp     |  Bin [31m0[m -> [32m121566[m bytes
+ assets/images/about/our-values-hero.jpg            |  Bin [31m964153[m -> [32m0[m bytes
+ assets/images/about/our-values-hero.webp           |  Bin [31m0[m -> [32m165020[m bytes
+ assets/images/cowita-acting.jpg                    |  Bin [31m638110[m -> [32m0[m bytes
+ assets/images/cowita-acting.webp                   |  Bin [31m0[m -> [32m51128[m bytes
+ assets/images/cowita-creative-collaboration.jpg    |  Bin [31m880675[m -> [32m0[m bytes
+ assets/images/cowita-creative-collaboration.webp   |  Bin [31m0[m -> [32m134014[m bytes
+ assets/images/cowita-dance.jpg                     |  Bin [31m666934[m -> [32m0[m bytes
+ assets/images/cowita-dance.webp                    |  Bin [31m0[m -> [32m72078[m bytes
+ assets/images/cowita-drawing.jpg                   |  Bin [31m788743[m -> [32m0[m bytes
+ assets/images/cowita-drawing.webp                  |  Bin [31m0[m -> [32m114786[m bytes
+ assets/images/cowita-have-talent-hero.jpg          |  Bin [31m813733[m -> [32m0[m bytes
+ assets/images/cowita-have-talent-hero.webp         |  Bin [31m0[m -> [32m111192[m bytes
+ assets/images/cowita-mentor-community.jpg          |  Bin [31m851843[m -> [32m0[m bytes
+ assets/images/cowita-mentor-community.webp         |  Bin [31m0[m -> [32m122304[m bytes
+ assets/images/cowita-mentor-hero.jpg               |  Bin [31m808141[m -> [32m0[m bytes
+ assets/images/cowita-mentor-hero.webp              |  Bin [31m0[m -> [32m102510[m bytes
+ assets/images/cowita-mentor-session.jpg            |  Bin [31m815260[m -> [32m0[m bytes
+ assets/images/cowita-mentor-session.webp           |  Bin [31m0[m -> [32m108980[m bytes
+ assets/images/cowita-music.jpg                     |  Bin [31m775905[m -> [32m0[m bytes
+ assets/images/cowita-music.webp                    |  Bin [31m0[m -> [32m91042[m bytes
+ assets/images/cowita-writing.jpg                   |  Bin [31m747293[m -> [32m0[m bytes
+ assets/images/cowita-writing.webp                  |  Bin [31m0[m -> [32m92252[m bytes
+ assets/images/get-involved-collaboration-hero.jpg  |  Bin [31m892747[m -> [32m0[m bytes
+ assets/images/get-involved-collaboration-hero.webp |  Bin [31m0[m -> [32m137660[m bytes
+ assets/images/get-involved-hero.jpg                |  Bin [31m964201[m -> [32m0[m bytes
+ assets/images/get-involved-hero.webp               |  Bin [31m0[m -> [32m172816[m bytes
+ assets/images/get-involved-partnership-hero.jpg    |  Bin [31m712253[m -> [32m0[m bytes
+ assets/images/get-involved-partnership-hero.webp   |  Bin [31m0[m -> [32m72084[m bytes
+ assets/images/get-involved-want-to-learn-hero.jpg  |  Bin [31m735483[m -> [32m0[m bytes
+ assets/images/get-involved-want-to-learn-hero.webp |  Bin [31m0[m -> [32m83612[m bytes
+ .../get-involved-want-to-learn-mentorship.jpg      |  Bin [31m717320[m -> [32m0[m bytes
+ .../get-involved-want-to-learn-mentorship.webp     |  Bin [31m0[m -> [32m79216[m bytes
+ assets/images/home/home-hero-main.jpg              |  Bin [31m754120[m -> [32m0[m bytes
+ assets/images/home/home-hero-main.webp             |  Bin [31m0[m -> [32m117800[m bytes
+ assets/images/home/home-idea.jpg                   |  Bin [31m732465[m -> [32m0[m bytes
+ assets/images/home/home-idea.webp                  |  Bin [31m0[m -> [32m81702[m bytes
+ assets/images/home/home-impact-main.jpg            |  Bin [31m866743[m -> [32m0[m bytes
+ assets/images/home/home-impact-main.webp           |  Bin [31m0[m -> [32m165840[m bytes
+ assets/images/home/home-story-featured.jpg         |  Bin [31m789707[m -> [32m0[m bytes
+ assets/images/home/home-story-featured.webp        |  Bin [31m0[m -> [32m137614[m bytes
+ assets/images/home/home-work-acting.jpg            |  Bin [31m775972[m -> [32m0[m bytes
+ assets/images/home/home-work-acting.webp           |  Bin [31m0[m -> [32m124434[m bytes
+ assets/images/home/home-work-dance.jpg             |  Bin [31m731099[m -> [32m0[m bytes
+ assets/images/home/home-work-dance.webp            |  Bin [31m0[m -> [32m96554[m bytes
+ assets/images/home/home-work-music.jpg             |  Bin [31m698324[m -> [32m0[m bytes
+ assets/images/home/home-work-music.webp            |  Bin [31m0[m -> [32m86544[m bytes
+ assets/images/home/home-work-visual-art.jpg        |  Bin [31m829584[m -> [32m0[m bytes
+ assets/images/home/home-work-visual-art.webp       |  Bin [31m0[m -> [32m149550[m bytes
+ assets/images/home/home-work-writing.jpg           |  Bin [31m711619[m -> [32m0[m bytes
+ assets/images/home/home-work-writing.webp          |  Bin [31m0[m -> [32m98184[m bytes
+ assets/images/impact/impact-hero.jpg               |  Bin [31m764209[m -> [32m0[m bytes
+ assets/images/impact/impact-hero.webp              |  Bin [31m0[m -> [32m83964[m bytes
+ assets/images/opportunity-hero.jpg                 |  Bin [31m723635[m -> [32m0[m bytes
+ assets/images/opportunity-hero.webp                |  Bin [31m0[m -> [32m70016[m bytes
+ assets/images/opportunity-idea.jpg                 |  Bin [31m766441[m -> [32m0[m bytes
+ assets/images/opportunity-idea.webp                |  Bin [31m0[m -> [32m90076[m bytes
+ assets/images/our-approach-hero.jpg                |  Bin [31m714756[m -> [32m0[m bytes
+ assets/images/our-approach-hero.webp               |  Bin [31m0[m -> [32m103952[m bytes
+ assets/images/our-approach-pathway.jpg             |  Bin [31m818076[m -> [32m0[m bytes
+ assets/images/our-approach-pathway.webp            |  Bin [31m0[m -> [32m140554[m bytes
+ assets/images/people-cowita-community-workshop.jpg |  Bin [31m881690[m -> [32m0[m bytes
+ .../images/people-cowita-community-workshop.webp   |  Bin [31m0[m -> [32m140450[m bytes
+ assets/images/stories-featured-hero.jpg            |  Bin [31m752084[m -> [32m0[m bytes
+ assets/images/stories-featured-hero.webp           |  Bin [31m0[m -> [32m81256[m bytes
+ assets/images/stories-featured.jpg                 |  Bin [31m783877[m -> [32m0[m bytes
+ assets/images/stories-featured.webp                |  Bin [31m0[m -> [32m97210[m bytes
+ assets/images/stories-hero.jpg                     |  Bin [31m810954[m -> [32m0[m bytes
+ assets/images/stories-hero.webp                    |  Bin [31m0[m -> [32m101158[m bytes
+ assets/images/stories-news-featured.jpg            |  Bin [31m867067[m -> [32m0[m bytes
+ assets/images/stories-news-featured.webp           |  Bin [31m0[m -> [32m127658[m bytes
+ assets/images/stories-news-hero.jpg                |  Bin [31m862390[m -> [32m0[m bytes
+ assets/images/stories-news-hero.webp               |  Bin [31m0[m -> [32m118588[m bytes
+ assets/images/stories-news-update-01.jpg           |  Bin [31m788820[m -> [32m0[m bytes
+ assets/images/stories-news-update-01.webp          |  Bin [31m0[m -> [32m94096[m bytes
+ assets/images/stories-news-update-02.jpg           |  Bin [31m823616[m -> [32m0[m bytes
+ assets/images/stories-news-update-02.webp          |  Bin [31m0[m -> [32m92794[m bytes
+ assets/images/stories-news-update-03.jpg           |  Bin [31m753732[m -> [32m0[m bytes
+ assets/images/stories-news-update-03.webp          |  Bin [31m0[m -> [32m85780[m bytes
+ assets/images/stories-participants-hero.jpg        |  Bin [31m776797[m -> [32m0[m bytes
+ assets/images/stories-participants-hero.webp       |  Bin [31m0[m -> [32m88578[m bytes
+ .../images/stories/creative-journey-featured.jpg   |  Bin [31m692520[m -> [32m0[m bytes
+ .../images/stories/creative-journey-featured.webp  |  Bin [31m0[m -> [32m75460[m bytes
+ assets/images/stories/creative-journeys-hero.jpg   |  Bin [31m768769[m -> [32m0[m bytes
+ assets/images/stories/creative-journeys-hero.webp  |  Bin [31m0[m -> [32m96166[m bytes
+ assets/images/stories/journey-dance.jpg            |  Bin [31m604334[m -> [32m0[m bytes
+ assets/images/stories/journey-dance.webp           |  Bin [31m0[m -> [32m27626[m bytes
+ assets/images/stories/journey-music.jpg            |  Bin [31m697077[m -> [32m0[m bytes
+ assets/images/stories/journey-music.webp           |  Bin [31m0[m -> [32m64096[m bytes
+ assets/images/stories/journey-visual-art.jpg       |  Bin [31m690016[m -> [32m0[m bytes
+ assets/images/stories/journey-visual-art.webp      |  Bin [31m0[m -> [32m64338[m bytes
+ assets/images/stories/stories-journey-01.jpg       |  Bin [31m727036[m -> [32m0[m bytes
+ assets/images/stories/stories-journey-01.webp      |  Bin [31m0[m -> [32m76990[m bytes
+ assets/images/stories/stories-participant-01.jpg   |  Bin [31m746923[m -> [32m0[m bytes
+ assets/images/stories/stories-participant-01.webp  |  Bin [31m0[m -> [32m91234[m bytes
+ assets/images/story-community.jpg                  |  Bin [31m788266[m -> [32m0[m bytes
+ assets/images/story-community.webp                 |  Bin [31m0[m -> [32m102904[m bytes
+ assets/images/story-creative-journey.jpg           |  Bin [31m700522[m -> [32m0[m bytes
+ assets/images/story-creative-journey.webp          |  Bin [31m0[m -> [32m68070[m bytes
+ assets/images/story-creative-process.jpg           |  Bin [31m690342[m -> [32m0[m bytes
+ assets/images/story-creative-process.webp          |  Bin [31m0[m -> [32m64784[m bytes
+ assets/images/story-dance.jpg                      |  Bin [31m691261[m -> [32m0[m bytes
+ assets/images/story-dance.webp                     |  Bin [31m0[m -> [32m58860[m bytes
+ assets/images/story-featured-placeholder.jpg       |  Bin [31m646717[m -> [32m0[m bytes
+ assets/images/story-featured-placeholder.webp      |  Bin [31m0[m -> [32m44808[m bytes
+ assets/images/story-hero-creative-youth.jpg        |  Bin [31m659850[m -> [32m0[m bytes
+ assets/images/story-hero-creative-youth.webp       |  Bin [31m0[m -> [32m61554[m bytes
+ assets/images/story-music.jpg                      |  Bin [31m717807[m -> [32m0[m bytes
+ assets/images/story-music.webp                     |  Bin [31m0[m -> [32m77298[m bytes
+ assets/images/story-participant-01.jpg             |  Bin [31m693870[m -> [32m0[m bytes
+ assets/images/story-participant-01.webp            |  Bin [31m0[m -> [32m61342[m bytes
+ assets/images/story-participant-02.jpg             |  Bin [31m750236[m -> [32m0[m bytes
+ assets/images/story-participant-02.webp            |  Bin [31m0[m -> [32m90280[m bytes
+ assets/images/story-participant-03.jpg             |  Bin [31m693583[m -> [32m0[m bytes
+ assets/images/story-participant-03.webp            |  Bin [31m0[m -> [32m63370[m bytes
+ assets/images/story-participant.jpg                |  Bin [31m679455[m -> [32m0[m bytes
+ assets/images/story-participant.webp               |  Bin [31m0[m -> [32m58318[m bytes
+ assets/images/story-update.jpg                     |  Bin [31m773054[m -> [32m0[m bytes
+ assets/images/story-update.webp                    |  Bin [31m0[m -> [32m94972[m bytes
+ assets/images/story-visual-art.jpg                 |  Bin [31m732465[m -> [32m0[m bytes
+ assets/images/story-visual-art.webp                |  Bin [31m0[m -> [32m81702[m bytes
+ assets/images/support-financial-hero.jpg           |  Bin [31m803801[m -> [32m0[m bytes
+ assets/images/support-financial-hero.webp          |  Bin [31m0[m -> [32m107452[m bytes
+ assets/images/support-hero.jpg                     |  Bin [31m879591[m -> [32m0[m bytes
+ assets/images/support-hero.webp                    |  Bin [31m0[m -> [32m132478[m bytes
+ .../images/support-partnership-collaboration.jpg   |  Bin [31m768504[m -> [32m0[m bytes
+ .../images/support-partnership-collaboration.webp  |  Bin [31m0[m -> [32m76874[m bytes
+ assets/images/support-partnership-hero.jpg         |  Bin [31m746402[m -> [32m0[m bytes
+ assets/images/support-partnership-hero.webp        |  Bin [31m0[m -> [32m88210[m bytes
+ assets/images/support-young-creative.jpg           |  Bin [31m741864[m -> [32m0[m bytes
+ assets/images/support-young-creative.webp          |  Bin [31m0[m -> [32m85126[m bytes
+ .../support/support-partnership-collaboration.jpg  |  Bin [31m741304[m -> [32m0[m bytes
+ .../support/support-partnership-collaboration.webp |  Bin [31m0[m -> [32m84096[m bytes
+ assets/images/support/support-partnership-hero.jpg |  Bin [31m808962[m -> [32m0[m bytes
+ .../images/support/support-partnership-hero.webp   |  Bin [31m0[m -> [32m115658[m bytes
+ assets/images/values-community.jpg                 |  Bin [31m799163[m -> [32m0[m bytes
+ assets/images/values-community.webp                |  Bin [31m0[m -> [32m126328[m bytes
+ assets/images/why-cowita-acting.jpg                |  Bin [31m891789[m -> [32m0[m bytes
+ assets/images/why-cowita-acting.webp               |  Bin [31m0[m -> [32m152412[m bytes
+ assets/images/why-cowita-dance.jpg                 |  Bin [31m693966[m -> [32m0[m bytes
+ assets/images/why-cowita-dance.webp                |  Bin [31m0[m -> [32m70318[m bytes
+ assets/images/why-cowita-hero.jpg                  |  Bin [31m973177[m -> [32m0[m bytes
+ assets/images/why-cowita-hero.webp                 |  Bin [31m0[m -> [32m191574[m bytes
+ assets/images/why-cowita-mentorship.jpg            |  Bin [31m745979[m -> [32m0[m bytes
+ assets/images/why-cowita-mentorship.webp           |  Bin [31m0[m -> [32m99956[m bytes
+ assets/images/why-cowita-music.jpg                 |  Bin [31m803404[m -> [32m0[m bytes
+ assets/images/why-cowita-music.webp                |  Bin [31m0[m -> [32m113770[m bytes
+ assets/images/why-cowita-talent.jpg                |  Bin [31m744124[m -> [32m0[m bytes
+ assets/images/why-cowita-talent.webp               |  Bin [31m0[m -> [32m84262[m bytes
+ assets/images/why-cowita-visual-art.jpg            |  Bin [31m775354[m -> [32m0[m bytes
+ assets/images/why-cowita-visual-art.webp           |  Bin [31m0[m -> [32m98796[m bytes
+ assets/images/why-cowita-writing.jpg               |  Bin [31m710000[m -> [32m0[m bytes
+ assets/images/why-cowita-writing.webp              |  Bin [31m0[m -> [32m67506[m bytes
+ assets/images/work-drawing-hero.jpg                |  Bin [31m689623[m -> [32m0[m bytes
+ assets/images/work-drawing-hero.webp               |  Bin [31m0[m -> [32m62314[m bytes
+ assets/images/work-writing-01.jpg                  |  Bin [31m631396[m -> [32m0[m bytes
+ assets/images/work-writing-01.webp                 |  Bin [31m0[m -> [32m49402[m bytes
+ assets/images/work-writing-02.jpg                  |  Bin [31m745927[m -> [32m0[m bytes
+ assets/images/work-writing-02.webp                 |  Bin [31m0[m -> [32m62526[m bytes
+ assets/images/work-writing-03.jpg                  |  Bin [31m764442[m -> [32m0[m bytes
+ assets/images/work-writing-03.webp                 |  Bin [31m0[m -> [32m82956[m bytes
+ assets/images/work-writing-hero.jpg                |  Bin [31m702855[m -> [32m0[m bytes
+ assets/images/work-writing-hero.webp               |  Bin [31m0[m -> [32m51362[m bytes
+ assets/images/work-youth-creative-session.jpg      |  Bin [31m805001[m -> [32m0[m bytes
+ assets/images/work-youth-creative-session.webp     |  Bin [31m0[m -> [32m104522[m bytes
+ assets/images/work/acting/acting-hero.jpg          |  Bin [31m755881[m -> [32m0[m bytes
+ assets/images/work/acting/acting-hero.webp         |  Bin [31m0[m -> [32m76594[m bytes
+ assets/images/work/acting/acting-performance.jpg   |  Bin [31m683469[m -> [32m0[m bytes
+ assets/images/work/acting/acting-performance.webp  |  Bin [31m0[m -> [32m47244[m bytes
+ assets/images/work/acting/acting-storytelling.jpg  |  Bin [31m662420[m -> [32m0[m bytes
+ assets/images/work/acting/acting-storytelling.webp |  Bin [31m0[m -> [32m38234[m bytes
+ assets/images/work/dance/dance-hero.jpg            |  Bin [31m696281[m -> [32m0[m bytes
+ assets/images/work/dance/dance-hero.webp           |  Bin [31m0[m -> [32m59480[m bytes
+ assets/images/work/dance/dance-training.jpg        |  Bin [31m702281[m -> [32m0[m bytes
+ assets/images/work/dance/dance-training.webp       |  Bin [31m0[m -> [32m63406[m bytes
+ assets/images/work/mentorship-hero.jpg             |  Bin [31m851730[m -> [32m0[m bytes
+ assets/images/work/mentorship-hero.webp            |  Bin [31m0[m -> [32m126990[m bytes
+ assets/images/work/mentorship-session.jpg          |  Bin [31m820130[m -> [32m0[m bytes
+ assets/images/work/mentorship-session.webp         |  Bin [31m0[m -> [32m118872[m bytes
+ assets/images/work/music/music-creation.jpg        |  Bin [31m681260[m -> [32m0[m bytes
+ assets/images/work/music/music-creation.webp       |  Bin [31m0[m -> [32m58480[m bytes
+ assets/images/work/music/music-development.jpg     |  Bin [31m855887[m -> [32m0[m bytes
+ assets/images/work/music/music-development.webp    |  Bin [31m0[m -> [32m113258[m bytes
+ assets/images/work/music/music-hero.jpg            |  Bin [31m723824[m -> [32m0[m bytes
+ assets/images/work/music/music-hero.webp           |  Bin [31m0[m -> [32m61658[m bytes
+ assets/images/work/music/music-opportunity.jpg     |  Bin [31m896495[m -> [32m0[m bytes
+ assets/images/work/music/music-opportunity.webp    |  Bin [31m0[m -> [32m122844[m bytes
+ components/footer.html                             |   11 [32m+[m[31m-[m
+ components/header.html                             |    2 [32m+[m[31m-[m
+ contact/index.html                                 |  812 [32m+[m[31m---[m
+ css/fonts.css                                      |  133 [32m+[m
+ css/pages/about-focus-areas.css                    |  511 [32m+++[m
+ css/pages/about-index.css                          |  933 [32m++++[m
+ css/pages/about-our-approach.css                   |  783 [32m++++[m
+ css/pages/about-our-story.css                      |  551 [32m+++[m
+ css/pages/about-our-values.css                     |  508 [32m+++[m
+ css/pages/about-who-we-work-with.css               |  898 [32m++++[m
+ css/pages/about-why-cowita.css                     |  730 [32m+++[m
+ css/pages/contact-index.css                        |  753 [32m+++[m
+ css/pages/get-involved-collaborate.css             |  600 [32m+++[m
+ css/pages/get-involved-have-talent.css             |  685 [32m+++[m
+ css/pages/get-involved-index.css                   |  365 [32m++[m
+ css/pages/get-involved-mentor.css                  |  767 [32m++++[m
+ css/pages/get-involved-partner.css                 |  521 [32m+++[m
+ css/pages/get-involved-thank-you.css               |  216 [32m+[m
+ css/pages/get-involved-want-to-learn.css           |  810 [32m++++[m
+ css/pages/home.css                                 |  951 [32m++++[m
+ css/pages/impact-change-we-seek.css                |  626 [32m+++[m
+ css/pages/impact-index.css                         |  571 [32m+++[m
+ css/pages/opportunity-index.css                    |  547 [32m+++[m
+ css/pages/stories-featured.css                     |  698 [32m+++[m
+ css/pages/stories-index.css                        |  711 [32m+++[m
+ css/pages/stories-journeys.css                     |  600 [32m+++[m
+ css/pages/stories-news.css                         |  620 [32m+++[m
+ css/pages/stories-participant-stories.css          |  532 [32m+++[m
+ css/pages/support-financial-support.css            |  737 [32m+++[m
+ css/pages/support-index.css                        |  459 [32m++[m
+ css/pages/support-partnership-support.css          |  737 [32m+++[m
+ css/pages/utility-faq.css                          |  422 [32m++[m
+ css/pages/work-acting.css                          |  688 [32m+++[m
+ css/pages/work-dance.css                           |  658 [32m+++[m
+ css/pages/work-drawing.css                         |  682 [32m+++[m
+ css/pages/work-index.css                           |  883 [32m++++[m
+ css/pages/work-mentorship.css                      |  672 [32m+++[m
+ css/pages/work-music.css                           |  810 [32m++++[m
+ css/pages/work-skills-development.css              |  478 [32m++[m
+ css/pages/work-writing.css                         |  504 [32m++[m
+ css/styles.css                                     |  360 [32m+[m[31m-[m
+ docs/RUNBOOK.md                                    |  229 [32m+[m
+ get-involved/collaborate.html                      |  660 [32m+[m[31m--[m
+ get-involved/have-talent.html                      |  764 [32m+[m[31m---[m
+ get-involved/index.html                            |  400 [32m+[m[31m-[m
+ get-involved/mentor.html                           |  852 [32m+[m[31m---[m
+ get-involved/partner.html                          |  625 [32m+[m[31m--[m
+ get-involved/thank-you.html                        |  218 [32m+[m[31m-[m
+ get-involved/want-to-learn.html                    |  872 [32m+[m[31m---[m
+ impact/change-we-seek.html                         |  665 [32m+[m[31m--[m
+ impact/index.html                                  |  616 [32m+[m[31m--[m
+ index.html                                         |  977 [32m+[m[31m---[m
+ js/config.js                                       |   30 [32m+[m[31m-[m
+ js/form-handler.js                                 |  705 [32m++[m[31m-[m
+ js/pages/utility-faq.js                            |   41 [32m+[m
+ legal/accessibility.html                           |  153 [32m+[m
+ legal/child-protection.html                        |  166 [32m+[m
+ legal/code-of-conduct.html                         |  149 [32m+[m
+ legal/complaints.html                              |  153 [32m+[m
+ legal/cookies.html                                 |  162 [32m+[m
+ legal/data-retention.html                          |  177 [32m+[m
+ legal/index.html                                   |  136 [32m+[m
+ legal/privacy.html                                 |  207 [32m+[m
+ legal/safeguarding.html                            |  185 [32m+[m
+ legal/terms.html                                   |  172 [32m+[m
+ opportunity/index.html                             |  586 [32m+[m[31m--[m
+ package-lock.json                                  | 4800 [32m++++++++++++++++++++[m
+ package.json                                       |   36 [32m+[m
+ robots.txt                                         |   11 [32m+[m
+ server.log                                         |   18 [32m+[m
+ sitemap.xml                                        |   50 [32m+[m
+ stories/featured.html                              |  805 [32m+[m[31m---[m
+ stories/index.html                                 |  771 [32m+[m[31m---[m
+ stories/journeys.html                              |  663 [32m+[m[31m--[m
+ stories/news.html                                  |  687 [32m+[m[31m--[m
+ stories/participant-stories.html                   |  586 [32m+[m[31m--[m
+ supabase/migrations/0001_init.sql                  |  224 [32m+[m
+ support/financial-support.html                     |  813 [32m+[m[31m---[m
+ support/index.html                                 |  494 [32m+[m[31m-[m
+ support/partnership-support.html                   |  774 [32m+[m[31m---[m
+ tests/admin.test.mjs                               |  415 [32m++[m
+ tests/endpoint.test.mjs                            |  325 [32m++[m
+ tests/health.test.mjs                              |   86 [32m+[m
+ tests/helpers/fake-supabase.mjs                    |  244 [32m+[m
+ tests/http.test.mjs                                |   91 [32m+[m
+ tests/sanitize.test.mjs                            |   73 [32m+[m
+ tests/validation.test.mjs                          |  150 [32m+[m
+ tools/a11y-check.mjs                               |  150 [32m+[m
+ tools/a11y-contrast-fix.mjs                        |  159 [32m+[m
+ tools/a11y-suite.mjs                               |   87 [32m+[m
+ tools/add-aria-labels.mjs                          |  278 [32m++[m
+ tools/axe-rule-selfcheck.mjs                       |   87 [32m+[m
+ tools/build-static.mjs                             |  108 [32m+[m
+ tools/check-links.mjs                              |  142 [32m+[m
+ tools/dev-server.mjs                               |  227 [32m+[m
+ tools/extract-inline-assets.mjs                    |  117 [32m+[m
+ tools/focus-check.mjs                              |  136 [32m+[m
+ tools/generate-legal-pages.mjs                     |  878 [32m++++[m
+ tools/generate-seo-files.mjs                       |  105 [32m+[m
+ tools/optimize-images.mjs                          |  166 [32m+[m
+ tools/selfhost-fonts.mjs                           |  111 [32m+[m
+ tools/seo-metadata.mjs                             |  239 [32m+[m
+ tools/watermark-to-css.mjs                         |   39 [32m+[m
+ utility/faq.html                                   |  523 [32m+[m[31m--[m
+ vercel.json                                        |   80 [32m+[m
+ work/acting.html                                   |  737 [32m+[m[31m--[m
+ work/dance.html                                    |  717 [32m+[m[31m--[m
+ work/drawing.html                                  |  731 [32m+[m[31m--[m
+ work/index.html                                    |  935 [32m+[m[31m---[m
+ work/mentorship.html                               |  715 [32m+[m[31m--[m
+ work/music.html                                    |  868 [32m+[m[31m---[m
+ work/skills-development.html                       |  535 [32m+[m[31m--[m
+ work/writing.html                                  |  555 [32m+[m[31m--[m
+ 353 files changed, 41899 insertions(+), 23633 deletions(-)

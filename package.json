@@ -12,6 +12,7 @@
     "build": "node tools/build-static.mjs",
     "test": "node --test tests/*.test.mjs",
     "check-links": "node tools/check-links.mjs",
+    "check-ids": "node tools/check-ids.mjs",
     "generate:legal": "node tools/generate-legal-pages.mjs",
     "generate:seo": "node tools/seo-metadata.mjs && node tools/generate-seo-files.mjs",
     "optimize:images": "node tools/optimize-images.mjs",
@@ -20,7 +21,7 @@
     "a11y": "node tools/a11y-suite.mjs",
     "a11y:contrast": "node tools/a11y-contrast-fix.mjs",
     "a11y:selfcheck": "node tools/axe-rule-selfcheck.mjs",
-    "verify": "npm run check-links && node tools/generate-seo-files.mjs && npm test && npm run build && npm run a11y"
+    "verify": "npm run check-links && npm run check-ids && node tools/generate-seo-files.mjs && npm test && npm run build && npm run a11y"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.4",

@@ -26,6 +26,9 @@ jobs:
       - name: Check internal links, assets and CSS references
         run: npm run check-links
 
+      - name: Check for duplicate ids and unresolved form= references
+        run: npm run check-ids
+
       - name: Run unit and integration tests
         run: npm test
 

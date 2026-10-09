@@ -3,9 +3,11 @@
  *
  * Run with:  node tools/generate-seo-files.mjs
  *
- * Excludes the admin dashboard, the API and the noindex thank-you page.
- * Also fails (exit 1) when two pages share a <title> or meta description,
- * which is exactly the kind of duplication the audit flagged.
+ * Excludes the admin dashboard, the API, the noindex thank-you page and the
+ * components/ partials (which are HTML fragments injected into pages, not
+ * standalone pages). Also fails (exit 1) when two pages share a <title> or
+ * meta description, which is exactly the kind of duplication the audit
+ * flagged.
  */
 
 import { readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
@@ -14,7 +16,16 @@ import { fileURLToPath } from 'node:url';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const SITE = 'https://cowita.org';
-const IGNORED_DIRS = new Set(['.git', 'node_modules', '.freebuff', 'apps-script', 'tools', 'admin', 'dist']);
+const IGNORED_DIRS = new Set([
+  '.git',
+  'node_modules',
+  '.freebuff',
+  'apps-script',
+  'tools',
+  'admin',
+  'dist',
+  'components',
+]);
 
 function walk(dir, files = []) {
   for (const entry of readdirSync(dir)) {
@@ -28,7 +39,15 @@ function walk(dir, files = []) {
 
 const pages = walk(root)
   .map((file) => relative(root, file).replace(/\\/g, '/'))
+  // Skip the noindex thank-you page and any HTML fragment that is not a
+  // full document. Component partials start with <footer> or <header>,
+  // so a document-level <html> check filters them out even if a new
+  // partials directory is ever added without being ignored above.
   .filter((rel) => !rel.includes('thank-you'))
+  .filter((rel) => {
+    const html = readFileSync(join(root, rel), 'utf8');
+    return html.includes('<html');
+  })
   .sort();
 
 const titles = new Map();
