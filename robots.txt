@@ -1,0 +1,11 @@
+# CoWiTa — https://cowita.org
+
+User-agent: *
+Allow: /
+
+# Staff-only and API paths
+Disallow: /admin/
+Disallow: /api/
+Disallow: /get-involved/thank-you.html
+
+Sitemap: https://cowita.org/sitemap.xml

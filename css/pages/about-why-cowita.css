@@ -1,0 +1,730 @@
+/* about/why-cowita.html — page-specific styles
+   (extracted from an inline <style> block for CSP compliance) */
+
+
+/* =========================================================
+   WHY COWITA PAGE
+   Uses the same visual language and component proportions as Dance.
+   Content and existing assets are preserved.
+   ========================================================= */
+
+/* HERO — deliberately mirrors Dance's full-bleed hero construction. */
+.why-page-hero{
+  position:relative;
+  min-height:78vh;
+  display:flex;
+  align-items:flex-end;
+  overflow:hidden;
+  background:var(--deep-teal);
+  color:#fff;
+  padding:150px 0 75px;
+}
+.why-page-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5,30,34,.94) 0%,
+      rgba(5,30,34,.72) 48%,
+      rgba(5,30,34,.25) 100%
+    );
+  z-index:1;
+}
+.why-hero-image{
+  position:absolute;
+  inset:0;
+  z-index:0;
+}
+.why-hero-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+.why-hero-grid{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:70px;
+  align-items:end;
+}
+.why-hero-content{
+  max-width:850px;
+}
+.why-hero-content > .eyebrow{
+  color:var(--gold);
+}
+.why-page-hero h1{
+  margin:0;
+  font-family:"Lora",Georgia,serif;
+  font-size:clamp(3rem,4.8vw,5.5rem) !important;
+  font-weight:500;
+  line-height:1.02;
+  letter-spacing:-.045em;
+}
+.why-page-hero h1 span{color:var(--gold)}
+.why-hero-copy,
+.why-page-hero .hero-lead{
+  max-width:650px;
+  margin:28px 0 0;
+  color:rgba(255,255,255,.78);
+  font-size:1.05rem;
+  line-height:1.65;
+}
+.why-page-hero .hero-supporting-copy{
+  max-width:650px;
+  margin:18px 0 0;
+  color: rgba(255, 255, 255, 0.8);
+  line-height:1.65;
+}
+.why-page-hero .hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:32px;
+}
+.why-page-hero .hero-actions .btn-primary{
+  background:var(--gold);
+  color:#191711;
+}
+.why-page-hero .hero-actions .btn-primary:hover{background:#f0bb38}
+.why-page-hero .hero-actions .btn-outline{
+  border-color: rgba(255, 255, 255, 0.8);
+  color:#fff;
+  background:rgba(255,255,255,.06);
+  backdrop-filter:blur(8px);
+}
+.why-page-hero .hero-actions .btn-outline:hover{
+  background:rgba(255,255,255,.14);
+  border-color:rgba(255,255,255,.7);
+}
+.why-hero-side{
+  align-self:end;
+  justify-self:end;
+  max-width:310px;
+  padding:25px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:22px;
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(12px);
+}
+.why-hero-side-label{
+  margin-bottom:12px;
+  color:var(--gold);
+  font-size:.68rem;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+.why-hero-side strong{
+  display:block;
+  color:rgba(255,255,255,.92);
+  line-height:1.45;
+}
+
+/* SECTION RHYTHM — clear, purposeful divisions rather than decorative lines. */
+.why-gap-section{background:var(--paper)}
+.why-challenge-section{background:var(--deep-teal);color:#fff}
+.why-talent-section{background:var(--cream)}
+.why-journey-section{background:var(--paper)}
+.why-practice-section{background:var(--deep-teal);color:#fff}
+.why-mentorship-section{background:var(--cream)}
+.why-difference-section{background:var(--paper)}
+.why-impact-section{background:var(--cream)}
+.why-belief-section{background:var(--gold);color:#191711}
+.why-actions-section{background:var(--paper)}
+.why-final-cta-section{background:var(--gold);color:#191711}
+
+/* The real challenge — four clean horizontal pathway-style blocks. */
+.why-challenge-section .two-column-heading{
+  max-width:850px;
+  margin-bottom:55px;
+}
+.why-challenge-section .eyebrow-light{color:var(--gold)}
+.why-challenge-section .problem-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+.why-challenge-section .problem-card{
+  position:relative;
+  min-height:275px;
+  padding:28px;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:22px;
+  background:rgba(255,255,255,.055);
+  overflow:hidden;
+  transition:transform .3s var(--ease),border-color .3s var(--ease),background .3s var(--ease);
+}
+.why-challenge-section .problem-card:hover{
+  transform:translateY(-7px);
+  border-color:var(--gold);
+  background:rgba(255,255,255,.075);
+}
+.why-challenge-section .problem-number{
+  font-size:3.2rem;
+  line-height:.8;
+  font-weight:800;
+  color:var(--gold);
+  opacity:.9;
+}
+.why-challenge-section .problem-card h3{
+  margin:35px 0 10px;
+  font-family:"Lora",Georgia,serif;
+  font-size:1.5rem;
+}
+.why-challenge-section .problem-card p{
+  margin:0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size:.78rem;
+  line-height:1.6;
+}
+
+/* Talent section — Dance-style image + editorial copy. */
+.why-talent-section .editorial-grid{
+  align-items:center;
+}
+.why-talent-section .editorial-image .image-frame{
+  overflow:hidden;
+  border-radius:30px 30px 110px 30px;
+}
+.why-talent-section .editorial-image img{
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+}
+.why-talent-section .question-block{
+  display:grid;
+  gap:0;
+  margin-top:30px;
+  border-top:1px solid var(--line);
+}
+.why-talent-section .question-block span{
+  padding:15px 0;
+  border-bottom:1px solid var(--line);
+  font-family:"Lora",Georgia,serif;
+  font-size:1.15rem;
+}
+
+/* From talent to possibility — exact Dance pathway card treatment, no icons. */
+.why-journey-section .section-intro{
+  max-width:750px;
+  margin-bottom:55px;
+}
+.why-pathway{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+.why-pathway-card{
+  position:relative;
+  min-height:275px;
+  padding:28px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:#fff;
+  overflow:hidden;
+  transition:transform .3s var(--ease),border-color .3s var(--ease);
+}
+.why-pathway-card:hover{
+  transform:translateY(-7px);
+  border-color:var(--gold);
+}
+.why-pathway-number{
+  font-size:3.2rem;
+  line-height:.8;
+  font-weight:800;
+  opacity:.07;
+}
+.why-pathway-card h3{
+  margin:35px 0 10px;
+  font-family:"Lora",Georgia,serif;
+  font-size:1.5rem;
+}
+.why-pathway-card p{
+  margin:0;
+  color:var(--muted);
+  font-size:.78rem;
+  line-height:1.6;
+}
+
+/* Practice — dark editorial grid, echoing Dance's Experience section. */
+.why-practice-section .section-heading-row{max-width:760px;margin-bottom:55px}
+.why-practice-section .eyebrow{color:var(--gold)}
+.why-practice-section .section-heading-support{color: rgba(255, 255, 255, 0.8)}
+.why-practice-section .discipline-story-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+.why-practice-section .discipline-story{
+  min-height:330px;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:22px;
+  background:rgba(255,255,255,.055);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.why-practice-section .discipline-story-image{
+  height:190px;
+  overflow:hidden;
+}
+.why-practice-section .discipline-story-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.why-practice-section .discipline-story-content{padding:26px 28px 30px}
+.why-practice-section .discipline-label{color:var(--gold)}
+.why-practice-section .discipline-story h3{
+  margin:15px 0 10px;
+  color:#fff;
+  font-family:"Lora",Georgia,serif;
+  font-size:1.5rem;
+}
+.why-practice-section .discipline-story p{
+  margin:0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size:.8rem;
+  line-height:1.65;
+}
+.why-practice-section .discipline-story-dark{
+  background:rgba(255,255,255,.09);
+}
+.why-practice-section .discipline-story-dark .discipline-story-content{height:100%}
+.why-practice-section .discipline-story-dark .btn-outline{
+  margin-top:24px;
+  border-color: rgba(255, 255, 255, 0.8);
+  color:#fff;
+}
+
+/* Remaining sections use the same restrained component language. */
+.why-mentorship-section .mentorship-feature,
+.why-impact-section .impact-story{
+  align-items:center;
+}
+.why-mentorship-section .mentorship-image .image-frame{
+  overflow:hidden;
+  border-radius:30px 30px 110px 30px;
+}
+.why-mentorship-section .mentorship-image img{
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+}
+.why-difference-section .difference-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+.why-difference-section .difference-item{
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:#fff;
+  padding:32px;
+}
+.why-impact-section .number-note{
+  min-height:320px;
+  padding:45px;
+  border-radius:30px;
+  background:#fff;
+  border:1px solid var(--line);
+}
+.why-belief-section .belief-banner{background:transparent}
+.why-actions-section .action-grid{gap:14px}
+.why-actions-section .action-card{
+  border-radius:22px;
+  background:#fff;
+  border:1px solid var(--line);
+}
+.why-actions-section .action-card:hover{border-color:var(--gold)}
+
+.why-actions-section .action-pathway-card{
+  position:relative;
+  min-height:330px;
+  padding:28px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:#fff;
+  overflow:hidden;
+  transition:transform .3s var(--ease),border-color .3s var(--ease);
+}
+.why-actions-section .action-pathway-card:hover{
+  transform:translateY(-7px);
+  border-color:var(--gold);
+}
+.why-actions-section .action-pathway-card h3{
+  margin:18px 0 14px;
+  font-family:"Lora",Georgia,serif;
+  font-size:1.55rem;
+  line-height:1.12;
+}
+.why-actions-section .action-pathway-card p{
+  margin:0;
+  color:var(--muted);
+  font-size:.8rem;
+  line-height:1.65;
+}
+.why-actions-section .action-card-label{
+  display:block;
+  color:var(--teal);
+  font-size:.68rem;
+  font-weight:800;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+.why-actions-section .action-button{
+  margin-top:26px;
+  border:1px solid var(--teal);
+  border-radius:100px;
+  color:var(--teal);
+  background:transparent;
+  text-decoration:none;
+}
+.why-actions-section .action-pathway-card:hover .action-button{
+  background:var(--teal);
+  color:#fff;
+}
+
+/* Buttons: no important action is allowed to collapse into plain text. */
+.why-page-hero .btn,
+.why-page .btn,
+.why-page-hero .hero-actions a{
+  text-decoration:none;
+}
+.why-page .text-link{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  min-height:46px;
+  padding:11px 18px;
+  border:1px solid var(--teal);
+  border-radius:100px;
+  background:rgba(13,75,75,.04);
+  color:var(--teal);
+  font-weight:800;
+  text-decoration:none;
+}
+.why-page .text-link:hover{
+  background:rgba(13,75,75,.09);
+  border-color:var(--gold);
+}
+.why-final-cta-section .final-cta-actions .button-light{
+  background:#191711;
+  color:#fff;
+}
+.why-final-cta-section .final-cta-actions .button-light:hover{background:var(--deep-teal)}
+
+/* Responsive — follows the same breakpoints as Dance. */
+@media(max-width:1000px){
+  .why-hero-grid{grid-template-columns:1fr}
+  .why-hero-side{justify-self:start}
+  .why-challenge-section .problem-grid{grid-template-columns:repeat(2,1fr)}
+  .why-pathway{grid-template-columns:repeat(3,1fr)}
+  .why-actions-section .action-pathway{grid-template-columns:repeat(2,1fr)}
+  .why-practice-section .discipline-story-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:900px){
+  .why-talent-section .editorial-grid,
+  .why-mentorship-section .mentorship-feature,
+  .why-impact-section .impact-story{grid-template-columns:1fr}
+  .why-mentorship-section .mentorship-image,
+  .why-mentorship-section .mentorship-copy{
+    grid-column:auto;
+    grid-row:auto;
+  }
+}
+@media(max-width:650px){
+  .why-page-hero{min-height:auto;padding:130px 0 55px}
+  .why-page-hero h1{font-size:clamp(3.5rem,18vw,6rem)}
+  .why-page-hero .hero-lead{font-size:.95rem}
+  .why-hero-side{max-width:none}
+  .why-challenge-section .problem-grid,
+  .why-pathway,
+  .why-actions-section .action-pathway,
+  .why-practice-section .discipline-story-grid,
+  .why-difference-section .difference-grid{grid-template-columns:1fr}
+  .why-talent-section .editorial-image img,
+  .why-mentorship-section .mentorship-image img{aspect-ratio:4/5}
+}
+
+/* =========================================================
+   REQUESTED REFINEMENTS
+   ========================================================= */
+
+/* Mentorship: image and text are equal editorial columns, with the IMAGE FIRST. */
+.why-mentorship-section .mentorship-feature{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+.why-mentorship-section .mentorship-image{
+  grid-column:1;
+  grid-row:1;
+}
+.why-mentorship-section .mentorship-copy{
+  grid-column:2;
+  grid-row:1;
+}
+
+/* Talent + mentorship now use the same editorial image/copy relationship. */
+.why-talent-section .editorial-grid,
+.why-mentorship-section .editorial-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+
+.why-mentorship-section .editorial-image .image-frame{
+  overflow:hidden;
+  border-radius:30px 30px 110px 30px;
+}
+
+.why-mentorship-section .editorial-image img{
+  display:block;
+  width:100%;
+  aspect-ratio:4 / 5;
+  object-fit:cover;
+}
+
+.why-mentorship-section .mentorship-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:max-content;
+  min-height:48px;
+  margin-top:18px;
+  padding:12px 22px;
+  border:1px solid var(--teal);
+  border-radius:100px;
+  background:var(--teal);
+  color:#fff;
+  font-weight:800;
+  line-height:1;
+  text-decoration:none;
+}
+.why-mentorship-section .mentorship-button:hover{
+  background:var(--deep-teal);
+  border-color:var(--deep-teal);
+  color:#fff;
+}
+
+/* Bigger picture: central talent node with five connected possibilities. */
+.why-impact-section .impact-story-note{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:430px;
+}
+
+.possibility-map{
+  position:relative;
+  width:min(100%, 520px);
+  aspect-ratio:1;
+}
+
+.possibility-map::before{
+  content:"";
+  position:absolute;
+  inset:16%;
+  border:1px solid var(--line);
+  border-radius:50%;
+}
+
+.possibility-map::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:1px;
+  height:1px;
+  box-shadow:
+    0 -155px 0 0 var(--line),
+    147px -48px 0 0 var(--line),
+    91px 125px 0 0 var(--line),
+    -91px 125px 0 0 var(--line),
+    -147px -48px 0 0 var(--line);
+}
+
+.possibility-node{
+  position:absolute;
+  z-index:2;
+  display:grid;
+  place-items:center;
+  width:92px;
+  height:92px;
+  padding:10px;
+  border:1px solid var(--line);
+  border-radius:50%;
+  background:#fff;
+  color:var(--teal);
+  text-align:center;
+  box-shadow:0 8px 24px rgba(20,32,28,.08);
+}
+
+.possibility-node strong{
+  display:block;
+  font-size:.78rem;
+  line-height:1.1;
+}
+
+.possibility-node span{
+  display:block;
+  margin-top:3px;
+  color:var(--muted);
+  font-size:.6rem;
+  line-height:1.1;
+}
+
+.possibility-center{
+  left:50%;
+  top:50%;
+  width:132px;
+  height:132px;
+  transform:translate(-50%,-50%);
+  border:2px solid var(--gold);
+  background:var(--gold);
+  color:#191711;
+  box-shadow:none;
+}
+
+.possibility-center strong{
+  font-family:"Lora",Georgia,serif;
+  font-size:1.35rem;
+}
+
+.possibility-center span{
+  color:#191711;
+  opacity:.7;
+  font-size:.68rem;
+}
+
+.possibility-node-1{left:50%;top:3%;transform:translateX(-50%)}
+.possibility-node-2{right:2%;top:31%}
+.possibility-node-3{right:20%;bottom:3%}
+.possibility-node-4{left:20%;bottom:3%}
+.possibility-node-5{left:2%;top:31%}
+
+/* Where do you fit? — same pathway treatment, with defined action controls. */
+.why-actions-section .pathway-header{
+  max-width:750px;
+  margin-bottom:55px;
+}
+
+.why-actions-section .pathway-header p{
+  max-width:650px;
+  margin-top:20px;
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.action-pathway{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+
+.action-pathway-card{
+  display:flex;
+  flex-direction:column;
+  min-height:330px;
+  color:var(--ink);
+  text-decoration:none;
+}
+
+.action-pathway-card .action-card-label{
+  margin-top:20px;
+  color:var(--teal);
+  font-size:.68rem;
+  font-weight:800;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+
+.action-pathway-card h3{
+  margin-top:15px;
+}
+
+.action-pathway-card p{
+  flex:1;
+}
+
+.action-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  align-self:flex-start;
+  gap:9px;
+  min-height:42px;
+  margin-top:24px;
+  padding:10px 16px;
+  border:1px solid var(--teal);
+  border-radius:100px;
+  color:var(--teal);
+  background:transparent;
+  font-size:.72rem;
+  font-weight:800;
+}
+
+.action-pathway-card:hover .action-button{
+  background:var(--teal);
+  color:#fff;
+}
+
+/* Final CTA: make "Start with your talent" an intentional button. */
+.why-final-cta-section .final-cta-actions .button-light{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:50px;
+  padding:13px 24px;
+  border:1px solid #191711;
+  border-radius:100px;
+  background:#191711;
+  color:#fff;
+  font-weight:800;
+  text-decoration:none;
+  box-shadow:none;
+}
+
+.why-final-cta-section .final-cta-actions .button-light:hover{
+  border-color:var(--deep-teal);
+  background:var(--deep-teal);
+  color:#fff;
+}
+
+@media(max-width:1000px){
+  .action-pathway{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:900px){
+  .why-talent-section .editorial-grid,
+  .why-mentorship-section .editorial-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:650px){
+  .action-pathway{
+    grid-template-columns:1fr;
+  }
+
+  .possibility-map{
+    width:min(100%, 390px);
+  }
+
+  .possibility-node-1{top:2%}
+  .possibility-node-2{right:0;top:30%}
+  .possibility-node-3{right:13%;bottom:2%}
+  .possibility-node-4{left:13%;bottom:2%}
+  .possibility-node-5{left:0;top:30%}
+}
+

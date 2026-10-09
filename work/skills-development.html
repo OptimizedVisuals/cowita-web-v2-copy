@@ -10,484 +10,47 @@
     content="CoWiTa develops the practical, creative and personal skills young people need to turn talent into opportunity."
   />
 
-  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="/css/styles.css" />
 
-  <style>
-    /* =========================================================
-       SKILLS DEVELOPMENT — PAGE-SPECIFIC STYLES
-       ========================================================= */
-
-    .skills-hero {
-      position: relative;
-      min-height: calc(100vh - var(--header-height));
-      display: flex;
-      align-items: center;
-      padding: 6rem 0;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(8, 40, 39, .94) 0%,
-          rgba(8, 40, 39, .78) 48%,
-          rgba(8, 40, 39, .34) 100%
-        ),
-        url("../assets/images/work/skills-development/cowita-skills-development-hero.webp")
-        center / cover no-repeat;
-      color: #fff;
-      overflow: hidden;
+  <link rel="stylesheet" href="/css/pages/work-skills-development.css">
+  <link rel="canonical" href="https://cowita.org/work/skills-development.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CoWiTa">
+  <meta property="og:title" content="Skills Development | CoWiTa">
+  <meta property="og:description" content="CoWiTa develops the practical, creative and personal skills young people need to turn talent into opportunity.">
+  <meta property="og:url" content="https://cowita.org/work/skills-development.html">
+  <meta property="og:image" content="https://cowita.org/assets/images/stories-hero.webp">
+  <meta property="og:image:alt" content="CoWiTa — talent into opportunity">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Skills Development | CoWiTa">
+  <meta name="twitter:description" content="CoWiTa develops the practical, creative and personal skills young people need to turn talent into opportunity.">
+  <meta name="twitter:image" content="https://cowita.org/assets/images/stories-hero.webp">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/brand/cowita-favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/images/cowita-logo.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://cowita.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Skills Development",
+      "item": "https://cowita.org/work/skills-development.html"
     }
-
-    .skills-hero-grid {
-      position: relative;
-      z-index: 1;
-    }
-
-    .skills-hero-copy {
-      max-width: 760px;
-    }
-
-    .skills-hero h1 {
-      max-width: 760px;
-      margin: 1rem 0 1.5rem;
-      font-size: clamp(3.6rem, 7vw, 7.4rem);
-      line-height: 0.91;
-      letter-spacing: -0.015em;
-      color: #fff;
-    }
-
-    .skills-hero-intro {
-      max-width: 650px;
-      font-size: clamp(1.15rem, 2vw, 1.45rem);
-      line-height: 1.55;
-      color: rgba(255,255,255,.82);
-    }
-
-    .skills-hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .8rem;
-      margin-top: 2rem;
-    }
-
-    .skills-hero-actions .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 13px 21px;
-      border: 1px solid transparent;
-      border-radius: 999px;
-      background: var(--gold);
-      color: var(--ink);
-      font-size: .78rem;
-      font-weight: 800;
-    }
-
-    .skills-hero-actions .button-outline {
-      border-color: rgba(255,255,255,.55);
-      background: rgba(255,255,255,.12);
-      color: #fff;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-    }
-
-    .skills-hero-media {
-      display: none;
-    }
-
-    .skills-hero-media img,
-    .skills-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .skills-intro {
-      padding: clamp(52px, 5.5vw, 76px) 0;
-      background: #fff;
-    }
-
-    .skills-intro-grid {
-      display: grid;
-      grid-template-columns: 0.7fr 1.3fr;
-      gap: 5rem;
-    }
-
-    .skills-section-label {
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-    }
-
-    .skills-intro h2 {
-      max-width: 900px;
-      margin: 0;
-      font-size: clamp(2.5rem, 5vw, 5.5rem);
-      line-height: 0.98;
-      letter-spacing: -0.015em;
-    }
-
-    .skills-intro p {
-      max-width: 720px;
-      margin-top: 2rem;
-      font-size: 1.15rem;
-      line-height: 1.75;
-    }
-
-    .skills-intro-image {
-      width: 100%;
-      min-height: 360px;
-      margin-top: 1.5rem;
-      object-fit: cover;
-      border-radius: 24px;
-    }
-
-    .skills-belief {
-      padding: clamp(52px, 5.5vw, 76px) 0;
-      background: var(--color-dark, #10211e);
-      color: #fff;
-    }
-
-    .skills-belief-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: start;
-    }
-
-    .skills-belief h2 {
-      margin: 0;
-      font-size: clamp(3rem, 6vw, 6rem);
-      line-height: 0.95;
-      letter-spacing: -0.015em;
-    }
-
-    .skills-belief-copy {
-      max-width: 650px;
-      font-size: 1.15rem;
-      line-height: 1.75;
-    }
-
-    .skills-pillars {
-      padding: clamp(52px, 5.5vw, 76px) 0;
-      background: var(--color-paper, #eee8dc);
-    }
-
-    .skills-pillars-header {
-      max-width: 800px;
-      margin-bottom: 4rem;
-    }
-
-    .skills-pillars-header h2 {
-      margin: 0.8rem 0 1.2rem;
-      font-size: clamp(2.8rem, 5vw, 5.5rem);
-      line-height: 0.95;
-      letter-spacing: -0.015em;
-    }
-
-    .skills-pillars-header p {
-      max-width: 650px;
-      font-size: 1.1rem;
-      line-height: 1.7;
-    }
-
-    .skills-card-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: rgba(16, 33, 30, 0.18);
-      border: 1px solid rgba(16, 33, 30, 0.18);
-    }
-
-    .skill-card {
-      min-height: 310px;
-      padding: 2rem;
-      background: var(--color-paper, #eee8dc);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .skill-card-number {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      opacity: 0.6;
-    }
-
-    .skill-card h3 {
-      margin: 3rem 0 1rem;
-      font-size: 1.7rem;
-      letter-spacing: -0.015em;
-    }
-
-    .skill-card p {
-      margin: 0;
-      line-height: 1.65;
-      opacity: 0.82;
-    }
-
-    .skills-journey {
-      padding: clamp(52px, 5.5vw, 76px) 0;
-      background: #fff;
-    }
-
-    .skills-journey-header {
-      display: grid;
-      grid-template-columns: 0.7fr 1.3fr;
-      gap: 5rem;
-      margin-bottom: 5rem;
-    }
-
-    .skills-journey-header h2 {
-      margin: 0;
-      max-width: 900px;
-      font-size: clamp(2.8rem, 5vw, 5.4rem);
-      line-height: 0.96;
-      letter-spacing: -0.015em;
-    }
-
-    .skills-pathway {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      border-top: 1px solid rgba(16, 33, 30, 0.2);
-      border-bottom: 1px solid rgba(16, 33, 30, 0.2);
-    }
-
-    .skills-step {
-      position: relative;
-      min-height: 260px;
-      padding: 1.5rem;
-      border-right: 1px solid rgba(16, 33, 30, 0.2);
-    }
-
-    .skills-step:last-child {
-      border-right: 0;
-    }
-
-    .skills-step-number {
-      display: block;
-      margin-bottom: 4rem;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      opacity: 0.55;
-    }
-
-    .skills-step h3 {
-      margin: 0 0 0.7rem;
-      font-size: 1.35rem;
-    }
-
-    .skills-step p {
-      margin: 0;
-      font-size: 0.92rem;
-      line-height: 1.55;
-      opacity: 0.75;
-    }
-
-    .skills-image-section {
-      padding: 0 0 clamp(52px, 5.5vw, 76px);
-      background: #fff;
-    }
-
-    .skills-image {
-      min-height: 620px;
-      overflow: hidden;
-      background: #d8d0c2;
-      position: relative;
-    }
-
-    .skills-image-caption {
-      position: absolute;
-      left: 1.5rem;
-      bottom: 1.5rem;
-      max-width: 420px;
-      padding: 1.2rem 1.4rem;
-      background: rgba(255, 255, 255, 0.92);
-      color: #10211e;
-    }
-
-    .skills-image-caption strong {
-      display: block;
-      margin-bottom: 0.4rem;
-      font-size: 1rem;
-    }
-
-    .skills-image-caption span {
-      font-size: 0.85rem;
-      line-height: 1.5;
-    }
-
-    .skills-practical {
-      padding: clamp(52px, 5.5vw, 76px) 0;
-      background: var(--color-gold, #c9a646);
-      color: #10211e;
-    }
-
-    .skills-practical-grid {
-      display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 5rem;
-    }
-
-    .skills-practical h2 {
-      margin: 0;
-      font-size: clamp(3rem, 5vw, 5.5rem);
-      line-height: 0.95;
-      letter-spacing: -0.015em;
-    }
-
-    .skills-practical-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: rgba(16, 33, 30, 0.2);
-      border: 1px solid rgba(16, 33, 30, 0.2);
-    }
-
-    .practical-item {
-      padding: 1.7rem;
-      background: var(--color-gold, #c9a646);
-    }
-
-    .practical-item h3 {
-      margin: 0 0 0.7rem;
-      font-size: 1.2rem;
-    }
-
-    .practical-item p {
-      margin: 0;
-      font-size: 0.92rem;
-      line-height: 1.6;
-    }
-
-    .skills-coming-soon {
-      padding: clamp(52px, 5.5vw, 76px) 0;
-      background: var(--color-dark, #10211e);
-      color: #fff;
-    }
-
-    .skills-coming-soon-inner {
-      max-width: 1050px;
-    }
-
-    .coming-soon-tag {
-      display: inline-flex;
-      padding: 0.5rem 0.75rem;
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-    }
-
-    .skills-coming-soon h2 {
-      max-width: 900px;
-      margin: 1.5rem 0;
-      font-size: clamp(3rem, 6vw, 6rem);
-      line-height: 0.94;
-      letter-spacing: -0.015em;
-    }
-
-    .skills-coming-soon p {
-      max-width: 680px;
-      font-size: 1.1rem;
-      line-height: 1.75;
-      opacity: 0.78;
-    }
-
-    .skills-coming-soon-note {
-      margin-top: 2.5rem;
-      padding: 1.25rem 1.5rem;
-      border-left: 2px solid var(--color-gold, #c9a646);
-      max-width: 650px;
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
-
-    @media (max-width: 1000px) {
-      .skills-hero-grid,
-      .skills-intro-grid,
-      .skills-belief-grid,
-      .skills-practical-grid,
-      .skills-journey-header {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-
-      .skills-card-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .skills-pathway {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .skills-step:nth-child(3) {
-        border-right: 0;
-      }
-
-      .skills-step:nth-child(n + 4) {
-        border-top: 1px solid rgba(16, 33, 30, 0.2);
-      }
-    }
-
-    @media (max-width: 680px) {
-      .skills-hero {
-        min-height: auto;
-        padding: 7rem 0 3rem;
-      }
-
-      .skills-hero-grid {
-        gap: 2.5rem;
-      }
-
-      .skills-hero-media {
-        min-height: 360px;
-      }
-
-      .skills-intro,
-      .skills-belief,
-      .skills-pillars,
-      .skills-journey,
-      .skills-practical,
-      .skills-coming-soon {
-        padding-block: 52px;
-      }
-
-      .skills-card-grid,
-      .skills-practical-list {
-        grid-template-columns: 1fr;
-      }
-
-      .skills-pathway {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .skills-step:nth-child(3) {
-        border-right: 1px solid rgba(16, 33, 30, 0.2);
-      }
-
-      .skills-step:nth-child(even) {
-        border-right: 0;
-      }
-
-      .skills-step:nth-child(n + 3) {
-        border-top: 1px solid rgba(16, 33, 30, 0.2);
-      }
-
-      .skills-step {
-        min-height: 220px;
-      }
-
-      .skills-image {
-        min-height: 420px;
-      }
-
-    }
-  </style>
+  ]
+}
+  </script>
+  <link rel="preload" href="/assets/fonts/inter-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/lora-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/fonts.css">
 </head>
 
 <body>
@@ -522,19 +85,19 @@
           </p>
 
           <div class="skills-hero-actions">
-            <a class="button" href="../get-involved/have-talent.html">
+            <a class="button" href="/get-involved/have-talent.html">
               I Have Talent
             </a>
 
-            <a class="button button-outline" href="../get-involved/want-to-learn.html">
+            <a class="button button-outline" href="/get-involved/want-to-learn.html">
               I Want to Learn
             </a>
           </div>
         </div>
 
         <div class="skills-hero-media reveal">
-          <img
-            src="../assets/images/work/skills-development/cowita-skills-development-hero.webp"
+          <img decoding="async"
+            src="/assets/images/work/skills-development/cowita-skills-development-hero.webp"
             alt="Young people learning and developing practical creative skills"
             loading="eager"
           />
@@ -552,9 +115,9 @@
 
         <div class="reveal">
           <span class="skills-section-label">01 / Why skills matter</span>
-          <img
+          <img loading="lazy" decoding="async"
             class="skills-intro-image"
-            src="../assets/images/work/skills-development/cowita-skills-development-workshop.webp"
+            src="/assets/images/work/skills-development/cowita-skills-development-workshop.webp"
             alt="Young people developing practical creative skills together"
           />
         </div>
@@ -813,8 +376,8 @@
       <div class="container">
 
         <div class="skills-image reveal">
-          <img
-            src="../assets/images/work/skills-development/cowita-skills-development-workshop.webp"
+          <img decoding="async"
+            src="/assets/images/work/skills-development/cowita-skills-development-workshop.webp"
             alt="Young people working together during a creative skills learning session"
             loading="lazy"
           />

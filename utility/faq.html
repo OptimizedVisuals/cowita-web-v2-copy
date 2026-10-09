@@ -11,420 +11,88 @@
     content="Find answers to common questions about CoWiTa, our work, opportunities, creative development, mentorship and ways to get involved."
   >
 
+    <link rel="preload" href="/assets/fonts/inter-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/lora-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/fonts.css">
   <link rel="stylesheet" href="/css/styles.css">
 
-  <style>
-    /* =========================================================
-       FAQ PAGE
-       ========================================================= */
-
-    .faq-hero {
-      padding: 115px 0 100px;
-      background: var(--deep-teal);
-      color: #fff;
+  <link rel="stylesheet" href="/css/pages/utility-faq.css">
+  <link rel="canonical" href="https://cowita.org/utility/faq.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CoWiTa">
+  <meta property="og:title" content="FAQ | CoWiTa">
+  <meta property="og:description" content="Find answers to common questions about CoWiTa, our work, opportunities, creative development, mentorship and ways to get involved.">
+  <meta property="og:url" content="https://cowita.org/utility/faq.html">
+  <meta property="og:image" content="https://cowita.org/assets/images/stories-hero.webp">
+  <meta property="og:image:alt" content="CoWiTa — talent into opportunity">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FAQ | CoWiTa">
+  <meta name="twitter:description" content="Find answers to common questions about CoWiTa, our work, opportunities, creative development, mentorship and ways to get involved.">
+  <meta name="twitter:image" content="https://cowita.org/assets/images/stories-hero.webp">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/brand/cowita-favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/images/cowita-logo.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://cowita.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "FAQ",
+      "item": "https://cowita.org/utility/faq.html"
     }
-
-    .faq-hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 90px;
-      align-items: end;
-    }
-
-    .faq-hero .eyebrow {
-      color: var(--gold);
-      margin-bottom: 22px;
-    }
-
-    .faq-hero h1 {
-      max-width: 800px;
-      margin: 0 0 25px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(3.2rem, 7vw, 6.2rem);
-      line-height: 0.94;
-      font-weight: 400;
-      letter-spacing: -0.015em;
-    }
-
-    .faq-hero-copy p {
-      max-width: 680px;
-      margin: 0;
-      color: rgba(255,255,255,0.74);
-      font-size: 1.08rem;
-      line-height: 1.8;
-    }
-
-    .faq-hero-note {
-      padding-left: 28px;
-      border-left: 1px solid rgba(255,255,255,0.28);
-    }
-
-    .faq-hero-note strong {
-      display: block;
-      margin-bottom: 10px;
-      color: var(--gold);
-      font-size: 0.76rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .faq-hero-note p {
-      margin: 0;
-      color: rgba(255,255,255,0.68);
-      line-height: 1.7;
-    }
-
-
-    /* ---------------------------------------------------------
-       QUICK LINKS
-       --------------------------------------------------------- */
-
-    .faq-navigation {
-      padding: 28px 0;
-      background: var(--cream);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .faq-navigation-inner {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .faq-navigation-label {
-      margin-right: 10px;
-      color: var(--deep-teal);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-    }
-
-    .faq-nav-link {
-      display: inline-flex;
-      padding: 10px 14px;
-      border: 1px solid var(--line);
-      background: #fff;
-      color: var(--deep-teal);
-      font-size: 0.84rem;
-      font-weight: 700;
-      text-decoration: none;
-      transition:
-        background 0.2s ease,
-        border-color 0.2s ease;
-    }
-
-    .faq-nav-link:hover {
-      background: var(--paper);
-      border-color: rgba(8, 37, 37, 0.25);
-    }
-
-
-    /* ---------------------------------------------------------
-       FAQ CONTENT
-       --------------------------------------------------------- */
-
-    .faq-content {
-      padding: clamp(52px, 5.5vw, 76px) 0;
-    }
-
-    .faq-layout {
-      display: grid;
-      grid-template-columns: 0.62fr 1.38fr;
-      gap: 95px;
-      align-items: start;
-    }
-
-    .faq-sidebar {
-      position: sticky;
-      top: 110px;
-    }
-
-    .faq-sidebar h2 {
-      margin: 0 0 20px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.2rem, 3.5vw, 3.4rem);
-      line-height: 1;
-      font-weight: 400;
-      letter-spacing: -0.015em;
-    }
-
-    .faq-sidebar p {
-      max-width: 380px;
-      margin: 0 0 30px;
-      color: var(--muted);
-      line-height: 1.75;
-    }
-
-    .faq-sidebar-links {
-      display: grid;
-      gap: 8px;
-    }
-
-    .faq-sidebar-links a {
-      color: var(--deep-teal);
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .faq-sidebar-links a:hover {
-      text-decoration: underline;
-    }
-
-
-    /* ---------------------------------------------------------
-       FAQ GROUPS
-       --------------------------------------------------------- */
-
-    .faq-group {
-      margin-bottom: 75px;
-    }
-
-    .faq-group:last-child {
-      margin-bottom: 0;
-    }
-
-    .faq-group-header {
-      margin-bottom: 22px;
-    }
-
-    .faq-group-header .section-label {
-      margin-bottom: 8px;
-    }
-
-    .faq-group-header h2 {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 2.15rem;
-      line-height: 1.05;
-      font-weight: 400;
-      letter-spacing: -0.015em;
-    }
-
-    .faq-list {
-      border-top: 1px solid var(--line);
-    }
-
-    .faq-item {
-      border-bottom: 1px solid var(--line);
-    }
-
-    .faq-question {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 30px;
-      padding: 25px 0;
-      border: 0;
-      background: transparent;
-      color: var(--ink);
-      text-align: left;
-      font: inherit;
-      font-size: 1.05rem;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    .faq-question:hover {
-      color: var(--deep-teal);
-    }
-
-    .faq-question-icon {
-      position: relative;
-      flex: 0 0 24px;
-      width: 24px;
-      height: 24px;
-      border: 1px solid var(--deep-teal);
-      border-radius: 50%;
-    }
-
-    .faq-question-icon::before,
-    .faq-question-icon::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 9px;
-      height: 1px;
-      background: var(--deep-teal);
-      transform: translate(-50%, -50%);
-    }
-
-    .faq-question-icon::after {
-      transform: translate(-50%, -50%) rotate(90deg);
-      transition: transform 0.25s ease;
-    }
-
-    .faq-item.open .faq-question-icon::after {
-      transform: translate(-50%, -50%) rotate(0deg);
-    }
-
-    .faq-answer {
-      display: grid;
-      grid-template-rows: 0fr;
-      transition: grid-template-rows 0.3s ease;
-    }
-
-    .faq-answer-inner {
-      overflow: hidden;
-    }
-
-    .faq-answer-content {
-      max-width: 760px;
-      padding: 0 55px 25px 0;
-      color: var(--muted);
-      line-height: 1.75;
-    }
-
-    .faq-answer-content p {
-      margin: 0 0 14px;
-    }
-
-    .faq-answer-content p:last-child {
-      margin-bottom: 0;
-    }
-
-    .faq-answer-content a {
-      color: var(--deep-teal);
-      font-weight: 700;
-    }
-
-    .faq-item.open .faq-answer {
-      grid-template-rows: 1fr;
-    }
-
-
-    /* ---------------------------------------------------------
-       STILL HAVE A QUESTION
-       --------------------------------------------------------- */
-
-    .faq-contact {
-      padding: clamp(52px, 5.5vw, 76px) 0;
-      background: var(--cream);
-    }
-
-    .faq-contact-inner {
-      display: grid;
-      grid-template-columns: 1fr 0.7fr;
-      gap: 70px;
-      align-items: end;
-    }
-
-    .faq-contact h2 {
-      max-width: 800px;
-      margin: 0 0 22px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.7rem, 5vw, 4.8rem);
-      line-height: 0.98;
-      font-weight: 400;
-      letter-spacing: -0.015em;
-    }
-
-    .faq-contact p {
-      max-width: 650px;
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.75;
-    }
-
-    .faq-contact-action {
-      display: flex;
-      justify-content: flex-end;
-    }
-
-
-    /* ---------------------------------------------------------
-       CLOSING
-       --------------------------------------------------------- */
-
-    .faq-closing {
-      padding: clamp(52px, 5.5vw, 76px) 0;
-      background: var(--gold);
-    }
-
-    .faq-closing-inner {
-      max-width: 900px;
-    }
-
-    .faq-closing h2 {
-      margin: 0 0 22px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.5rem, 5vw, 4.6rem);
-      line-height: 0.98;
-      font-weight: 400;
-      letter-spacing: -0.015em;
-    }
-
-    .faq-closing p {
-      max-width: 700px;
-      margin: 0;
-      color: rgba(20, 38, 38, 0.72);
-      line-height: 1.8;
-    }
-
-
-    /* ---------------------------------------------------------
-       RESPONSIVE
-       --------------------------------------------------------- */
-
-    @media (max-width: 1000px) {
-      .faq-hero-grid,
-      .faq-layout,
-      .faq-contact-inner {
-        grid-template-columns: 1fr;
-        gap: 50px;
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is CoWiTa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CoWiTa is a creative talent and opportunity organisation that helps young people turn talent into skills, and skills into opportunities."
       }
-
-      .faq-sidebar {
-        position: static;
+    },
+    {
+      "@type": "Question",
+      "name": "Who can take part in CoWiTa programmes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our programmes are designed for children and young people, along with mentors, volunteers, partners and supporters who want to contribute."
       }
-
-      .faq-contact-action {
-        justify-content: flex-start;
+    },
+    {
+      "@type": "Question",
+      "name": "Does sending a form guarantee a place on a programme?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Every form on this site is an expression of interest. We review each one and get back to you about the most relevant next step."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does CoWiTa handle personal information from under-18s?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A parent or guardian must agree to the submission, and we collect only what the programme needs. Our Privacy Policy and Child Protection Policy explain this in full."
       }
     }
+  ]
+}
+  </script>
 
-    @media (max-width: 700px) {
-      .faq-hero {
-        padding: 85px 0 70px;
-      }
-
-      .faq-content,
-      .faq-contact,
-      .faq-closing {
-        padding-block: 52px;
-      }
-
-      .faq-navigation {
-        padding: 20px 0;
-      }
-
-      .faq-navigation-inner {
-        align-items: flex-start;
-      }
-
-      .faq-navigation-label {
-        width: 100%;
-        margin-bottom: 3px;
-      }
-
-      .faq-question {
-        padding: 21px 0;
-        font-size: 0.98rem;
-      }
-
-      .faq-answer-content {
-        padding-right: 35px;
-      }
-
-      .faq-group {
-        margin-bottom: 60px;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -1181,7 +849,7 @@
 
                         <p>
                           Visit
-                          <a href="/opportunities/">
+                          <a href="/opportunity/">
                             Find Opportunity
                           </a>
                           to see what is currently available and what is being
@@ -1605,45 +1273,6 @@
 
   <script src="/js/main.js" defer></script>
 
-  <script>
-    /* =========================================================
-       FAQ ACCORDION
-       ========================================================= */
-
-    document.querySelectorAll(".faq-question").forEach(function (button) {
-
-      button.addEventListener("click", function () {
-
-        const item = button.closest(".faq-item");
-        const isOpen = item.classList.contains("open");
-
-        document.querySelectorAll(".faq-item.open").forEach(function (openItem) {
-
-          if (openItem !== item) {
-
-            openItem.classList.remove("open");
-
-            const openButton = openItem.querySelector(".faq-question");
-
-            if (openButton) {
-              openButton.setAttribute("aria-expanded", "false");
-            }
-
-          }
-
-        });
-
-        item.classList.toggle("open", !isOpen);
-
-        button.setAttribute(
-          "aria-expanded",
-          String(!isOpen)
-        );
-
-      });
-
-    });
-  </script>
-
+  <script src="/js/pages/utility-faq.js" defer></script>
 </body>
 </html>

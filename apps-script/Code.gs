@@ -32,16 +32,16 @@
 var APP_NAME = 'CoWiTa';
 
 /** Inbox that receives a notification for every submission. */
-var TEAM_EMAIL = 'info@cowiterg@gmail.com'; // TODO: change to the real inbox
+var TEAM_EMAIL = 'info@cowita.org';
 
 /** Display name used on outgoing emails. */
 var FROM_NAME = 'CoWiTa';
 
 /** Contact address shown in email footers. */
-var CONTACT_EMAIL = 'info@cowiterg@gmail.com';
+var CONTACT_EMAIL = 'info@cowita.org';
 
 /** Where the live website lives (used in email links). */
-var SITE_URL = 'https://cowita.org'; // TODO: change to the real domain
+var SITE_URL = 'https://cowita.org';
 
 /**
  * Form registry: one Google Sheet tab per form.

@@ -11,761 +11,50 @@
     content="Contact CoWiTa to ask a question, share your talent, explore learning, mentoring, collaboration, partnership or support."
   >
 
+  <link rel="preload" href="/assets/fonts/inter-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/lora-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/fonts.css">
   <link rel="stylesheet" href="/css/styles.css">
   <script src="/js/config.js" defer></script>
   <script src="/js/form-handler.js" defer></script>
 
-  <style>
-    /* =========================================================
-       CONTACT PAGE
-       Action-focused contact page.
-       Page-specific styles only.
-    ========================================================= */
+  <link rel="stylesheet" href="/css/pages/contact-index.css">
+  <link rel="canonical" href="https://cowita.org/contact/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CoWiTa">
+  <meta property="og:title" content="Contact | CoWiTa">
+  <meta property="og:description" content="Contact CoWiTa to ask a question, share your talent, explore learning, mentoring, collaboration, partnership or support.">
+  <meta property="og:url" content="https://cowita.org/contact/">
+  <meta property="og:image" content="https://cowita.org/assets/images/stories-hero.webp">
+  <meta property="og:image:alt" content="CoWiTa — talent into opportunity">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact | CoWiTa">
+  <meta name="twitter:description" content="Contact CoWiTa to ask a question, share your talent, explore learning, mentoring, collaboration, partnership or support.">
+  <meta name="twitter:image" content="https://cowita.org/assets/images/stories-hero.webp">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/brand/cowita-favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/images/cowita-logo.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://cowita.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Contact",
+      "item": "https://cowita.org/contact/"
+    }
+  ]
+}
+  </script>
 
-
-    /* =========================================================
-       HERO
-    ========================================================= */
-
-    .contact-hero {
-      min-height: calc(100svh - 80px);
-
-      display: flex;
-      align-items: center;
-
-      padding: 70px 0;
-
-      background: var(--deep-teal);
-      color: #fff;
-
-      overflow: hidden;
-    }
-
-    .contact-hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .contact-hero-copy {
-      max-width: 800px;
-    }
-
-    .contact-hero .eyebrow {
-      margin-bottom: 20px;
-      color: var(--gold);
-    }
-
-    .contact-hero h1 {
-      max-width: 800px;
-
-      margin: 0 0 25px;
-
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(3.2rem, 7vw, 6.5rem);
-      line-height: .94;
-      font-weight: 400;
-      letter-spacing: -.025em;
-
-      color: #fff;
-    }
-
-    .contact-hero-copy > p {
-      max-width: 650px;
-
-      margin: 0;
-
-      color: rgba(255,255,255,.76);
-
-      font-size: 1.08rem;
-      line-height: 1.75;
-    }
-
-    .contact-hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-
-      margin-top: 30px;
-    }
-
-    .contact-hero-actions .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-
-      min-height: 48px;
-      padding: 12px 23px;
-
-      border-radius: 999px;
-
-      font-size: .72rem;
-      font-weight: 800;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      text-decoration: none;
-    }
-
-    .contact-hero-actions .btn-contact {
-      background: var(--gold);
-      border: 1px solid var(--gold);
-      color: #1b1a16;
-    }
-
-    .contact-hero-actions .btn-contact:hover {
-      background: #fff;
-      border-color: #fff;
-      color: var(--deep-teal);
-    }
-
-    .contact-hero-actions .btn-explore {
-      background: rgba(255,255,255,.07);
-      border: 1px solid rgba(255,255,255,.45);
-      color: #fff;
-
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-
-    .contact-hero-actions .btn-explore:hover {
-      background: rgba(255,255,255,.14);
-      border-color: #fff;
-    }
-
-
-    /* =========================================================
-       QUICK CONTACT PANEL
-    ========================================================= */
-
-    .contact-hero-panel {
-      padding: 30px;
-
-      background: rgba(255,255,255,.055);
-
-      border: 1px solid rgba(255,255,255,.18);
-
-      border-radius: 20px;
-    }
-
-    .contact-hero-panel .section-label {
-      margin-bottom: 24px;
-      color: var(--gold);
-    }
-
-    .contact-hero-panel h2 {
-      margin: 0 0 22px;
-
-      color: #fff;
-
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 2rem;
-      line-height: 1.05;
-      font-weight: 400;
-    }
-
-    .contact-hero-panel-list {
-      display: grid;
-      gap: 0;
-
-      border-top: 1px solid rgba(255,255,255,.14);
-    }
-
-    .contact-hero-panel-item {
-      padding: 17px 0;
-
-      border-bottom: 1px solid rgba(255,255,255,.14);
-    }
-
-    .contact-hero-panel-item strong {
-      display: block;
-
-      margin-bottom: 5px;
-
-      color: #fff;
-
-      font-size: .8rem;
-    }
-
-    .contact-hero-panel-item span {
-      display: block;
-
-      color: rgba(255,255,255,.58);
-
-      font-size: .75rem;
-      line-height: 1.5;
-    }
-
-
-    /* =========================================================
-       CONTACT FORM AREA
-    ========================================================= */
-
-    .contact-main {
-      padding: clamp(52px, 5.5vw, 76px) 0;
-
-      background: var(--paper);
-    }
-
-    .contact-main-grid {
-      display: grid;
-      grid-template-columns: .7fr 1.3fr;
-      gap: 80px;
-      align-items: start;
-    }
-
-    .contact-details {
-      position: sticky;
-      top: 110px;
-    }
-
-    .contact-details h2,
-    .contact-form-wrap h2 {
-      margin: 0 0 18px;
-
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.4rem, 4vw, 4rem);
-      line-height: .98;
-      font-weight: 400;
-      letter-spacing: -.015em;
-    }
-
-    .contact-details > p {
-      max-width: 500px;
-
-      margin: 0 0 35px;
-
-      color: var(--muted);
-
-      line-height: 1.75;
-    }
-
-
-    /* =========================================================
-       CONTACT DETAILS
-    ========================================================= */
-
-    .contact-detail-list {
-      border-top: 1px solid var(--line);
-    }
-
-    .contact-detail {
-      padding: 20px 0;
-
-      border-bottom: 1px solid var(--line);
-    }
-
-    .contact-detail-label {
-      display: block;
-
-      margin-bottom: 6px;
-
-      color: var(--deep-teal);
-
-      font-size: .7rem;
-      font-weight: 800;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    .contact-detail-value {
-      color: var(--ink);
-
-      font-size: .9rem;
-      line-height: 1.6;
-    }
-
-    .contact-detail-value.placeholder {
-      color: var(--muted);
-      font-style: italic;
-    }
-
-
-    /* =========================================================
-       FORM
-    ========================================================= */
-
-    .contact-form-wrap {
-      padding: 42px;
-
-      background: #fff;
-
-      border: 1px solid var(--line);
-      border-radius: 24px;
-    }
-
-    .contact-form-wrap > p {
-      max-width: 650px;
-
-      margin: 0 0 32px;
-
-      color: var(--muted);
-
-      line-height: 1.7;
-    }
-
-    .contact-form {
-      display: grid;
-      gap: 20px;
-    }
-
-    .contact-form-row {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .contact-field {
-      display: grid;
-      gap: 8px;
-    }
-
-    .contact-field label {
-      color: var(--deep-teal);
-
-      font-size: .72rem;
-      font-weight: 800;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-    }
-
-    .contact-field input,
-    .contact-field select,
-    .contact-field textarea {
-      width: 100%;
-
-      padding: 14px 15px;
-
-      background: #fff;
-
-      border: 1px solid var(--line);
-      border-radius: 10px;
-
-      color: var(--ink);
-
-      font: inherit;
-      font-size: .88rem;
-
-      outline: none;
-
-      transition:
-        border-color .2s ease,
-        box-shadow .2s ease;
-    }
-
-    .contact-field input:focus,
-    .contact-field select:focus,
-    .contact-field textarea:focus {
-      border-color: var(--deep-teal);
-
-      box-shadow:
-        0 0 0 3px rgba(8,37,37,.07);
-    }
-
-    .contact-field textarea {
-      min-height: 180px;
-      resize: vertical;
-    }
-
-    .contact-form-note {
-      margin: -2px 0 0;
-
-      color: var(--muted);
-
-      font-size: .72rem;
-      line-height: 1.55;
-    }
-
-    .contact-form-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-
-      padding-top: 8px;
-    }
-
-    .contact-form-actions .btn {
-      min-height: 46px;
-    }
-
-
-    /* =========================================================
-       ACTION PATHS
-    ========================================================= */
-
-    .contact-paths {
-      padding-block: clamp(52px, 5.5vw, 76px);
-
-      background: var(--cream);
-    }
-
-    .contact-section-header {
-      max-width: 720px;
-
-      margin-bottom: 38px;
-    }
-
-    .contact-section-header h2 {
-      margin: 7px 0 16px;
-
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.4rem, 4.5vw, 4.2rem);
-      line-height: .98;
-      font-weight: 400;
-      letter-spacing: -.015em;
-    }
-
-    .contact-section-header p {
-      margin: 0;
-
-      color: var(--muted);
-
-      line-height: 1.7;
-    }
-
-    .contact-path-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-
-    .contact-path {
-      display: flex;
-      flex-direction: column;
-
-      min-height: 220px;
-
-      padding: 28px;
-
-      background: #fff;
-
-      border: 1px solid var(--line);
-
-      text-decoration: none;
-      color: var(--ink);
-
-      transition:
-        transform .25s var(--ease),
-        box-shadow .25s var(--ease),
-        border-color .25s var(--ease);
-    }
-
-    .contact-path:hover {
-      transform: translateY(-4px);
-
-      border-color: rgba(13,75,75,.28);
-
-      box-shadow: var(--shadow);
-    }
-
-    .contact-path-number {
-      display: block;
-
-      margin-bottom: auto;
-
-      color: var(--muted);
-
-      font-size: .7rem;
-      font-weight: 800;
-      letter-spacing: .1em;
-    }
-
-    .contact-path h3 {
-      margin: 35px 0 10px;
-
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.7rem;
-      line-height: 1;
-      font-weight: 400;
-    }
-
-    .contact-path p {
-      margin: 0;
-
-      color: var(--muted);
-
-      font-size: .82rem;
-      line-height: 1.6;
-    }
-
-    .contact-path-arrow {
-      display: block;
-
-      margin-top: 22px;
-
-      color: var(--deep-teal);
-
-      font-size: .78rem;
-      font-weight: 800;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-    }
-
-
-    /* =========================================================
-       WHAT HAPPENS NEXT
-    ========================================================= */
-
-    .contact-next {
-      padding-block: clamp(52px, 5.5vw, 76px);
-
-      background: var(--deep-teal);
-
-      color: #fff;
-    }
-
-    .contact-next-header {
-      max-width: 650px;
-
-      margin-bottom: 42px;
-    }
-
-    .contact-next-header .section-label {
-      color: var(--gold);
-    }
-
-    .contact-next-header h2 {
-      margin: 7px 0 0;
-
-      color: #fff;
-
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.5rem, 4.5vw, 4.4rem);
-      line-height: .98;
-      font-weight: 400;
-      letter-spacing: -.02em;
-    }
-
-    .contact-next-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-    }
-
-    .contact-next-step {
-      padding: 25px 22px;
-
-      background: rgba(255,255,255,.055);
-
-      border: 1px solid rgba(255,255,255,.15);
-    }
-
-    .contact-next-step-number {
-      display: block;
-
-      margin-bottom: 35px;
-
-      color: var(--gold);
-
-      font-size: .7rem;
-      font-weight: 800;
-      letter-spacing: .1em;
-    }
-
-    .contact-next-step h3 {
-      margin: 0 0 9px;
-
-      color: #fff;
-
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.55rem;
-      font-weight: 400;
-    }
-
-    .contact-next-step p {
-      margin: 0;
-
-      color: rgba(255,255,255,.62);
-
-      font-size: .78rem;
-      line-height: 1.6;
-    }
-
-
-    /* =========================================================
-       FINAL ACTIONS
-    ========================================================= */
-
-    .contact-final {
-      padding-block: clamp(52px, 5.5vw, 76px);
-
-      background: var(--gold);
-    }
-
-    .contact-final-grid {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .contact-final h2 {
-      max-width: 800px;
-
-      margin: 0;
-
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.7rem, 5vw, 5rem);
-      line-height: .97;
-      font-weight: 400;
-      letter-spacing: -.035em;
-    }
-
-    .contact-final-copy {
-      max-width: 360px;
-    }
-
-    .contact-final-copy p {
-      margin: 0 0 20px;
-
-      color: rgba(27,26,22,.7);
-
-      font-size: .82rem;
-      line-height: 1.65;
-    }
-
-    .contact-final-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .contact-final-actions .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-
-      min-height: 46px;
-      padding: 11px 21px;
-
-      border-radius: 999px;
-
-      font-size: .7rem;
-      font-weight: 800;
-      letter-spacing: .05em;
-      text-transform: uppercase;
-      text-decoration: none;
-    }
-
-    .contact-final-actions .btn-primary {
-      background: #1b1a16;
-      border: 1px solid #1b1a16;
-      color: var(--gold);
-    }
-
-    .contact-final-actions .btn-primary:hover {
-      background: var(--deep-teal);
-      border-color: var(--deep-teal);
-      color: #fff;
-    }
-
-    .contact-final-actions .btn-outline {
-      background: transparent;
-      border: 1px solid rgba(27,26,22,.45);
-      color: #1b1a16;
-    }
-
-    .contact-final-actions .btn-outline:hover {
-      background: rgba(27,26,22,.08);
-      border-color: #1b1a16;
-    }
-
-
-    /* =========================================================
-       RESPONSIVE
-    ========================================================= */
-
-    @media (max-width: 1000px) {
-
-      .contact-hero {
-        min-height: auto;
-      }
-
-      .contact-hero-grid,
-      .contact-main-grid {
-        grid-template-columns: 1fr;
-        gap: 50px;
-      }
-
-      .contact-details {
-        position: static;
-      }
-
-      .contact-path-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .contact-next-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .contact-final-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-    }
-
-
-    @media (max-width: 700px) {
-
-      .contact-hero {
-        padding: 75px 0 65px;
-      }
-
-      .contact-hero h1 {
-        font-size: clamp(3rem, 14vw, 4.5rem);
-      }
-
-      .contact-hero-actions {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .contact-hero-actions .btn {
-        width: 100%;
-        text-align: center;
-      }
-
-      .contact-main,
-      .contact-paths,
-      .contact-next,
-      .contact-final {
-        padding-block: 52px;
-      }
-
-      .contact-form-row {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-
-      .contact-form-wrap {
-        padding: 27px 20px;
-      }
-
-      .contact-path-grid,
-      .contact-next-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-path {
-        min-height: 200px;
-      }
-
-      .contact-final h2 {
-        font-size: 3rem;
-      }
-
-      .contact-final-actions {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .contact-final-actions .btn {
-        width: 100%;
-        text-align: center;
-      }
-    }
-  </style>
 </head>
 
 
@@ -917,8 +206,8 @@
                   Email
                 </span>
 
-                <div class="contact-detail-value placeholder">
-                  CoWiTa email coming soon
+                <div class="contact-detail-value">
+                  <a href="mailto:info@cowita.org">info@cowita.org</a>
                 </div>
 
               </div>
@@ -989,7 +278,9 @@
               class="contact-form"
               method="post"
               data-cowita-form
+              novalidate
               data-form-type="contact"
+              action="/api/forms/contact"
             >
 
 
@@ -1141,10 +432,7 @@
 
 
               <!-- SPAM PROTECTION (hidden from humans) -->
-              <div
-                style="position:absolute;left:-9999px;top:-9999px;"
-                aria-hidden="true"
-              >
+              <div class="honeypot-field" aria-hidden="true">
                 <label>Leave this field empty
                   <input
                     type="text"
@@ -1163,6 +451,16 @@
 
 
               <div class="contact-form-actions">
+
+                <div class="form-consent">
+                  <input type="checkbox" id="consent-contact" name="consent" required>
+                  <label for="consent-contact">
+                    I have read and agree to the CoWiTa
+                    <a href="/legal/privacy.html">Privacy Policy</a>, including how
+                    information about children and young people is collected and
+                    protected. <span aria-hidden="true">*</span>
+                  </label>
+                </div>
 
                 <button
                   class="btn btn-dark"
@@ -1345,7 +643,7 @@
 
 
           <a
-            href="/support/financial.html"
+            href="/support/financial-support.html"
             class="contact-path"
           >
 

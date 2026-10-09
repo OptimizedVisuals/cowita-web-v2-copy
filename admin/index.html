@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CoWiTa submissions</title>
+
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body class="admin">
+
+<a class="admin-skip" href="#admin-main">Skip to content</a>
+
+<!-- =====================================================
+     SIGN-IN
+     ===================================================== -->
+<section
+  class="admin-auth"
+  id="admin-auth"
+  aria-labelledby="admin-auth-title"
+>
+  <div class="admin-auth-card">
+    <p class="admin-brand">CoWiTa</p>
+    <h1 id="admin-auth-title">Submissions dashboard</h1>
+    <p class="admin-muted">
+      Staff access only. You will be asked for a one-time code from your
+      authenticator app.
+    </p>
+
+    <form id="admin-login-form" novalidate>
+      <label for="admin-email">Work email address</label>
+      <input
+        type="email"
+        id="admin-email"
+        name="email"
+        autocomplete="email"
+        required
+      >
+
+      <button type="submit" class="admin-btn admin-btn-primary" id="admin-login-button">
+        Email me a sign-in link
+      </button>
+    </form>
+
+    <p class="admin-message" id="admin-auth-message" role="status" aria-live="polite"></p>
+
+    <!-- MFA: enrol or verify -->
+    <div class="admin-mfa" id="admin-mfa" hidden>
+      <h2 id="admin-mfa-title">Two-factor authentication</h2>
+
+      <div id="admin-mfa-enrol" hidden>
+        <p class="admin-muted">
+          Scan this code with your authenticator app, then enter the six-digit
+          code it shows.
+        </p>
+        <div class="admin-qr" id="admin-mfa-qr"></div>
+        <p class="admin-secret">
+          Or enter this key manually:
+          <code id="admin-mfa-secret"></code>
+        </p>
+      </div>
+
+      <div id="admin-mfa-verify">
+        <p class="admin-muted">Enter the six-digit code from your authenticator app.</p>
+        <form id="admin-mfa-form" novalidate>
+          <label for="admin-mfa-code">Authentication code</label>
+          <input
+            type="text"
+            id="admin-mfa-code"
+            name="code"
+            inputmode="numeric"
+            autocomplete="one-time-code"
+            pattern="[0-9]{6}"
+            maxlength="6"
+            required
+          >
+          <button type="submit" class="admin-btn admin-btn-primary" id="admin-mfa-button">
+            Verify and continue
+          </button>
+        </form>
+      </div>
+
+      <p class="admin-message" id="admin-mfa-message" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     DASHBOARD
+     ===================================================== -->
+<div class="admin-shell" id="admin-shell" hidden>
+
+  <header class="admin-header">
+    <div>
+      <p class="admin-brand">CoWiTa</p>
+      <h1>Submissions</h1>
+    </div>
+    <div class="admin-header-right">
+      <span class="admin-who" id="admin-who"></span>
+      <button type="button" class="admin-btn" id="admin-signout">Sign out</button>
+    </div>
+  </header>
+
+  <main class="admin-main" id="admin-main">
+
+    <form class="admin-filters" id="admin-filters" role="search">
+      <div class="admin-field">
+        <label for="filter-q">Search</label>
+        <input type="search" id="filter-q" name="q" placeholder="Name, email or phone">
+      </div>
+
+      <div class="admin-field">
+        <label for="filter-type">Form</label>
+        <select id="filter-type" name="form_type">
+          <option value="">All forms</option>
+          <option value="contact">Contact</option>
+          <option value="talent">Talent</option>
+          <option value="mentor">Mentor</option>
+          <option value="partner">Partner</option>
+          <option value="collaborate">Collaborate</option>
+          <option value="learn">Learn</option>
+          <option value="support">Support</option>
+        </select>
+      </div>
+
+      <div class="admin-field">
+        <label for="filter-status">Status</label>
+        <select id="filter-status" name="status">
+          <option value="">Any status</option>
+          <option value="new">New</option>
+          <option value="reviewed">Reviewed</option>
+          <option value="contacted">Contacted</option>
+          <option value="closed">Closed</option>
+        </select>
+      </div>
+
+      <div class="admin-field">
+        <label for="filter-from">From</label>
+        <input type="date" id="filter-from" name="from">
+      </div>
+
+      <div class="admin-field">
+        <label for="filter-to">To</label>
+        <input type="date" id="filter-to" name="to">
+      </div>
+
+      <div class="admin-filter-actions">
+        <button type="submit" class="admin-btn admin-btn-primary">Apply</button>
+        <button type="button" class="admin-btn" id="admin-export">Export CSV</button>
+      </div>
+    </form>
+
+    <p class="admin-message" id="admin-list-message" role="status" aria-live="polite"></p>
+
+    <div class="admin-layout">
+      <section class="admin-list-panel" aria-labelledby="admin-list-title">
+        <h2 id="admin-list-title" class="admin-sr-only">Submissions</h2>
+
+        <table class="admin-table">
+          <caption class="admin-sr-only">
+            Submissions received through the CoWiTa website
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Received</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Form</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody id="admin-rows"></tbody>
+        </table>
+
+        <div class="admin-pagination">
+          <button type="button" class="admin-btn" id="admin-prev">Previous</button>
+          <span id="admin-page-info" class="admin-muted"></span>
+          <button type="button" class="admin-btn" id="admin-next">Next</button>
+        </div>
+      </section>
+
+      <section class="admin-detail" id="admin-detail" aria-labelledby="admin-detail-title">
+        <h2 id="admin-detail-title">Submission</h2>
+        <p class="admin-muted" id="admin-detail-empty">
+          Select a submission to see the full answers.
+        </p>
+
+        <div id="admin-detail-body" hidden>
+          <dl class="admin-answers" id="admin-answers"></dl>
+
+          <div class="admin-field">
+            <label for="admin-status">Status</label>
+            <select id="admin-status">
+              <option value="new">New</option>
+              <option value="reviewed">Reviewed</option>
+              <option value="contacted">Contacted</option>
+              <option value="closed">Closed</option>
+            </select>
+          </div>
+
+          <div class="admin-field">
+            <label for="admin-notes">Internal notes</label>
+            <textarea id="admin-notes" rows="4" placeholder="Only visible to CoWiTa staff"></textarea>
+          </div>
+
+          <div class="admin-detail-actions">
+            <button type="button" class="admin-btn admin-btn-primary" id="admin-save">
+              Save changes
+            </button>
+            <a class="admin-btn" id="admin-reply" href="#">Reply by email</a>
+            <button type="button" class="admin-btn admin-btn-danger" id="admin-delete">
+              Delete
+            </button>
+          </div>
+
+          <p class="admin-message" id="admin-detail-message" role="status" aria-live="polite"></p>
+
+          <h3>History</h3>
+          <ul class="admin-history" id="admin-history"></ul>
+        </div>
+      </section>
+    </div>
+
+  </main>
+</div>
+
+<script src="/admin/vendor/supabase.js" defer></script>
+<script src="/admin/config.js" defer></script>
+<script src="/admin/admin.js" defer></script>
+
+</body>
+</html>

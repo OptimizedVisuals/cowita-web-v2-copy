@@ -13,655 +13,48 @@
 
   <title>Dance — CoWiTa</title>
 
+    <link rel="preload" href="/assets/fonts/inter-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/lora-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/fonts.css">
   <link rel="stylesheet" href="/css/styles.css">
 
-  <style>
-    /* =========================================================
-       DANCE PAGE
-       Page-specific styles only.
-       ========================================================= */
+  <link rel="stylesheet" href="/css/pages/work-dance.css">
+  <link rel="canonical" href="https://cowita.org/work/dance.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CoWiTa">
+  <meta property="og:title" content="Dance — CoWiTa">
+  <meta property="og:description" content="Dance at CoWiTa — developing young dancers through training, mentorship, creative practice, performance and pathways to opportunity.">
+  <meta property="og:url" content="https://cowita.org/work/dance.html">
+  <meta property="og:image" content="https://cowita.org/assets/images/stories-hero.webp">
+  <meta property="og:image:alt" content="CoWiTa — talent into opportunity">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dance — CoWiTa">
+  <meta name="twitter:description" content="Dance at CoWiTa — developing young dancers through training, mentorship, creative practice, performance and pathways to opportunity.">
+  <meta name="twitter:image" content="https://cowita.org/assets/images/stories-hero.webp">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/brand/cowita-favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/images/cowita-logo.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://cowita.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Dance",
+      "item": "https://cowita.org/work/dance.html"
+    }
+  ]
+}
+  </script>
 
-    .dance-hero {
-      position: relative;
-      min-height: 78vh;
-      display: flex;
-      align-items: flex-end;
-      overflow: hidden;
-      background: var(--deep-teal);
-      color: #fff;
-      padding: 150px 0 75px;
-    }
-
-    .dance-hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(5, 30, 34, .94) 0%,
-          rgba(5, 30, 34, .72) 48%,
-          rgba(5, 30, 34, .25) 100%
-        );
-      z-index: 1;
-    }
-
-    .dance-hero.dance-hero .dance-hero-image {
-      position: absolute;
-      inset: 0;
-      height: 100%;
-      z-index: 0;
-      max-height: none !important;
-    }
-
-    .dance-hero-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .dance-hero-grid {
-      position: relative;
-      z-index: 2;
-
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 70px;
-      align-items: end;
-    }
-
-    .dance-hero-content {
-      max-width: 850px;
-    }
-
-    .dance-hero h1 {
-      margin: 0;
-
-      font-family: "Lora", Georgia, serif;
-      font-size: clamp(4rem, 9vw, 8.5rem);
-      font-weight: 500;
-      line-height: .88;
-      letter-spacing: -.065em;
-    }
-
-    .dance-hero h1 em {
-      color: var(--gold);
-      font-style: normal;
-    }
-
-    .dance-hero-copy {
-      max-width: 650px;
-      margin: 28px 0 0;
-
-      color: rgba(255,255,255,.78);
-      font-size: 1.05rem;
-      line-height: 1.65;
-    }
-
-    .dance-hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 32px;
-    }
-
-    .dance-hero-actions .btn-primary {
-      background: var(--gold);
-      color: #191711;
-    }
-
-    .dance-hero-actions .btn-primary:hover {
-      background: #f0bb38;
-    }
-
-    .dance-hero-actions .btn-outline {
-      border-color: rgba(255,255,255,.55);
-      background: rgba(255,255,255,.12);
-      color: #fff;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-    }
-
-    .dance-hero-actions .btn-outline:hover {
-      border-color: #fff;
-      background: rgba(255,255,255,.2);
-      color: #fff;
-    }
-
-    .dance-hero-side {
-      align-self: end;
-      justify-self: end;
-      max-width: 310px;
-
-      padding: 25px;
-
-      border: 1px solid rgba(255,255,255,.18);
-      border-radius: 22px;
-
-      background: rgba(255,255,255,.08);
-      backdrop-filter: blur(12px);
-    }
-
-    .dance-hero-side-label {
-      margin-bottom: 12px;
-
-      color: var(--gold);
-      font-size: .68rem;
-      font-weight: 800;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-
-    .dance-hero-side p {
-      margin: 0;
-
-      color: rgba(255,255,255,.72);
-      font-size: .82rem;
-      line-height: 1.6;
-    }
-
-
-    /* =========================================================
-       INTRO
-       ========================================================= */
-
-    .dance-intro {
-      display: grid;
-      grid-template-columns: .8fr 1.2fr;
-      gap: 90px;
-      align-items: start;
-    }
-
-    .dance-intro-copy {
-      max-width: 720px;
-    }
-
-    .dance-intro-copy .lead {
-      margin: 0 0 24px;
-
-      color: var(--ink);
-
-      font-family: "Lora", Georgia, serif;
-      font-size: 1.8rem;
-      line-height: 1.2;
-      letter-spacing: -.025em;
-    }
-
-    .dance-intro-copy p {
-      margin: 0 0 20px;
-
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-
-    /* =========================================================
-       THE IDEA
-       ========================================================= */
-
-    .dance-belief {
-      background: var(--cream);
-    }
-
-    .dance-belief-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .dance-belief-image {
-      position: relative;
-    }
-
-    .dance-belief-image img {
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-
-      border-radius: 30px 30px 110px 30px;
-    }
-
-    .dance-belief-image::after {
-      content: "";
-
-      position: absolute;
-      right: -20px;
-      bottom: -20px;
-
-      width: 95px;
-      height: 95px;
-
-      border: 1px solid var(--gold);
-      border-radius: 50%;
-    }
-
-    .dance-belief-copy {
-      max-width: 650px;
-    }
-
-    .dance-belief-copy h2 {
-      margin-bottom: 25px;
-    }
-
-    .dance-belief-copy p {
-      margin: 0 0 20px;
-
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .dance-quote {
-      margin-top: 35px;
-      padding-left: 25px;
-
-      border-left: 3px solid var(--gold);
-
-      font-family: "Lora", Georgia, serif;
-      font-size: 1.4rem;
-      line-height: 1.3;
-    }
-
-
-    /* =========================================================
-       DEVELOPMENT PATHWAY
-       ========================================================= */
-
-    .pathway-header {
-      max-width: 750px;
-      margin-bottom: 55px;
-    }
-
-    .pathway-header p {
-      max-width: 650px;
-      margin-top: 20px;
-
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .dance-pathway {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 12px;
-    }
-
-    .pathway-card {
-      position: relative;
-
-      min-height: 275px;
-      padding: 28px;
-
-      border: 1px solid var(--line);
-      border-radius: 22px;
-
-      background: #fff;
-
-      overflow: hidden;
-
-      transition:
-        transform .3s var(--ease),
-        border-color .3s var(--ease);
-    }
-
-    .pathway-card:hover {
-      transform: translateY(-7px);
-      border-color: var(--gold);
-    }
-
-    .pathway-number {
-      font-size: 3.2rem;
-      line-height: .8;
-      font-weight: 800;
-      opacity: .07;
-    }
-
-    .pathway-card h3 {
-      margin: 35px 0 10px;
-
-      font-family: "Lora", Georgia, serif;
-      font-size: 1.5rem;
-    }
-
-    .pathway-card p {
-      margin: 0;
-
-      color: var(--muted);
-      font-size: .78rem;
-      line-height: 1.6;
-    }
-
-
-    /* =========================================================
-       WHAT PARTICIPANTS EXPERIENCE
-       ========================================================= */
-
-    .experience-section {
-      background: var(--deep-teal);
-      color: #fff;
-    }
-
-    .experience-header {
-      max-width: 760px;
-      margin-bottom: 55px;
-    }
-
-    .experience-header .section-label {
-      color: var(--gold);
-    }
-
-    .experience-header p {
-      margin-top: 20px;
-
-      color: rgba(255,255,255,.68);
-      line-height: 1.7;
-    }
-
-    .experience-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-
-    .experience-card {
-      min-height: 250px;
-      padding: 32px;
-
-      border: 1px solid rgba(255,255,255,.14);
-      border-radius: 22px;
-
-      background: rgba(255,255,255,.055);
-    }
-
-    .experience-icon {
-      width: 48px;
-      height: 48px;
-
-      display: grid;
-      place-items: center;
-
-      border-radius: 50%;
-
-      background: var(--gold);
-      color: #191711;
-
-      font-size: .75rem;
-      font-weight: 800;
-    }
-
-    .experience-card h3 {
-      margin: 30px 0 10px;
-
-      font-family: "Lora", Georgia, serif;
-      font-size: 1.6rem;
-    }
-
-    .experience-card p {
-      margin: 0;
-
-      color: rgba(255,255,255,.62);
-      font-size: .8rem;
-      line-height: 1.65;
-    }
-
-
-    /* =========================================================
-       OPPORTUNITY
-       ========================================================= */
-
-    .opportunity-section {
-      background: var(--paper);
-    }
-
-    .opportunity-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .opportunity-copy {
-      max-width: 650px;
-    }
-
-    .opportunity-copy p {
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .opportunity-list {
-      margin-top: 35px;
-
-      border-top: 1px solid var(--line);
-    }
-
-    .opportunity-item {
-      display: grid;
-      grid-template-columns: 35px 1fr;
-      gap: 15px;
-
-      padding: 19px 0;
-
-      border-bottom: 1px solid var(--line);
-    }
-
-    .opportunity-item-number {
-      color: var(--teal);
-      font-size: .72rem;
-      font-weight: 800;
-    }
-
-    .opportunity-item strong {
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .opportunity-item span {
-      color: var(--muted);
-      font-size: .76rem;
-      line-height: 1.5;
-    }
-
-    .opportunity-card {
-      min-height: 430px;
-      padding: 45px;
-
-      border-radius: 28px;
-
-      background: var(--gold);
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .opportunity-card-label {
-      font-size: .68rem;
-      font-weight: 800;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-
-    .opportunity-card h3 {
-      max-width: 450px;
-
-      margin: 35px 0 0;
-
-      font-family: "Lora", Georgia, serif;
-      font-size: clamp(2.3rem, 4vw, 4rem);
-      line-height: .98;
-      letter-spacing: -.045em;
-    }
-
-    .opportunity-card p {
-      max-width: 430px;
-      margin: 25px 0 0;
-
-      color: rgba(27,26,22,.7);
-      font-size: .82rem;
-      line-height: 1.6;
-    }
-
-
-    /* =========================================================
-       COMING SOON
-       ========================================================= */
-
-    .coming-soon {
-      background: var(--cream);
-    }
-
-    .coming-soon-inner {
-      max-width: 850px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .coming-soon-inner h2 {
-      margin-bottom: 20px;
-    }
-
-    .coming-soon-inner p {
-      max-width: 650px;
-      margin: 0 auto;
-
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .coming-soon-badge {
-      display: inline-flex;
-      align-items: center;
-
-      margin-top: 30px;
-      padding: 9px 15px;
-
-      border: 1px solid var(--line);
-      border-radius: 100px;
-
-      background: #fff;
-
-      color: var(--teal);
-
-      font-size: .68rem;
-      font-weight: 800;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-
-    /* =========================================================
-       CTA
-       ========================================================= */
-
-    .dance-cta {
-      background: var(--gold);
-      color: #191711;
-    }
-
-    .dance-cta-inner {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .dance-cta h2 {
-      max-width: 800px;
-      margin: 0;
-
-      font-family: "Lora", Georgia, serif;
-      font-size: clamp(2.5rem, 5vw, 5rem);
-      line-height: .98;
-      letter-spacing: -.05em;
-    }
-
-    .dance-cta p {
-      max-width: 280px;
-      margin: 0;
-
-      font-size: .8rem;
-      line-height: 1.6;
-    }
-
-
-    /* =========================================================
-       RESPONSIVE
-       ========================================================= */
-
-    @media (max-width: 1000px) {
-
-      .dance-pathway {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .dance-hero-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .dance-hero-side {
-        justify-self: start;
-      }
-    }
-
-
-    @media (max-width: 900px) {
-
-      .dance-intro,
-      .dance-belief-grid,
-      .opportunity-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .experience-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .dance-cta-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .dance-cta p {
-        max-width: 500px;
-      }
-    }
-
-
-    @media (max-width: 650px) {
-
-      .dance-hero {
-        min-height: auto;
-        padding: 130px 0 55px;
-      }
-
-      .dance-hero h1 {
-        font-size: clamp(3.5rem, 18vw, 6rem);
-      }
-
-      .dance-hero-copy {
-        font-size: .95rem;
-      }
-
-      .dance-hero-side {
-        max-width: none;
-      }
-
-      .dance-belief-image img {
-        border-radius: 24px 24px 80px 24px;
-      }
-
-      .dance-pathway,
-      .experience-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .opportunity-card {
-        min-height: 350px;
-        padding: 32px;
-      }
-    }
-  </style>
 </head>
 
 
@@ -690,8 +83,8 @@
 
   <div class="dance-hero-image">
 
-    <img
-      src="/assets/images/work/dance/dance-hero.jpg"
+    <img fetchpriority="high" fetchpriority="high" width="1408" height="768" fetchpriority="high" decoding="async"
+      src="/assets/images/work/dance/dance-hero.webp"
       alt="Young dancer performing in a creative community setting"
     >
 
@@ -827,8 +220,8 @@
 
     <div class="dance-belief-image reveal">
 
-      <img
-        src="/assets/images/work/dance/dance-training.jpg"
+      <img width="1408" height="768" decoding="async"
+        src="/assets/images/work/dance/dance-training.webp"
         alt="Young people learning and practising dance together"
         loading="lazy"
       >
@@ -912,9 +305,7 @@
 
       <article class="pathway-card reveal">
 
-        <div class="pathway-number">
-          01
-        </div>
+        <div class="pathway-number" aria-hidden="true" data-number="01"></div>
 
         <h3>
           Discover
@@ -931,9 +322,7 @@
 
       <article class="pathway-card reveal">
 
-        <div class="pathway-number">
-          02
-        </div>
+        <div class="pathway-number" aria-hidden="true" data-number="02"></div>
 
         <h3>
           Develop
@@ -950,9 +339,7 @@
 
       <article class="pathway-card reveal">
 
-        <div class="pathway-number">
-          03
-        </div>
+        <div class="pathway-number" aria-hidden="true" data-number="03"></div>
 
         <h3>
           Create
@@ -968,9 +355,7 @@
 
       <article class="pathway-card reveal">
 
-        <div class="pathway-number">
-          04
-        </div>
+        <div class="pathway-number" aria-hidden="true" data-number="04"></div>
 
         <h3>
           Connect
@@ -987,9 +372,7 @@
 
       <article class="pathway-card reveal">
 
-        <div class="pathway-number">
-          05
-        </div>
+        <div class="pathway-number" aria-hidden="true" data-number="05"></div>
 
         <h3>
           Grow
@@ -1368,9 +751,9 @@
       </p>
 
       <a
-        class="btn btn-dark"
+        class="btn btn-dark u-mt-20"
         href="/get-involved/have-talent.html"
-        style="margin-top:20px;"
+        
       >
         I Have Talent →
       </a>

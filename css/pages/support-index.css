@@ -1,0 +1,459 @@
+/* support/index.html — page-specific styles
+   (extracted from an inline <style> block for CSP compliance) */
+
+
+    /* =========================================================
+       SUPPORT PAGE
+    ========================================================= */
+
+    .support-hero {
+      min-height: 76vh;
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(7, 47, 47, 0.94) 0%,
+          rgba(7, 47, 47, 0.78) 48%,
+          rgba(7, 47, 47, 0.30) 100%
+        ),
+        url('/assets/images/support-hero.webp') center / cover no-repeat;
+    }
+
+    .support-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to top,
+          rgba(7, 47, 47, 0.45),
+          transparent 45%
+        );
+      pointer-events: none;
+    }
+
+    .support-hero .container {
+      position: relative;
+      z-index: 2;
+      padding-top: 9rem;
+      padding-bottom: 6rem;
+    }
+
+    .support-hero-content {
+      max-width: 760px;
+      color: #fff;
+    }
+
+    .support-hero h1 {
+      max-width: 760px;
+      margin: 0 0 1.5rem;
+      color: #fff;
+      font-size: clamp(3rem, 7vw, 6.2rem);
+      line-height: 0.98;
+      letter-spacing: -0.015em;
+    }
+
+    .support-hero p {
+      max-width: 650px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+      line-height: 1.7;
+    }
+
+    .support-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 2rem;
+    }
+
+    .support-hero-actions .btn-primary {
+      background: var(--gold);
+      color: var(--ink);
+    }
+
+    .support-hero-actions .btn-dark {
+      border-color: rgba(255, 255, 255, 0.8);
+      color: #fff;
+    }
+
+    /* Intro */
+
+    .support-intro {
+      background: var(--paper);
+    }
+
+    .support-intro-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .support-intro h2 {
+      max-width: 560px;
+    }
+
+    .support-intro-copy {
+      max-width: 680px;
+    }
+
+    .support-intro-copy p {
+      font-size: 1.08rem;
+      line-height: 1.85;
+      color: var(--muted);
+    }
+
+    .support-intro-copy p + p {
+      margin-top: 1.25rem;
+    }
+
+    /* Support pathways */
+
+    .support-pathways {
+      background: var(--cream);
+    }
+
+    .support-pathways-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+
+    .support-card {
+      position: relative;
+      min-height: 360px;
+      padding: 2.4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .support-card::before {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      top: -90px;
+      right: -70px;
+      border-radius: 50%;
+      background: rgba(218, 173, 75, 0.11);
+    }
+
+    .support-card-number {
+      position: relative;
+      z-index: 1;
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--deep-teal);
+    }
+
+    .support-card-body {
+      position: relative;
+      z-index: 1;
+      max-width: 520px;
+    }
+
+    .support-card h3 {
+      margin: 0 0 1rem;
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      line-height: 1.08;
+    }
+
+    .support-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .support-card-link {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+      color: var(--deep-teal);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .support-card-link span {
+      transition: transform 180ms ease;
+    }
+
+    .support-card-link:hover span {
+      transform: translateX(4px);
+    }
+
+    /* What support makes possible */
+
+    .support-makes-possible {
+      background: var(--deep-teal);
+      color: #fff;
+    }
+
+    .support-makes-possible .section-label {
+      color: var(--gold-ink);
+    }
+
+    .support-makes-possible h2 {
+      max-width: 760px;
+      color: #fff;
+    }
+
+    .support-makes-possible-intro {
+      max-width: 680px;
+      margin-top: 1.5rem;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .support-use-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 4rem;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .support-use-item {
+      min-height: 240px;
+      padding: 2rem;
+      background: var(--deep-teal);
+    }
+
+    .support-use-item h3 {
+      margin: 0 0 0.8rem;
+      color: #fff;
+      font-size: 1.35rem;
+    }
+
+    .support-use-item p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.7;
+    }
+
+    .support-use-icon {
+      width: 38px;
+      height: 38px;
+      margin-bottom: 2.5rem;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      color: var(--gold-ink);
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    /* Philosophy */
+
+    .support-philosophy {
+      background: var(--paper);
+    }
+
+    .support-philosophy-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .support-philosophy-image {
+      min-height: 520px;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(7, 47, 47, 0.04),
+          rgba(7, 47, 47, 0.22)
+        ),
+        url('/assets/images/support-young-creative.webp') center / cover no-repeat;
+    }
+
+    .support-philosophy-copy {
+      max-width: 600px;
+    }
+
+    .support-philosophy-copy h2 {
+      margin-bottom: 1.5rem;
+    }
+
+    .support-philosophy-copy p {
+      color: var(--muted);
+      line-height: 1.85;
+      font-size: 1.05rem;
+    }
+
+    .support-principles {
+      display: grid;
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .support-principle {
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .support-principle strong {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: var(--ink);
+    }
+
+    .support-principle span {
+      display: block;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* Coming soon */
+
+    .support-coming-soon {
+      background: var(--cream);
+    }
+
+    .support-coming-soon-inner {
+      max-width: 860px;
+      padding: 4rem;
+      border: 1px solid var(--line);
+      background: var(--paper);
+    }
+
+    .support-coming-soon-inner h2 {
+      margin-bottom: 1rem;
+    }
+
+    .support-coming-soon-inner p {
+      max-width: 680px;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .coming-soon-tag {
+      display: inline-flex;
+      margin-bottom: 1.5rem;
+      padding: 0.45rem 0.75rem;
+      border: 1px solid rgba(218, 173, 75, 0.5);
+      color: var(--deep-teal);
+      background: rgba(218, 173, 75, 0.1);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* CTA */
+
+    .support-cta {
+      background: var(--gold);
+    }
+
+    .support-cta-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+    }
+
+    .support-cta h2 {
+      max-width: 700px;
+      margin: 0;
+      color: var(--ink);
+    }
+
+    .support-cta p {
+      max-width: 580px;
+      margin: 1rem 0 0;
+      color: rgba(20, 28, 27, 0.72);
+      line-height: 1.7;
+    }
+
+    .support-cta .btn-dark {
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 900px) {
+      .support-intro-grid,
+      .support-philosophy-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .support-pathways-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .support-use-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .support-philosophy-image {
+        min-height: 400px;
+      }
+
+      .support-cta-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .support-hero {
+        min-height: 72vh;
+      }
+
+      .support-hero .container {
+        padding-top: 7rem;
+        padding-bottom: 4rem;
+      }
+
+      .support-hero h1 {
+        font-size: clamp(2.7rem, 14vw, 4.3rem);
+      }
+
+      .support-card {
+        min-height: 320px;
+        padding: 1.7rem;
+      }
+
+      .support-use-item {
+        min-height: auto;
+      }
+
+      .support-philosophy-image {
+        min-height: 320px;
+      }
+
+      .support-coming-soon-inner {
+        padding: 2rem;
+      }
+
+      .support-cta .btn {
+        width: 100%;
+      }
+    }
+  

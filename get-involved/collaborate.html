@@ -12,611 +12,52 @@
   <meta name="theme-color" content="#0d4b4b">
 
   <title>Collaborate With CoWiTa — CoWiTa</title>
+  <link rel="preload" href="/assets/fonts/inter-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="/assets/fonts/lora-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="/css/fonts.css">
 
   <link rel="stylesheet" href="/css/styles.css">
   <script src="/js/config.js" defer></script>
   <script src="/js/form-handler.js" defer></script>
 
-  <style>
-    /* =========================================================
-       COLLABORATE PAGE
-       Page-specific styles only.
-       ========================================================= */
-
-    .collab-hero {
-      position: relative;
-      min-height: 72vh;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      background: var(--deep-teal);
-      color: #fff;
-      padding: 140px 0 80px;
+  <link rel="stylesheet" href="/css/pages/get-involved-collaborate.css">
+  <link rel="canonical" href="https://cowita.org/get-involved/collaborate.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CoWiTa">
+  <meta property="og:title" content="Collaborate With CoWiTa — CoWiTa">
+  <meta property="og:description" content="Share a creative project, event, workshop, community idea, skill or resource you would like to explore with CoWiTa.">
+  <meta property="og:url" content="https://cowita.org/get-involved/collaborate.html">
+  <meta property="og:image" content="https://cowita.org/assets/images/stories-hero.webp">
+  <meta property="og:image:alt" content="CoWiTa — talent into opportunity">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Collaborate With CoWiTa — CoWiTa">
+  <meta name="twitter:description" content="Share a creative project, event, workshop, community idea, skill or resource you would like to explore with CoWiTa.">
+  <meta name="twitter:image" content="https://cowita.org/assets/images/stories-hero.webp">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/brand/cowita-favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/images/cowita-logo.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://cowita.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Collaborate With CoWiTa",
+      "item": "https://cowita.org/get-involved/collaborate.html"
     }
-
-    .collab-hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(
-          circle at 78% 22%,
-          rgba(229, 165, 26, .22),
-          transparent 28%
-        ),
-        linear-gradient(
-          120deg,
-          rgba(7, 35, 40, .96),
-          rgba(13, 75, 75, .78)
-        );
-    }
-
-    .collab-hero-grid {
-      position: relative;
-      z-index: 1;
-
-      display: grid;
-      grid-template-columns: 1fr .9fr;
-      gap: 75px;
-      align-items: center;
-    }
-
-    .collab-hero h1 {
-      max-width: 760px;
-      margin: 0;
-
-      font-family: "Lora", Georgia, serif;
-      font-size: clamp(3.4rem, 7vw, 6.5rem);
-      font-weight: 500;
-      line-height: .94;
-      letter-spacing: -.055em;
-    }
-
-    .collab-hero h1 em {
-      color: var(--gold);
-      font-style: normal;
-    }
-
-    .collab-hero-copy {
-      max-width: 570px;
-      margin: 28px 0 0;
-
-      color: rgba(255, 255, 255, .76);
-      font-size: 1.05rem;
-      line-height: 1.7;
-    }
-
-    .collab-hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 35px;
-    }
-
-    .collab-hero-visual {
-      position: relative;
-      min-height: 500px;
-    }
-
-    .collab-hero-visual img {
-      width: 100%;
-      height: 100%;
-      min-height: 500px;
-      object-fit: cover;
-
-      border-radius: 34px 34px 110px 34px;
-    }
-
-    .collab-hero-note {
-      position: absolute;
-      left: -35px;
-      bottom: 30px;
-
-      max-width: 245px;
-      padding: 20px;
-
-      background: var(--gold);
-      color: #1d1b15;
-
-      border-radius: 18px;
-      box-shadow: var(--shadow);
-    }
-
-    .collab-hero-note strong {
-      display: block;
-
-      font-family: "Lora", Georgia, serif;
-      font-size: 1.35rem;
-      line-height: 1.05;
-    }
-
-    .collab-hero-note span {
-      display: block;
-      margin-top: 9px;
-
-      font-size: .72rem;
-      line-height: 1.5;
-    }
-
-
-    /* =========================================================
-       FORM INTRO
-       ========================================================= */
-
-    .collab-form-intro {
-      max-width: 820px;
-      margin-bottom: 50px;
-    }
-
-    .collab-form-intro h2 {
-      max-width: 760px;
-      margin-bottom: 18px;
-    }
-
-    .collab-form-intro p {
-      max-width: 680px;
-      margin: 0;
-
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-
-    /* =========================================================
-       SELECTION AREAS
-       ========================================================= */
-
-    .collab-selection-group {
-      margin-bottom: 55px;
-    }
-
-    .collab-selection-heading {
-      margin-bottom: 20px;
-    }
-
-    .collab-selection-heading h3 {
-      margin: 0 0 7px;
-
-      font-family: "Lora", Georgia, serif;
-      font-size: 1.8rem;
-      line-height: 1.1;
-    }
-
-    .collab-selection-heading p {
-      margin: 0;
-
-      color: var(--muted);
-      font-size: .85rem;
-      line-height: 1.6;
-    }
-
-    .collab-choice-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-
-    .collab-choice {
-      position: relative;
-      display: block;
-      cursor: pointer;
-    }
-
-    .collab-choice input {
-      position: absolute;
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .collab-choice-content {
-      min-height: 92px;
-      padding: 22px 24px;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-
-      transition:
-        border-color .25s var(--ease),
-        background .25s var(--ease),
-        transform .25s var(--ease);
-    }
-
-    .collab-choice-content::after {
-      content: "＋";
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      width: 28px;
-      height: 28px;
-      flex: 0 0 28px;
-
-      border: 1px solid var(--line);
-      border-radius: 50%;
-
-      color: var(--muted);
-      font-size: .9rem;
-      line-height: 1;
-    }
-
-    .collab-choice:hover .collab-choice-content {
-      transform: translateY(-2px);
-      border-color: var(--gold);
-    }
-
-    .collab-choice input:checked + .collab-choice-content {
-      background: rgba(229, 165, 26, .10);
-      border-color: var(--gold);
-      box-shadow: 0 0 0 2px rgba(229, 165, 26, .12);
-    }
-
-    .collab-choice input:checked + .collab-choice-content::after {
-      content: "✓";
-
-      background: var(--gold);
-      border-color: var(--gold);
-      color: #1b1a16;
-      font-weight: 800;
-    }
-
-    .collab-choice-title {
-      display: block;
-
-      color: var(--ink);
-      font-size: .9rem;
-      font-weight: 700;
-      line-height: 1.3;
-    }
-
-
-    /* =========================================================
-       INTAKE FORM
-       ========================================================= */
-
-    .collab-form-shell {
-      max-width: 1050px;
-      padding: 45px;
-
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 28px;
-    }
-
-    .collab-form-header {
-      margin-bottom: 35px;
-    }
-
-    .collab-form-header h2 {
-      margin-bottom: 12px;
-    }
-
-    .collab-form-header p {
-      max-width: 700px;
-      margin: 0;
-
-      color: var(--muted);
-      font-size: .88rem;
-      line-height: 1.65;
-    }
-
-    .collab-form-section {
-      padding: 35px 0;
-
-      border-top: 1px solid var(--line);
-    }
-
-    .collab-form-section:first-of-type {
-      padding-top: 0;
-      border-top: 0;
-    }
-
-    .collab-form-section h3 {
-      margin: 0 0 22px;
-
-      font-family: "Lora", Georgia, serif;
-      font-size: 1.55rem;
-    }
-
-    .collab-form-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .collab-field {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .collab-field.full {
-      grid-column: 1 / -1;
-    }
-
-    .collab-field label {
-      color: var(--ink);
-      font-size: .76rem;
-      font-weight: 700;
-    }
-
-    .collab-field label span {
-      color: var(--muted);
-      font-weight: 400;
-    }
-
-    .collab-field input,
-    .collab-field select,
-    .collab-field textarea {
-      width: 100%;
-      padding: 14px 15px;
-
-      border: 1px solid var(--line);
-      border-radius: 12px;
-
-      background: #fff;
-      color: var(--ink);
-
-      font: inherit;
-      font-size: .86rem;
-
-      transition:
-        border-color .2s ease,
-        box-shadow .2s ease;
-    }
-
-    .collab-field textarea {
-      min-height: 135px;
-      resize: vertical;
-    }
-
-    .collab-field input:focus,
-    .collab-field select:focus,
-    .collab-field textarea:focus {
-      outline: none;
-      border-color: var(--deep-teal);
-      box-shadow: 0 0 0 3px rgba(13, 75, 75, .10);
-    }
-
-    .collab-field small {
-      color: var(--muted);
-      font-size: .7rem;
-      line-height: 1.5;
-    }
-
-    .collab-form-footer {
-      padding-top: 30px;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-
-      border-top: 1px solid var(--line);
-    }
-
-    .collab-form-note {
-      max-width: 570px;
-
-      color: var(--muted);
-      font-size: .72rem;
-      line-height: 1.55;
-    }
-
-    .collab-form-note a {
-      color: var(--ink);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-
-    /* =========================================================
-       WHAT HAPPENS NEXT
-       ========================================================= */
-
-    .collab-next {
-      background: var(--cream);
-    }
-
-    .collab-next-header {
-      max-width: 720px;
-      margin-bottom: 45px;
-    }
-
-    .collab-next-header h2 {
-      margin-bottom: 15px;
-    }
-
-    .collab-next-header p {
-      margin: 0;
-
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .collab-next-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-    }
-
-    .collab-next-step {
-      min-height: 210px;
-      padding: 28px;
-
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 20px;
-    }
-
-    .collab-next-step > span {
-      display: block;
-
-      color: var(--gold);
-      font-size: .7rem;
-      font-weight: 800;
-      letter-spacing: .12em;
-    }
-
-    .collab-next-step h3 {
-      margin: 38px 0 10px;
-
-      font-family: "Lora", Georgia, serif;
-      font-size: 1.4rem;
-      line-height: 1.05;
-    }
-
-    .collab-next-step p {
-      margin: 0;
-
-      color: var(--muted);
-      font-size: .78rem;
-      line-height: 1.55;
-    }
-
-
-    /* =========================================================
-       FINAL CTA
-       ========================================================= */
-
-    .collab-cta {
-      background: var(--gold);
-      color: #1b1a16;
-    }
-
-    .collab-cta-inner {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .collab-cta h2 {
-      max-width: 850px;
-
-      margin: 0;
-
-      font-family: "Lora", Georgia, serif;
-      font-size: clamp(2.5rem, 5vw, 5rem);
-      line-height: .98;
-      letter-spacing: -.05em;
-    }
-
-    .collab-cta p {
-      max-width: 620px;
-      margin: 20px 0 0;
-
-      font-size: .85rem;
-      line-height: 1.6;
-    }
-
-    .collab-cta-actions {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-
-    /* =========================================================
-       RESPONSIVE
-       ========================================================= */
-
-    @media (max-width: 900px) {
-
-      .collab-hero-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .collab-hero {
-        padding-top: 125px;
-      }
-
-      .collab-hero-visual {
-        min-height: 420px;
-      }
-
-      .collab-hero-visual img {
-        min-height: 420px;
-      }
-
-      .collab-hero-note {
-        left: 15px;
-      }
-
-      .collab-choice-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .collab-next-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .collab-cta-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .collab-cta-actions {
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
-    }
-
-
-    @media (max-width: 650px) {
-
-      .collab-hero {
-        min-height: auto;
-        padding-bottom: 50px;
-      }
-
-      .collab-hero h1 {
-        font-size: clamp(3rem, 15vw, 5rem);
-      }
-
-      .collab-hero-visual,
-      .collab-hero-visual img {
-        min-height: 340px;
-      }
-
-      .collab-hero-visual img {
-        border-radius: 24px 24px 80px 24px;
-      }
-
-      .collab-choice-grid,
-      .collab-next-grid,
-      .collab-form-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .collab-form-shell {
-        padding: 28px 20px;
-        border-radius: 22px;
-      }
-
-      .collab-field.full {
-        grid-column: auto;
-      }
-
-      .collab-form-footer {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .collab-cta-actions {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-  </style>
+  ]
+}
+  </script>
 </head>
 
 
@@ -686,7 +127,11 @@
     <div class="collab-hero-visual reveal">
 
       <img
-        src="/assets/images/get-involved-collaboration-hero.jpg"
+        fetchpriority="high"
+        width="1408"
+        height="768"
+        decoding="async"
+        src="/assets/images/get-involved-collaboration-hero.webp"
         alt="Young creatives working together on a collaborative project"
       >
 
@@ -744,7 +189,9 @@
       class="collab-form-shell reveal"
       method="post"
       data-cowita-form
+      novalidate
       data-form-type="collaborate"
+      action="/api/forms/collaborate"
     >
 
       <!-- =====================================================
@@ -1378,10 +825,7 @@
       <div class="collab-form-footer">
 
         <!-- SPAM PROTECTION (hidden from humans) -->
-        <div
-          style="position:absolute;left:-9999px;top:-9999px;"
-          aria-hidden="true"
-        >
+        <div class="honeypot-field" aria-hidden="true">
           <label>Leave this field empty
             <input
               type="text"
@@ -1398,6 +842,16 @@
           Each enquiry can be reviewed based on its context,
           purpose and practical possibilities.
         </p>
+
+        <div class="form-consent">
+          <input type="checkbox" id="consent-collaborate" name="consent" required>
+          <label for="consent-collaborate">
+            I have read and agree to the CoWiTa
+            <a href="/legal/privacy.html">Privacy Policy</a>, including how
+            information about children and young people is collected and
+            protected. <span aria-hidden="true">*</span>
+          </label>
+        </div>
 
         <button
           class="btn btn-primary"

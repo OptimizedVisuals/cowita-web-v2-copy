@@ -25,3 +25,21 @@
 127.0.0.1 - - [27/Sep/2026 00:54:11] "GET /assets/images/stories/stories-participant-01.jpg HTTP/1.1" 200 -
 127.0.0.1 - - [27/Sep/2026 00:54:11] "GET /assets/images/stories/stories-journey-01.jpg HTTP/1.1" 200 -
 127.0.0.1 - - [27/Sep/2026 00:54:11] "GET /assets/images/brand/cowita-favicon.svg HTTP/1.1" 200 -
+127.0.0.1 - - [27/Sep/2026 01:00:41] "GET /get-involved/have-talent.html HTTP/1.1" 304 -
+127.0.0.1 - - [27/Sep/2026 01:00:41] "GET /js/config.js HTTP/1.1" 304 -
+127.0.0.1 - - [27/Sep/2026 01:00:41] "GET /js/form-handler.js HTTP/1.1" 200 -
+127.0.0.1 - - [27/Sep/2026 01:00:41] code 404, message File not found
+127.0.0.1 - - [27/Sep/2026 01:00:41] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [27/Sep/2026 01:26:06] "GET /get-involved/have-talent.html HTTP/1.1" 304 -
+127.0.0.1 - - [27/Sep/2026 01:26:07] "GET /js/config.js HTTP/1.1" 304 -
+127.0.0.1 - - [27/Sep/2026 01:26:07] "GET /js/form-handler.js HTTP/1.1" 304 -
+127.0.0.1 - - [28/Sep/2026 23:02:09] "GET /get-involved/have-talent.html HTTP/1.1" 304 -
+127.0.0.1 - - [28/Sep/2026 23:02:09] "GET /css/styles.css HTTP/1.1" 304 -
+127.0.0.1 - - [28/Sep/2026 23:02:09] "GET /js/config.js HTTP/1.1" 304 -
+127.0.0.1 - - [28/Sep/2026 23:02:10] "GET /assets/images/cowita-have-talent-hero.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [28/Sep/2026 23:02:10] "GET /js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [28/Sep/2026 23:02:10] "GET /js/form-handler.js HTTP/1.1" 304 -
+127.0.0.1 - - [28/Sep/2026 23:02:10] "GET /components/footer.html HTTP/1.1" 304 -
+127.0.0.1 - - [28/Sep/2026 23:02:10] "GET /components/header.html HTTP/1.1" 304 -
+127.0.0.1 - - [28/Sep/2026 23:02:10] "GET /assets/images/brand/cowita-logo-white.svg HTTP/1.1" 304 -
+127.0.0.1 - - [28/Sep/2026 23:02:10] "GET /assets/images/brand/cowita-logo-primary.svg HTTP/1.1" 304 -

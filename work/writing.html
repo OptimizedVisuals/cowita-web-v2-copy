@@ -10,509 +10,48 @@
     content="CoWiTa's writing pathway helps children and young people develop their voice, storytelling ability and creative expression through writing."
   >
 
+    <link rel="preload" href="/assets/fonts/inter-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/lora-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/fonts.css">
   <link rel="stylesheet" href="/css/styles.css">
 
-  <style>
-    /* =========================================================
-       WRITING PAGE
-       ========================================================= */
+  <link rel="stylesheet" href="/css/pages/work-writing.css">
+  <link rel="canonical" href="https://cowita.org/work/writing.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CoWiTa">
+  <meta property="og:title" content="Writing | CoWiTa">
+  <meta property="og:description" content="CoWiTa's writing pathway helps children and young people develop their voice, storytelling ability and creative expression through writing.">
+  <meta property="og:url" content="https://cowita.org/work/writing.html">
+  <meta property="og:image" content="https://cowita.org/assets/images/stories-hero.webp">
+  <meta property="og:image:alt" content="CoWiTa — talent into opportunity">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Writing | CoWiTa">
+  <meta name="twitter:description" content="CoWiTa's writing pathway helps children and young people develop their voice, storytelling ability and creative expression through writing.">
+  <meta name="twitter:image" content="https://cowita.org/assets/images/stories-hero.webp">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/brand/cowita-favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/images/cowita-logo.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://cowita.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Writing",
+      "item": "https://cowita.org/work/writing.html"
+    }
+  ]
+}
+  </script>
 
-    .writing-hero {
-      background: var(--deep-teal, #123f3b);
-      color: #fff;
-      padding: 8rem 0 6rem;
-      overflow: hidden;
-    }
-
-    .writing-hero-grid {
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 5rem;
-      align-items: center;
-    }
-
-    .writing-hero-copy {
-      max-width: 720px;
-    }
-
-    .writing-hero h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(3.5rem, 7vw, 6.5rem);
-      line-height: .95;
-      letter-spacing: -0.015em;
-      margin: .8rem 0 1.5rem;
-    }
-
-    .writing-hero h1 span {
-      color: #d6a84f;
-    }
-
-    .writing-hero p {
-      max-width: 650px;
-      color: rgba(255,255,255,.78);
-      font-size: 1.12rem;
-      line-height: 1.8;
-    }
-
-    .writing-hero-image {
-      position: relative;
-    }
-
-    .writing-hero-image img {
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      border-radius: 2rem 2rem 2rem .4rem;
-      display: block;
-      filter: saturate(.9);
-    }
-
-    .writing-note {
-      position: absolute;
-      left: -2rem;
-      bottom: 2rem;
-      max-width: 230px;
-      padding: 1.2rem 1.4rem;
-      background: #d6a84f;
-      color: #123f3b;
-      border-radius: .7rem;
-      box-shadow: 0 18px 45px rgba(0,0,0,.22);
-      transform: rotate(-3deg);
-    }
-
-    .writing-note strong {
-      display: block;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.25rem;
-      margin-bottom: .35rem;
-    }
-
-    .writing-note span {
-      font-size: .88rem;
-      line-height: 1.5;
-    }
-
-    .writing-intro {
-      padding: clamp(52px, 5.5vw, 76px) 0;
-    }
-
-    .writing-intro-grid {
-      display: grid;
-      grid-template-columns: .8fr 1.2fr;
-      gap: 5rem;
-      align-items: start;
-    }
-
-    .writing-intro h2,
-    .writing-development h2,
-    .writing-pathway h2,
-    .writing-status h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.5rem, 5vw, 4.4rem);
-      line-height: 1;
-      letter-spacing: -.045em;
-      margin: .7rem 0 1.5rem;
-      color: #123f3b;
-    }
-
-    .writing-intro-copy {
-      font-size: 1.08rem;
-      line-height: 1.85;
-      color: #4f5f5d;
-    }
-
-    .writing-intro-copy p {
-      margin-bottom: 1.3rem;
-    }
-
-    .writing-quote {
-      border-left: 3px solid #d6a84f;
-      padding-left: 1.5rem;
-      margin-top: 2rem;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.4rem;
-      line-height: 1.5;
-      color: #123f3b;
-    }
-
-    .writing-development {
-      background: #f3f0e9;
-      padding: clamp(52px, 5.5vw, 76px) 0;
-    }
-
-    .writing-development-header {
-      max-width: 760px;
-      margin-bottom: 3.5rem;
-    }
-
-    .writing-development-header p {
-      max-width: 650px;
-      color: #5b6866;
-      line-height: 1.8;
-      font-size: 1.05rem;
-    }
-
-    .writing-cards {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.25rem;
-    }
-
-    .writing-card {
-      background: #fff;
-      padding: 2.2rem;
-      border-radius: 1.25rem;
-      min-height: 245px;
-      border: 1px solid rgba(18,63,59,.08);
-      transition: transform .35s ease, box-shadow .35s ease;
-    }
-
-    .writing-card:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 20px 45px rgba(18,63,59,.1);
-    }
-
-    .writing-card-number {
-      font-size: .8rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: #b18435;
-      font-weight: 700;
-      margin-bottom: 2rem;
-    }
-
-    .writing-card h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.65rem;
-      color: #123f3b;
-      margin: 0 0 .8rem;
-    }
-
-    .writing-card p {
-      color: #64716f;
-      line-height: 1.7;
-      margin: 0;
-    }
-
-    .writing-pathway {
-      padding: clamp(52px, 5.5vw, 76px) 0;
-    }
-
-    .writing-pathway-intro {
-      max-width: 720px;
-      margin-bottom: 4rem;
-    }
-
-    .writing-pathway-intro p {
-      color: #5f6c6a;
-      line-height: 1.8;
-      font-size: 1.05rem;
-    }
-
-    .writing-steps {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      border-top: 1px solid rgba(18,63,59,.18);
-    }
-
-    .writing-step {
-      padding: 2rem 1.25rem 1rem;
-      border-right: 1px solid rgba(18,63,59,.12);
-    }
-
-    .writing-step:last-child {
-      border-right: 0;
-    }
-
-    .writing-step span {
-      display: block;
-      font-size: .75rem;
-      color: #b18435;
-      font-weight: 700;
-      letter-spacing: .1em;
-      margin-bottom: 1.4rem;
-    }
-
-    .writing-step h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      color: #123f3b;
-      font-size: 1.35rem;
-      margin: 0 0 .7rem;
-    }
-
-    .writing-step p {
-      font-size: .9rem;
-      line-height: 1.6;
-      color: #687573;
-      margin: 0;
-    }
-
-    .writing-gallery {
-      padding-bottom: clamp(52px, 5.5vw, 76px);
-    }
-
-    .writing-gallery-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 2rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .writing-gallery-header h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      color: #123f3b;
-      font-size: clamp(2.3rem, 4vw, 3.7rem);
-      line-height: 1;
-      margin: .5rem 0 0;
-    }
-
-    .writing-gallery-header p {
-      max-width: 450px;
-      color: #65716f;
-      line-height: 1.7;
-      margin: 0;
-    }
-
-    .writing-gallery-grid {
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 1.25rem;
-    }
-
-    .writing-gallery-main,
-    .writing-gallery-side {
-      overflow: hidden;
-      border-radius: 1.4rem;
-    }
-
-    .writing-gallery-main img,
-    .writing-gallery-side img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform .7s cubic-bezier(.2,.7,.2,1);
-    }
-
-    .writing-gallery-main {
-      min-height: 530px;
-    }
-
-    .writing-gallery-side {
-      display: grid;
-      grid-template-rows: 1fr 1fr;
-      gap: 1.25rem;
-    }
-
-    .writing-gallery-side > div {
-      overflow: hidden;
-      border-radius: 1.4rem;
-      min-height: 255px;
-    }
-
-    .writing-gallery-main:hover img,
-    .writing-gallery-side > div:hover img {
-      transform: scale(1.045);
-    }
-
-    .writing-status {
-      background: #123f3b;
-      color: #fff;
-      padding-block: clamp(52px, 5.5vw, 76px);
-    }
-
-    .writing-status-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-    }
-
-    .writing-status h2 {
-      color: #fff;
-    }
-
-    .writing-status p {
-      color: rgba(255,255,255,.74);
-      line-height: 1.8;
-      font-size: 1.05rem;
-    }
-
-    .writing-status-box {
-      border: 1px solid rgba(255,255,255,.18);
-      border-radius: 1.3rem;
-      padding: 2.2rem;
-      background: rgba(255,255,255,.04);
-    }
-
-    .writing-status-box h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.6rem;
-      margin: 0 0 1rem;
-    }
-
-    .writing-status-box ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .writing-status-box li {
-      padding: .8rem 0;
-      border-bottom: 1px solid rgba(255,255,255,.1);
-      color: rgba(255,255,255,.72);
-    }
-
-    .writing-status-box li:last-child {
-      border-bottom: 0;
-    }
-
-    .writing-status-box li::before {
-      content: "—";
-      color: #d6a84f;
-      margin-right: .7rem;
-    }
-
-    .writing-cta {
-      margin-top: 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: .9rem;
-    }
-
-    .writing-next {
-      padding-block: clamp(52px, 5.5vw, 76px);
-      border-bottom: 1px solid rgba(18,63,59,.1);
-    }
-
-    .writing-next-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .writing-next-card {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 2rem;
-      padding: 2rem;
-      border: 1px solid rgba(18,63,59,.12);
-      border-radius: 1rem;
-      text-decoration: none;
-      transition: background .3s ease, transform .3s ease;
-    }
-
-    .writing-next-card:hover {
-      background: #f3f0e9;
-      transform: translateY(-4px);
-    }
-
-    .writing-next-card small {
-      display: block;
-      text-transform: uppercase;
-      letter-spacing: .1em;
-      font-size: .7rem;
-      color: #b18435;
-      font-weight: 700;
-      margin-bottom: .5rem;
-    }
-
-    .writing-next-card strong {
-      color: #123f3b;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.45rem;
-    }
-
-    .writing-next-arrow {
-      color: #123f3b;
-      font-size: 1.5rem;
-    }
-
-    @media (max-width: 900px) {
-      .writing-hero {
-        padding: 6rem 0 4rem;
-      }
-
-      .writing-hero-grid,
-      .writing-intro-grid,
-      .writing-status-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-
-      .writing-hero-image {
-        max-width: 650px;
-      }
-
-      .writing-steps {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .writing-step:nth-child(3) {
-        border-right: 0;
-      }
-
-      .writing-step:nth-child(n+4) {
-        border-top: 1px solid rgba(18,63,59,.12);
-      }
-
-      .writing-gallery-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .writing-gallery-main {
-        min-height: 420px;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .writing-hero h1 {
-        font-size: 3.4rem;
-      }
-
-      .writing-note {
-        left: 1rem;
-        bottom: 1rem;
-      }
-
-      .writing-cards,
-      .writing-next-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .writing-steps {
-        grid-template-columns: 1fr;
-      }
-
-      .writing-step,
-      .writing-step:nth-child(3) {
-        border-right: 0;
-        border-bottom: 1px solid rgba(18,63,59,.12);
-      }
-
-      .writing-step:last-child {
-        border-bottom: 0;
-      }
-
-      .writing-gallery-header {
-        display: block;
-      }
-
-      .writing-gallery-header p {
-        margin-top: 1.5rem;
-      }
-
-      .writing-gallery-main {
-        min-height: 300px;
-      }
-
-      .writing-gallery-side {
-        grid-template-rows: 260px 260px;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -565,8 +104,8 @@
         <div class="writing-hero-image reveal">
 
           <!-- IMAGE: work-writing-hero.jpg -->
-          <img
-            src="/assets/images/work-writing-hero.jpg"
+          <img fetchpriority="high" fetchpriority="high" width="1408" height="768" fetchpriority="high" decoding="async"
+            src="/assets/images/work-writing-hero.webp"
             alt="Young writer developing a story with a notebook"
           >
 
@@ -858,8 +397,8 @@
 
           <div class="writing-gallery-main reveal">
             <!-- IMAGE: work-writing-01.jpg -->
-            <img
-              src="/assets/images/work-writing-01.jpg"
+            <img width="1408" height="768" loading="lazy" decoding="async"
+              src="/assets/images/work-writing-01.webp"
               alt="Young person writing and developing a creative idea"
             >
           </div>
@@ -869,16 +408,16 @@
 
             <div class="reveal">
               <!-- IMAGE: work-writing-02.jpg -->
-              <img
-                src="/assets/images/work-writing-02.jpg"
+              <img width="1408" height="768" loading="lazy" decoding="async"
+                src="/assets/images/work-writing-02.webp"
                 alt="Notebook containing creative writing ideas"
               >
             </div>
 
             <div class="reveal">
               <!-- IMAGE: work-writing-03.jpg -->
-              <img
-                src="/assets/images/work-writing-03.jpg"
+              <img width="1408" height="768" loading="lazy" decoding="async"
+                src="/assets/images/work-writing-03.webp"
                 alt="Young creatives sharing and discussing written work"
               >
             </div>

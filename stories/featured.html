@@ -13,711 +13,52 @@
 
   <title>Featured Stories — CoWiTa</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <!-- Shared CoWiTa design system -->
+  <link rel="preload" href="/assets/fonts/inter-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="preload" href="/assets/fonts/lora-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="/css/fonts.css">
+
   <link rel="stylesheet" href="/css/styles.css">
 
-  <style>
-
-    /* =========================================================
-       FEATURED STORIES
-       Page-specific styles only.
-       ========================================================= */
-
-    .stories-hero {
-      position: relative;
-      min-height: 72vh;
-
-      display: flex;
-      align-items: flex-end;
-
-      overflow: hidden;
-
-      background: var(--deep-teal);
-      color: #fff;
-
-      padding: 150px 0 80px;
+  <link rel="stylesheet" href="/css/pages/stories-featured.css">
+  <link rel="canonical" href="https://cowita.org/stories/featured.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CoWiTa">
+  <meta property="og:title" content="Featured Stories — CoWiTa">
+  <meta property="og:description" content="Featured CoWiTa stories — emerging creative journeys, community experiences and the people behind the work.">
+  <meta property="og:url" content="https://cowita.org/stories/featured.html">
+  <meta property="og:image" content="https://cowita.org/assets/images/stories-hero.webp">
+  <meta property="og:image:alt" content="CoWiTa — talent into opportunity">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Featured Stories — CoWiTa">
+  <meta name="twitter:description" content="Featured CoWiTa stories — emerging creative journeys, community experiences and the people behind the work.">
+  <meta name="twitter:image" content="https://cowita.org/assets/images/stories-hero.webp">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/brand/cowita-favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/images/cowita-logo.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://cowita.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Featured Stories",
+      "item": "https://cowita.org/stories/featured.html"
     }
-
-    .stories-hero::before {
-      content: "";
-
-      position: absolute;
-      inset: 0;
-
-      background:
-        radial-gradient(
-          circle at 78% 18%,
-          rgba(229,165,26,.22),
-          transparent 30%
-        ),
-        linear-gradient(
-          120deg,
-          rgba(7,35,40,.97),
-          rgba(13,75,75,.72)
-        );
-    }
-
-    .stories-hero-grid {
-      position: relative;
-      z-index: 1;
-
-      display: grid;
-      grid-template-columns: 1fr .9fr;
-
-      gap: 70px;
-
-      align-items: end;
-    }
-
-    .stories-hero-copy {
-      max-width: 800px;
-    }
-
-    .stories-hero h1 {
-      margin: 0;
-
-      font-family: "Lora", Georgia, serif;
-
-      font-size: clamp(3.6rem, 7vw, 7rem);
-
-      font-weight: 500;
-
-      line-height: .92;
-
-      letter-spacing: -.06em;
-    }
-
-    .stories-hero h1 em {
-      color: var(--gold);
-      font-style: normal;
-    }
-
-    .stories-hero-text {
-      max-width: 600px;
-
-      margin-top: 28px;
-
-      color: rgba(255,255,255,.76);
-
-      font-size: 1.05rem;
-
-      line-height: 1.7;
-    }
-
-    .stories-hero-visual {
-      position: relative;
-
-      min-height: 430px;
-    }
-
-    .stories-hero-visual img {
-      width: 100%;
-      height: 100%;
-      min-height: 430px;
-
-      object-fit: cover;
-
-      border-radius: 34px 34px 110px 34px;
-    }
-
-    .stories-hero-badge {
-      position: absolute;
-
-      left: -35px;
-      bottom: 30px;
-
-      max-width: 230px;
-
-      padding: 20px;
-
-      background: var(--gold);
-
-      color: #1b1a16;
-
-      border-radius: 18px;
-
-      box-shadow: var(--shadow);
-    }
-
-    .stories-hero-badge strong {
-      display: block;
-
-      font-family: "Lora", Georgia, serif;
-
-      font-size: 1.4rem;
-
-      line-height: 1.05;
-    }
-
-    .stories-hero-badge span {
-      display: block;
-
-      margin-top: 8px;
-
-      font-size: .72rem;
-
-      line-height: 1.5;
-    }
-
-
-    /* =========================================================
-       INTRO
-       ========================================================= */
-
-    .stories-intro {
-      display: grid;
-
-      grid-template-columns: .75fr 1.25fr;
-
-      gap: 90px;
-
-      align-items: start;
-    }
-
-    .stories-intro-copy {
-      max-width: 760px;
-    }
-
-    .stories-intro-copy p {
-      margin: 0 0 22px;
-
-      color: var(--muted);
-
-      font-size: 1rem;
-
-      line-height: 1.75;
-    }
-
-    .stories-intro-copy p:first-child {
-      color: var(--ink);
-
-      font-family: "Lora", Georgia, serif;
-
-      font-size: 1.65rem;
-
-      line-height: 1.25;
-
-      letter-spacing: -.025em;
-    }
-
-
-    /* =========================================================
-       FEATURED STORY
-       ========================================================= */
-
-    .featured-story-section {
-      background: var(--cream);
-    }
-
-    .featured-story {
-      display: grid;
-
-      grid-template-columns: 1.05fr .95fr;
-
-      min-height: 600px;
-
-      overflow: hidden;
-
-      border-radius: 32px;
-
-      background: #fff;
-
-      box-shadow: var(--shadow);
-    }
-
-    .featured-story-image {
-      position: relative;
-
-      min-height: 600px;
-
-      overflow: hidden;
-    }
-
-    .featured-story-image img {
-      width: 100%;
-      height: 100%;
-
-      object-fit: cover;
-
-      transition: transform .6s var(--ease);
-    }
-
-    .featured-story:hover .featured-story-image img {
-      transform: scale(1.035);
-    }
-
-    .featured-story-overlay {
-      position: absolute;
-
-      inset: 0;
-
-      background:
-        linear-gradient(
-          to top,
-          rgba(0,0,0,.5),
-          transparent 45%
-        );
-    }
-
-    .featured-story-tag {
-      position: absolute;
-
-      top: 28px;
-      left: 28px;
-
-      padding: 9px 13px;
-
-      background: var(--gold);
-
-      color: #1b1a16;
-
-      border-radius: 999px;
-
-      font-size: .65rem;
-
-      font-weight: 800;
-
-      text-transform: uppercase;
-
-      letter-spacing: .1em;
-    }
-
-    .featured-story-content {
-      display: flex;
-
-      flex-direction: column;
-
-      justify-content: center;
-
-      padding: 60px;
-    }
-
-    .featured-story-content h2 {
-      margin: 18px 0 22px;
-
-      font-family: "Lora", Georgia, serif;
-
-      font-size: clamp(2.4rem, 4vw, 4.5rem);
-
-      line-height: .98;
-
-      letter-spacing: -.05em;
-    }
-
-    .featured-story-content p {
-      max-width: 560px;
-
-      color: var(--muted);
-
-      line-height: 1.7;
-    }
-
-    .featured-story-meta {
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 10px;
-
-      margin-top: 30px;
-    }
-
-    .story-meta-item {
-      padding: 8px 12px;
-
-      border: 1px solid var(--line);
-
-      border-radius: 999px;
-
-      color: var(--muted);
-
-      font-size: .68rem;
-    }
-
-    .featured-story-content .btn {
-      align-self: flex-start;
-
-      margin-top: 35px;
-    }
-
-
-    /* =========================================================
-       STORY GRID
-       ========================================================= */
-
-    .stories-header {
-      display: flex;
-
-      justify-content: space-between;
-
-      align-items: flex-end;
-
-      gap: 40px;
-
-      margin-bottom: 45px;
-    }
-
-    .stories-header-copy {
-      max-width: 700px;
-    }
-
-    .stories-header-copy p {
-      margin-top: 18px;
-
-      color: var(--muted);
-
-      line-height: 1.7;
-    }
-
-    .stories-grid {
-      display: grid;
-
-      grid-template-columns: repeat(3, 1fr);
-
-      gap: 18px;
-    }
-
-    .story-card {
-      overflow: hidden;
-
-      border: 1px solid var(--line);
-
-      border-radius: 24px;
-
-      background: #fff;
-
-      transition:
-        transform .3s var(--ease),
-        box-shadow .3s var(--ease),
-        border-color .3s var(--ease);
-    }
-
-    .story-card:hover {
-      transform: translateY(-7px);
-
-      border-color: rgba(229,165,26,.65);
-
-      box-shadow: var(--shadow);
-    }
-
-    .story-card-image {
-      position: relative;
-
-      aspect-ratio: 4 / 3;
-
-      overflow: hidden;
-
-      background: #dfe7e5;
-    }
-
-    .story-card-image img {
-      width: 100%;
-      height: 100%;
-
-      object-fit: cover;
-
-      transition: transform .5s var(--ease);
-    }
-
-    .story-card:hover .story-card-image img {
-      transform: scale(1.04);
-    }
-
-    .story-card-tag {
-      position: absolute;
-
-      left: 18px;
-      top: 18px;
-
-      padding: 7px 10px;
-
-      background: rgba(255,255,255,.92);
-
-      color: var(--teal);
-
-      border-radius: 999px;
-
-      font-size: .62rem;
-
-      font-weight: 800;
-
-      text-transform: uppercase;
-
-      letter-spacing: .08em;
-    }
-
-    .story-card-content {
-      padding: 28px;
-    }
-
-    .story-card-content h3 {
-      margin: 0 0 12px;
-
-      font-family: "Lora", Georgia, serif;
-
-      font-size: 1.55rem;
-
-      line-height: 1.05;
-    }
-
-    .story-card-content p {
-      margin: 0;
-
-      color: var(--muted);
-
-      font-size: .82rem;
-
-      line-height: 1.65;
-    }
-
-    .story-card-link {
-      display: inline-flex;
-
-      margin-top: 22px;
-
-      color: var(--teal);
-
-      font-size: .72rem;
-
-      font-weight: 800;
-
-      text-transform: uppercase;
-
-      letter-spacing: .08em;
-    }
-
-
-    /* =========================================================
-       COMING SOON
-       ========================================================= */
-
-    .coming-soon-section {
-      background: var(--paper);
-    }
-
-    .coming-soon-panel {
-      position: relative;
-
-      overflow: hidden;
-
-      padding: 70px;
-
-      border-radius: 32px;
-
-      background: var(--deep-teal);
-
-      color: #fff;
-    }
-
-    .coming-soon-panel::after {
-      content: "";
-
-      position: absolute;
-
-      width: 300px;
-      height: 300px;
-
-      right: -100px;
-      top: -100px;
-
-      border: 1px solid rgba(229,165,26,.3);
-
-      border-radius: 50%;
-    }
-
-    .coming-soon-panel h2 {
-      max-width: 700px;
-
-      margin: 18px 0;
-
-      font-family: "Lora", Georgia, serif;
-
-      font-size: clamp(2.5rem, 5vw, 5rem);
-
-      line-height: .98;
-
-      letter-spacing: -.05em;
-    }
-
-    .coming-soon-panel p {
-      max-width: 650px;
-
-      color: rgba(255,255,255,.7);
-
-      line-height: 1.7;
-    }
-
-    .coming-soon-label {
-      color: var(--gold);
-
-      font-size: .68rem;
-
-      font-weight: 800;
-
-      text-transform: uppercase;
-
-      letter-spacing: .14em;
-    }
-
-
-    /* =========================================================
-       CTA
-       ========================================================= */
-
-    .stories-cta {
-      background: var(--gold);
-
-      color: #1b1a16;
-    }
-
-    .stories-cta-inner {
-      display: grid;
-
-      grid-template-columns: 1fr auto;
-
-      gap: 50px;
-
-      align-items: center;
-    }
-
-    .stories-cta h2 {
-      max-width: 850px;
-
-      margin: 0;
-
-      font-family: "Lora", Georgia, serif;
-
-      font-size: clamp(2.5rem, 5vw, 5rem);
-
-      line-height: .98;
-
-      letter-spacing: -.05em;
-    }
-
-    .stories-cta p {
-      max-width: 270px;
-
-      margin: 0;
-
-      font-size: .78rem;
-
-      line-height: 1.6;
-    }
-
-
-    /* =========================================================
-       TABLET
-       ========================================================= */
-
-    @media (max-width: 900px) {
-
-      .stories-hero-grid,
-      .stories-intro,
-      .featured-story {
-        grid-template-columns: 1fr;
-      }
-
-      .stories-hero {
-        padding-top: 125px;
-      }
-
-      .stories-hero-visual {
-        min-height: 400px;
-      }
-
-      .stories-hero-visual img {
-        min-height: 400px;
-      }
-
-      .stories-hero-badge {
-        left: 15px;
-      }
-
-      .featured-story-image {
-        min-height: 480px;
-      }
-
-      .stories-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .stories-cta-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .stories-cta p {
-        max-width: 500px;
-      }
-
-    }
-
-
-    /* =========================================================
-       MOBILE
-       ========================================================= */
-
-    @media (max-width: 650px) {
-
-      .stories-hero {
-        min-height: auto;
-
-        padding-bottom: 45px;
-      }
-
-      .stories-hero h1 {
-        font-size: clamp(3rem, 15vw, 5rem);
-      }
-
-      .stories-hero-visual {
-        min-height: 330px;
-      }
-
-      .stories-hero-visual img {
-        min-height: 330px;
-
-        border-radius: 24px 24px 80px 24px;
-      }
-
-      .stories-intro-copy p:first-child {
-        font-size: 1.4rem;
-      }
-
-      .featured-story-image {
-        min-height: 350px;
-      }
-
-      .featured-story-content {
-        padding: 35px 28px;
-      }
-
-      .featured-story-content h2 {
-        font-size: 2.5rem;
-      }
-
-      .stories-header {
-        display: block;
-      }
-
-      .stories-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .coming-soon-panel {
-        padding: 40px 28px;
-      }
-
-      .stories-cta-inner {
-        gap: 30px;
-      }
-
-    }
-
-  </style>
+  ]
+}
+  </script>
 </head>
-
 
 <body>
 
@@ -725,16 +66,13 @@
   Skip to content
 </a>
 
-
 <!-- =========================================================
      HEADER
      ========================================================= -->
 
 <div id="site-header"></div>
 
-
 <main id="main-content">
-
 
 <!-- =========================================================
      1. HERO
@@ -764,14 +102,13 @@
 
     </div>
 
-
     <div class="stories-hero-visual reveal">
 
       <!-- IMAGE PLACEHOLDER:
            stories-featured-hero.jpg -->
 
-      <img
-        src="/assets/images/stories-featured-hero.jpg"
+      <img fetchpriority="high" fetchpriority="high" width="1408" height="768" fetchpriority="high" decoding="async"
+        src="/assets/images/stories-featured-hero.webp"
         alt="Young creatives participating in a creative activity"
       >
 
@@ -794,7 +131,6 @@
 
 </section>
 
-
 <!-- =========================================================
      2. INTRO
      ========================================================= -->
@@ -814,7 +150,6 @@
       </h2>
 
     </div>
-
 
     <div class="stories-intro-copy reveal">
 
@@ -842,7 +177,6 @@
 
 </section>
 
-
 <!-- =========================================================
      3. FEATURED STORY
      ========================================================= -->
@@ -858,8 +192,8 @@
         <!-- IMAGE PLACEHOLDER:
              story-featured-placeholder.jpg -->
 
-        <img
-          src="/assets/images/story-featured-placeholder.jpg"
+        <img width="1408" height="768" loading="lazy" decoding="async"
+          src="/assets/images/story-featured-placeholder.webp"
           alt="Placeholder for a future CoWiTa participant story"
         >
 
@@ -870,7 +204,6 @@
         </div>
 
       </div>
-
 
       <div class="featured-story-content">
 
@@ -922,7 +255,6 @@
 
 </section>
 
-
 <!-- =========================================================
      4. STORY CATEGORIES
      ========================================================= -->
@@ -953,9 +285,7 @@
 
     </div>
 
-
     <div class="stories-grid">
-
 
       <!-- PARTICIPANT STORIES -->
 
@@ -966,8 +296,8 @@
           <!-- IMAGE:
                story-participant.jpg -->
 
-          <img
-            src="/assets/images/story-participant.jpg"
+          <img width="1408" height="768" loading="lazy" decoding="async"
+            src="/assets/images/story-participant.webp"
             alt="Young person developing a creative skill"
           >
 
@@ -976,7 +306,6 @@
           </div>
 
         </div>
-
 
         <div class="story-card-content">
 
@@ -1000,7 +329,6 @@
 
       </article>
 
-
       <!-- CREATIVE JOURNEYS -->
 
       <article class="story-card reveal">
@@ -1010,8 +338,8 @@
           <!-- IMAGE:
                story-creative-journey.jpg -->
 
-          <img
-            src="/assets/images/story-creative-journey.jpg"
+          <img width="1408" height="768" loading="lazy" decoding="async"
+            src="/assets/images/story-creative-journey.webp"
             alt="Creative work being developed by a young artist"
           >
 
@@ -1020,7 +348,6 @@
           </div>
 
         </div>
-
 
         <div class="story-card-content">
 
@@ -1035,7 +362,7 @@
           </p>
 
           <a
-            href="/stories/creative-journeys.html"
+            href="/stories/journeys.html"
             class="story-card-link"
           >
             Explore →
@@ -1044,7 +371,6 @@
         </div>
 
       </article>
-
 
       <!-- COMMUNITY -->
 
@@ -1055,8 +381,8 @@
           <!-- IMAGE:
                story-community.jpg -->
 
-          <img
-            src="/assets/images/story-community.jpg"
+          <img width="1408" height="768" loading="lazy" decoding="async"
+            src="/assets/images/story-community.webp"
             alt="Young people collaborating during a community activity"
           >
 
@@ -1065,7 +391,6 @@
           </div>
 
         </div>
-
 
         <div class="story-card-content">
 
@@ -1090,13 +415,11 @@
 
       </article>
 
-
     </div>
 
   </div>
 
 </section>
-
 
 <!-- =========================================================
      5. STORY PRINCIPLE
@@ -1132,7 +455,6 @@
 
 </section>
 
-
 <!-- =========================================================
      6. FUTURE STORY SYSTEM
      ========================================================= -->
@@ -1153,9 +475,7 @@
 
     </div>
 
-
     <div class="stories-grid">
-
 
       <article class="story-card reveal">
 
@@ -1164,8 +484,8 @@
           <!-- IMAGE:
                story-dance.jpg -->
 
-          <img
-            src="/assets/images/story-dance.jpg"
+          <img width="1408" height="768" loading="lazy" decoding="async"
+            src="/assets/images/story-dance.webp"
             alt="Dance creative story placeholder"
           >
 
@@ -1190,7 +510,6 @@
 
       </article>
 
-
       <article class="story-card reveal">
 
         <div class="story-card-image">
@@ -1198,8 +517,8 @@
           <!-- IMAGE:
                story-music.jpg -->
 
-          <img
-            src="/assets/images/story-music.jpg"
+          <img width="1408" height="768" loading="lazy" decoding="async"
+            src="/assets/images/story-music.webp"
             alt="Music creative story placeholder"
           >
 
@@ -1224,7 +543,6 @@
 
       </article>
 
-
       <article class="story-card reveal">
 
         <div class="story-card-image">
@@ -1232,8 +550,8 @@
           <!-- IMAGE:
                story-visual-art.jpg -->
 
-          <img
-            src="/assets/images/story-visual-art.jpg"
+          <img width="1408" height="768" loading="lazy" decoding="async"
+            src="/assets/images/story-visual-art.webp"
             alt="Visual artist developing creative work"
           >
 
@@ -1258,13 +576,11 @@
 
       </article>
 
-
     </div>
 
   </div>
 
 </section>
-
 
 <!-- =========================================================
      7. CTA
@@ -1288,8 +604,8 @@
 
       <a
         href="/get-involved/have-talent.html"
-        class="btn btn-dark"
-        style="margin-top:24px;"
+        class="btn btn-dark u-mt-24"
+        
       >
         I Have Talent →
       </a>
@@ -1300,16 +616,13 @@
 
 </section>
 
-
 </main>
-
 
 <!-- =========================================================
      FOOTER
      ========================================================= -->
 
 <div id="site-footer"></div>
-
 
 <script src="/js/main.js" defer></script>
 

@@ -12,609 +12,50 @@
   <meta name="theme-color" content="#0d4b4b">
 
   <title>Creative Journeys — CoWiTa</title>
+  <link rel="preload" href="/assets/fonts/inter-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="/assets/fonts/lora-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="/css/fonts.css">
 
   <link rel="stylesheet" href="/css/styles.css">
 
-  <style>
-    /* =========================================================
-       CREATIVE JOURNEYS
-       Page-specific styles
-       ========================================================= */
-
-    .journeys-hero {
-      position: relative;
-      min-height: 78vh;
-      display: flex;
-      align-items: flex-end;
-      overflow: hidden;
-      background: var(--deep-teal);
-      color: #fff;
-      padding: 150px 0 80px;
-    }
-
-    .journeys-hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-
-      background:
-        linear-gradient(
-          120deg,
-          rgba(5, 28, 32, .96),
-          rgba(13, 75, 75, .70)
-        ),
-        radial-gradient(
-          circle at 80% 20%,
-          rgba(229, 165, 26, .24),
-          transparent 30%
-        );
-    }
-
-    .journeys-hero-grid {
-      position: relative;
-      z-index: 1;
-
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 70px;
-      align-items: end;
-    }
-
-    .journeys-hero h1 {
-      max-width: 850px;
-      margin: 0;
-
-      font-family: "Lora", Georgia, serif;
-      font-size: clamp(3.5rem, 7vw, 7rem);
-      font-weight: 500;
-      line-height: .93;
-      letter-spacing: -.055em;
-    }
-
-    .journeys-hero h1 em {
-      color: var(--gold);
-      font-style: normal;
-    }
-
-    .journeys-hero-copy {
-      max-width: 570px;
-      margin-top: 28px;
-
-      color: rgba(255,255,255,.76);
-      font-size: 1.05rem;
-      line-height: 1.7;
-    }
-
-    .journeys-hero-visual {
-      position: relative;
-      min-height: 450px;
-    }
-
-    .journeys-hero-visual img {
-      width: 100%;
-      height: 100%;
-      min-height: 450px;
-
-      object-fit: cover;
-
-      border-radius: 34px 34px 110px 34px;
-    }
-
-    .journeys-hero-note {
-      position: absolute;
-      left: -30px;
-      bottom: 25px;
-
-      max-width: 245px;
-      padding: 20px;
-
-      background: var(--gold);
-      color: #1c1a15;
-
-      border-radius: 18px;
-      box-shadow: var(--shadow);
-    }
-
-    .journeys-hero-note strong {
-      display: block;
-
-      font-family: "Lora", Georgia, serif;
-      font-size: 1.4rem;
-      line-height: 1.05;
-    }
-
-    .journeys-hero-note span {
-      display: block;
-      margin-top: 9px;
-
-      font-size: .72rem;
-      line-height: 1.5;
-    }
-
-
-    /* =========================================================
-       INTRODUCTION
-       ========================================================= */
-
-    .journeys-intro {
-      display: grid;
-      grid-template-columns: .75fr 1.25fr;
-      gap: 90px;
-      align-items: start;
-    }
-
-    .journeys-intro-copy {
-      max-width: 760px;
-    }
-
-    .journeys-intro-copy .lead {
-      margin: 0 0 25px;
-
-      font-family: "Lora", Georgia, serif;
-      font-size: 1.75rem;
-      line-height: 1.2;
-      letter-spacing: -.025em;
-
-      color: var(--ink);
-    }
-
-    .journeys-intro-copy p {
-      margin: 0 0 20px;
-
-      color: var(--muted);
-      line-height: 1.75;
-    }
-
-
-    /* =========================================================
-       JOURNEY MODEL
-       ========================================================= */
-
-    .journey-model {
-      background: var(--cream);
-    }
-
-    .journey-model-header {
-      max-width: 760px;
-      margin-bottom: 55px;
-    }
-
-    .journey-model-header h2 {
-      margin-bottom: 20px;
-    }
-
-    .journey-model-header p {
-      margin: 0;
-
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .journey-track {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 2px;
-
-      overflow: hidden;
-
-      border: 1px solid var(--line);
-      border-radius: 24px;
-
-      background: var(--line);
-    }
-
-    .journey-stage {
-      position: relative;
-
-      min-height: 310px;
-      padding: 30px;
-
-      background: #fff;
-    }
-
-    .journey-stage:nth-child(even) {
-      background: #faf7ef;
-    }
-
-    .journey-stage-number {
-      color: var(--gold);
-
-      font-size: .7rem;
-      font-weight: 800;
-      letter-spacing: .1em;
-    }
-
-    .journey-stage h3 {
-      margin: 65px 0 14px;
-
-      font-family: "Lora", Georgia, serif;
-      font-size: 1.8rem;
-      line-height: 1;
-    }
-
-    .journey-stage p {
-      margin: 0;
-
-      color: var(--muted);
-      font-size: .8rem;
-      line-height: 1.65;
-    }
-
-    .journey-stage::after {
-      content: "→";
-
-      position: absolute;
-      right: 20px;
-      top: 25px;
-
-      color: rgba(13,75,75,.25);
-      font-size: 1.5rem;
-    }
-
-    .journey-stage:last-child::after {
-      content: "";
-    }
-
-
-    /* =========================================================
-       FEATURED JOURNEY
-       ========================================================= */
-
-    .featured-journey {
-      background: var(--deep-teal);
-      color: #fff;
-    }
-
-    .featured-journey-grid {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .featured-journey-image {
-      position: relative;
-    }
-
-    .featured-journey-image img {
-      width: 100%;
-      aspect-ratio: 4 / 5;
-
-      object-fit: cover;
-
-      border-radius: 30px 30px 110px 30px;
-    }
-
-    .coming-soon-badge {
-      position: absolute;
-      left: 20px;
-      top: 20px;
-
-      padding: 9px 13px;
-
-      background: var(--gold);
-      color: #1d1b15;
-
-      border-radius: 999px;
-
-      font-size: .65rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: .1em;
-    }
-
-    .featured-journey-copy {
-      max-width: 650px;
-    }
-
-    .featured-journey-copy .section-label {
-      color: var(--gold);
-    }
-
-    .featured-journey-copy h2 {
-      margin-bottom: 25px;
-      color: #fff;
-    }
-
-    .featured-journey-copy p {
-      color: rgba(255,255,255,.7);
-      line-height: 1.75;
-    }
-
-    .journey-placeholder {
-      margin-top: 35px;
-
-      padding: 25px;
-
-      border: 1px solid rgba(255,255,255,.15);
-      border-radius: 18px;
-
-      background: rgba(255,255,255,.04);
-    }
-
-    .journey-placeholder strong {
-      display: block;
-      margin-bottom: 8px;
-
-      color: #fff;
-    }
-
-    .journey-placeholder span {
-      color: rgba(255,255,255,.55);
-      font-size: .78rem;
-      line-height: 1.6;
-    }
-
-
-    /* =========================================================
-       JOURNEY STORIES
-       ========================================================= */
-
-    .journey-stories-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-
-      gap: 30px;
-      margin-bottom: 50px;
-    }
-
-    .journey-stories-header-copy {
-      max-width: 700px;
-    }
-
-    .journey-stories-header-copy p {
-      margin-top: 15px;
-
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .journey-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .journey-card {
-      overflow: hidden;
-
-      border: 1px solid var(--line);
-      border-radius: 24px;
-
-      background: #fff;
-
-      transition:
-        transform .3s var(--ease),
-        box-shadow .3s var(--ease);
-    }
-
-    .journey-card:hover {
-      transform: translateY(-7px);
-      box-shadow: var(--shadow);
-    }
-
-    .journey-card-image {
-      position: relative;
-      aspect-ratio: 4 / 3;
-      overflow: hidden;
-    }
-
-    .journey-card-image img {
-      width: 100%;
-      height: 100%;
-
-      object-fit: cover;
-
-      transition: transform .5s var(--ease);
-    }
-
-    .journey-card:hover img {
-      transform: scale(1.04);
-    }
-
-    .journey-card-content {
-      padding: 25px;
-    }
-
-    .journey-card-label {
-      color: var(--teal);
-
-      font-size: .65rem;
-      font-weight: 800;
-
-      text-transform: uppercase;
-      letter-spacing: .12em;
-    }
-
-    .journey-card h3 {
-      margin: 12px 0 10px;
-
-      font-family: "Lora", Georgia, serif;
-      font-size: 1.6rem;
-      line-height: 1.05;
-    }
-
-    .journey-card p {
-      margin: 0;
-
-      color: var(--muted);
-      font-size: .8rem;
-      line-height: 1.6;
-    }
-
-
-    /* =========================================================
-       WHAT STORIES WILL SHOW
-       ========================================================= */
-
-    .journey-details {
-      background: var(--paper);
-    }
-
-    .journey-details-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-
-    .journey-detail {
-      padding: 35px;
-
-      border: 1px solid var(--line);
-      border-radius: 22px;
-
-      background: #fff;
-    }
-
-    .journey-detail-number {
-      color: var(--gold);
-
-      font-size: .7rem;
-      font-weight: 800;
-    }
-
-    .journey-detail h3 {
-      margin: 28px 0 10px;
-
-      font-family: "Lora", Georgia, serif;
-      font-size: 1.7rem;
-    }
-
-    .journey-detail p {
-      margin: 0;
-
-      color: var(--muted);
-      font-size: .82rem;
-      line-height: 1.65;
-    }
-
-
-    /* =========================================================
-       CTA
-       ========================================================= */
-
-    .journeys-cta {
-      background: var(--gold);
-      color: #1c1a15;
-    }
-
-    .journeys-cta-inner {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .journeys-cta h2 {
-      max-width: 800px;
-
-      margin: 0;
-
-      font-family: "Lora", Georgia, serif;
-      font-size: clamp(2.5rem, 5vw, 5rem);
-      line-height: .98;
-      letter-spacing: -.05em;
-    }
-
-    .journeys-cta p {
-      max-width: 270px;
-      margin: 0;
-
-      font-size: .8rem;
-      line-height: 1.6;
-    }
-
-
-    /* =========================================================
-       RESPONSIVE
-       ========================================================= */
-
-    @media (max-width: 1000px) {
-
-      .journeys-hero-grid,
-      .journeys-intro,
-      .featured-journey-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .journey-track {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .journey-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .journeys-cta-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .journeys-cta p {
-        max-width: 500px;
-      }
-    }
-
-
-    @media (max-width: 650px) {
-
-      .journeys-hero {
-        min-height: auto;
-        padding: 125px 0 50px;
-      }
-
-      .journeys-hero h1 {
-        font-size: clamp(3rem, 15vw, 5rem);
-      }
-
-      .journeys-hero-visual {
-        min-height: 340px;
-      }
-
-      .journeys-hero-visual img {
-        min-height: 340px;
-        border-radius: 24px 24px 80px 24px;
-      }
-
-      .journeys-hero-note {
-        left: 15px;
-      }
-
-      .journey-track,
-      .journey-grid,
-      .journey-details-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .journey-stage {
-        min-height: 240px;
-      }
-
-      .journey-stage h3 {
-        margin-top: 45px;
-      }
-
-      .journey-stage::after {
-        content: "";
-      }
-
-      .journey-stories-header {
-        display: block;
-      }
-
-      .featured-journey-image img {
-        aspect-ratio: 1 / 1;
-        border-radius: 24px 24px 80px 24px;
-      }
-
-      .journeys-cta h2 {
-        font-size: 3rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="/css/pages/stories-journeys.css">
+  <link rel="canonical" href="https://cowita.org/stories/journeys.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CoWiTa">
+  <meta property="og:title" content="Creative Journeys — CoWiTa">
+  <meta property="og:description" content="Explore the creative journeys CoWiTa is building with children and young people — from discovering talent to developing skills, creating work and finding opportunity.">
+  <meta property="og:url" content="https://cowita.org/stories/journeys.html">
+  <meta property="og:image" content="https://cowita.org/assets/images/stories-hero.webp">
+  <meta property="og:image:alt" content="CoWiTa — talent into opportunity">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Creative Journeys — CoWiTa">
+  <meta name="twitter:description" content="Explore the creative journeys CoWiTa is building with children and young people — from discovering talent to developing skills, creating work and finding opportunity.">
+  <meta name="twitter:image" content="https://cowita.org/assets/images/stories-hero.webp">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/brand/cowita-favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/images/cowita-logo.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://cowita.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Creative Journeys",
+      "item": "https://cowita.org/stories/journeys.html"
+    }
+  ]
+}
+  </script>
 </head>
 
 
@@ -666,8 +107,8 @@
 
     <div class="journeys-hero-visual reveal">
 
-      <img
-        src="/assets/images/stories/creative-journeys-hero.jpg"
+      <img fetchpriority="high" fetchpriority="high" width="1408" height="768" fetchpriority="high" decoding="async"
+        src="/assets/images/stories/creative-journeys-hero.webp"
         alt="Young creative developing their artistic skills"
       >
 
@@ -882,8 +323,8 @@
 
     <div class="featured-journey-image reveal">
 
-      <img
-        src="/assets/images/stories/creative-journey-featured.jpg"
+      <img width="1408" height="768" loading="lazy" decoding="async"
+        src="/assets/images/stories/creative-journey-featured.webp"
         alt="CoWiTa participant creative journey placeholder"
       >
 
@@ -977,8 +418,8 @@
 
         <div class="journey-card-image">
 
-          <img
-            src="/assets/images/stories/journey-dance.jpg"
+          <img width="1408" height="768" loading="lazy" decoding="async"
+            src="/assets/images/stories/journey-dance.webp"
             alt="Dance journey placeholder"
           >
 
@@ -1008,8 +449,8 @@
 
         <div class="journey-card-image">
 
-          <img
-            src="/assets/images/stories/journey-music.jpg"
+          <img width="1408" height="768" loading="lazy" decoding="async"
+            src="/assets/images/stories/journey-music.webp"
             alt="Music journey placeholder"
           >
 
@@ -1039,8 +480,8 @@
 
         <div class="journey-card-image">
 
-          <img
-            src="/assets/images/stories/journey-visual-art.jpg"
+          <img width="1408" height="768" loading="lazy" decoding="async"
+            src="/assets/images/stories/journey-visual-art.webp"
             alt="Visual art journey placeholder"
           >
 
@@ -1194,9 +635,9 @@
       </p>
 
       <a
-        class="btn btn-dark"
+        class="btn btn-dark u-mt-20"
         href="/get-involved/have-talent.html"
-        style="margin-top:20px;"
+        
       >
         I Have Talent →
       </a>

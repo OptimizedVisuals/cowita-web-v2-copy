@@ -1,0 +1,737 @@
+/* support/partnership-support.html — page-specific styles
+   (extracted from an inline <style> block for CSP compliance) */
+
+
+    /* =========================================================
+       UTILITIES
+    ========================================================= */
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+
+    /* =========================================================
+       PARTNERSHIP SUPPORT
+    ========================================================= */
+
+    .partnership-hero {
+      min-height: 76vh;
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(7, 47, 47, 0.96) 0%,
+          rgba(7, 47, 47, 0.82) 48%,
+          rgba(7, 47, 47, 0.28) 100%
+        ),
+        url('/assets/images/support-partnership-hero.webp')
+        center / cover no-repeat;
+    }
+
+    .partnership-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          to top,
+          rgba(7, 47, 47, 0.48),
+          transparent 55%
+        );
+
+      pointer-events: none;
+    }
+
+    .partnership-hero .container {
+      position: relative;
+      z-index: 2;
+
+      padding-top: 9rem;
+      padding-bottom: 6rem;
+    }
+
+    .partnership-hero-content {
+      max-width: 800px;
+      color: #fff;
+    }
+
+    .partnership-hero .eyebrow {
+      color: var(--gold-on-dark);
+    }
+
+    .partnership-hero h1 {
+      max-width: 780px;
+      margin: 0 0 1.5rem;
+
+      color: #fff;
+
+      font-size: clamp(3rem, 7vw, 6.2rem);
+      line-height: 0.98;
+      letter-spacing: -0.015em;
+    }
+
+    .partnership-hero p {
+      max-width: 680px;
+      margin: 0;
+
+      color: rgba(255, 255, 255, 0.86);
+
+      font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+      line-height: 1.75;
+    }
+
+    .partnership-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+
+      margin-top: 2rem;
+    }
+
+    .partnership-hero-actions .btn-primary {
+      background: var(--gold);
+      color: var(--ink);
+    }
+
+    .partnership-hero-actions .btn-dark {
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.8);
+    }
+
+
+    /* =========================================================
+       INTRO
+    ========================================================= */
+
+    .partnership-intro {
+      background: var(--paper);
+    }
+
+    .partnership-intro-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .partnership-intro h2 {
+      max-width: 590px;
+    }
+
+    .partnership-intro-copy {
+      max-width: 700px;
+    }
+
+    .partnership-intro-copy p {
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: 1.08rem;
+      line-height: 1.85;
+    }
+
+    .partnership-intro-copy p + p {
+      margin-top: 1.25rem;
+    }
+
+
+    /* =========================================================
+       WHAT PARTNERSHIP MEANS
+    ========================================================= */
+
+    .partnership-model {
+      background: var(--cream);
+    }
+
+    .partnership-model-header {
+      max-width: 800px;
+    }
+
+    .partnership-model-header p {
+      max-width: 700px;
+      margin-top: 1rem;
+
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .partnership-model-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+
+      margin-top: 3.5rem;
+
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .partnership-model-card {
+      min-height: 280px;
+      padding: 2.2rem;
+
+      background: var(--paper);
+    }
+
+    .partnership-model-number {
+      display: block;
+      margin-bottom: 4rem;
+
+      color: var(--gold-ink);
+
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+    }
+
+    .partnership-model-card h3 {
+      margin: 0 0 0.8rem;
+
+      font-size: 1.5rem;
+    }
+
+    .partnership-model-card p {
+      margin: 0;
+
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+
+    /* =========================================================
+       WHO CAN PARTNER
+    ========================================================= */
+
+    .partner-types {
+      background: var(--deep-teal);
+      color: #fff;
+    }
+
+    .partner-types .section-label {
+      color: var(--gold-ink);
+    }
+
+    .partner-types h2 {
+      max-width: 800px;
+      color: #fff;
+    }
+
+    .partner-types-intro {
+      max-width: 700px;
+      margin-top: 1rem;
+
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.8;
+    }
+
+    .partner-types-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      margin-top: 4rem;
+
+      border-top: 1px solid rgba(255, 255, 255, 0.16);
+      border-left: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .partner-type {
+      min-height: 250px;
+      padding: 2rem;
+
+      border-right: 1px solid rgba(255, 255, 255, 0.16);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .partner-type-number {
+      display: block;
+      margin-bottom: 3.5rem;
+
+      color: var(--gold-ink);
+
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+    }
+
+    .partner-type h3 {
+      margin: 0 0 0.7rem;
+
+      color: #fff;
+      font-size: 1.35rem;
+    }
+
+    .partner-type p {
+      margin: 0;
+
+      color: rgba(255, 255, 255, 0.8);
+
+      line-height: 1.7;
+    }
+
+
+    /* =========================================================
+       WHAT PARTNERS BRING
+    ========================================================= */
+
+    .partnership-contributions {
+      background: var(--paper);
+    }
+
+    .contributions-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .contributions-image {
+      min-height: 540px;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(7, 47, 47, 0.02),
+          rgba(7, 47, 47, 0.2)
+        ),
+        url('/assets/images/support-partnership-collaboration.webp')
+        center / cover no-repeat;
+    }
+
+    .contributions-copy {
+      max-width: 620px;
+    }
+
+    .contributions-copy h2 {
+      margin-bottom: 1.2rem;
+    }
+
+    .contributions-copy > p {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .contribution-list {
+      display: grid;
+      gap: 0;
+
+      margin-top: 2rem;
+    }
+
+    .contribution-item {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 1rem;
+
+      padding: 1.2rem 0;
+
+      border-top: 1px solid var(--line);
+    }
+
+    .contribution-number {
+      width: 34px;
+      height: 34px;
+
+      display: grid;
+      place-items: center;
+
+      border: 1px solid var(--line);
+      border-radius: 50%;
+
+      color: var(--deep-teal);
+
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+
+    .contribution-item h3 {
+      margin: 0 0 0.3rem;
+
+      font-size: 1.05rem;
+    }
+
+    .contribution-item p {
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+
+    /* =========================================================
+       WHAT COWITA BRINGS
+    ========================================================= */
+
+    .cowita-brings {
+      background: var(--cream);
+    }
+
+    .cowita-brings-header {
+      max-width: 760px;
+    }
+
+    .cowita-brings-header p {
+      margin-top: 1rem;
+
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .cowita-brings-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+
+      margin-top: 3rem;
+    }
+
+    .cowita-bring {
+      min-height: 250px;
+      padding: 2rem;
+
+      background: var(--paper);
+      border: 1px solid var(--line);
+    }
+
+    .cowita-bring h3 {
+      margin: 0 0 0.7rem;
+
+      font-size: 1.3rem;
+    }
+
+    .cowita-bring p {
+      margin: 0;
+
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+
+    /* =========================================================
+       HOW PARTNERSHIP WORKS
+    ========================================================= */
+
+    .partnership-process {
+      background: var(--paper);
+    }
+
+    .process-header {
+      max-width: 760px;
+    }
+
+    .process-header p {
+      margin-top: 1rem;
+
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+
+      margin-top: 4rem;
+
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .process-step {
+      min-height: 280px;
+      padding: 2rem;
+
+      border-right: 1px solid var(--line);
+    }
+
+    .process-step:last-child {
+      border-right: none;
+    }
+
+    .process-step-number {
+      display: block;
+      margin-bottom: 4rem;
+
+      color: var(--gold-ink);
+
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+    }
+
+    .process-step h3 {
+      margin: 0 0 0.7rem;
+
+      font-size: 1.15rem;
+    }
+
+    .process-step p {
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+
+
+    /* =========================================================
+       RESPONSIBLE PARTNERSHIP
+    ========================================================= */
+
+    .responsible-partnership {
+      background: var(--deep-teal);
+      color: #fff;
+    }
+
+    .responsible-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .responsible-partnership .section-label {
+      color: var(--gold-ink);
+    }
+
+    .responsible-partnership h2 {
+      max-width: 560px;
+      color: #fff;
+    }
+
+    .responsible-copy {
+      max-width: 700px;
+    }
+
+    .responsible-copy > p {
+      margin: 0;
+
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.8;
+    }
+
+    .responsibility-list {
+      display: grid;
+      gap: 1rem;
+
+      margin-top: 2rem;
+    }
+
+    .responsibility-item {
+      padding: 1.3rem 0;
+
+      border-top: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .responsibility-item strong {
+      display: block;
+      margin-bottom: 0.35rem;
+
+      color: #fff;
+    }
+
+    .responsibility-item span {
+      display: block;
+
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.65;
+    }
+
+
+    /* =========================================================
+       CURRENT STAGE
+    ========================================================= */
+
+    .partnership-status {
+      background: var(--cream);
+    }
+
+    .partnership-status-box {
+      max-width: 900px;
+      margin: 0 auto;
+
+      padding: 3.5rem;
+
+      background: var(--paper);
+      border: 1px solid var(--line);
+    }
+
+    .status-tag {
+      display: inline-flex;
+
+      margin-bottom: 1.3rem;
+      padding: 0.45rem 0.75rem;
+
+      border: 1px solid rgba(218, 173, 75, 0.5);
+      background: rgba(218, 173, 75, 0.1);
+
+      color: var(--deep-teal);
+
+      font-size: 0.72rem;
+      font-weight: 800;
+
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .partnership-status-box h2 {
+      max-width: 680px;
+      margin-bottom: 1rem;
+    }
+
+    .partnership-status-box p {
+      max-width: 700px;
+      margin: 0;
+
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+
+    /* =========================================================
+       CTA
+    ========================================================= */
+
+    .partnership-cta {
+      background: var(--gold);
+    }
+
+    .partnership-cta-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 3rem;
+    }
+
+    .partnership-cta h2 {
+      max-width: 720px;
+      margin: 0;
+    }
+
+    .partnership-cta p {
+      max-width: 650px;
+      margin: 1rem 0 0;
+
+      color: rgba(20, 28, 27, 0.72);
+      line-height: 1.7;
+    }
+
+    .partnership-cta .btn {
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 1000px) {
+
+      .partnership-intro-grid,
+      .contributions-grid,
+      .responsible-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .partner-types-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .cowita-brings-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-step:nth-child(2n) {
+        border-right: none;
+      }
+
+      .process-step {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .process-step:last-child {
+        border-bottom: none;
+      }
+    }
+
+
+    @media (max-width: 700px) {
+
+      .partnership-hero {
+        min-height: 70vh;
+      }
+
+      .partnership-hero .container {
+        padding-top: 7rem;
+        padding-bottom: 4rem;
+      }
+
+      .partnership-hero h1 {
+        font-size: clamp(2.7rem, 14vw, 4.4rem);
+      }
+
+      .partnership-model-grid,
+      .partner-types-grid,
+      .cowita-brings-grid,
+      .process {
+        grid-template-columns: 1fr;
+      }
+
+      .partnership-model-card,
+      .partner-type {
+        min-height: auto;
+      }
+
+      .partner-type {
+        border-right: 1px solid rgba(255, 255, 255, 0.16);
+      }
+
+      .process-step {
+        border-right: none;
+      }
+
+      .process-step-number {
+        margin-bottom: 2rem;
+      }
+
+      .contributions-image {
+        min-height: 350px;
+      }
+
+      .partnership-status-box {
+        padding: 2rem;
+      }
+
+      .partnership-cta-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .partnership-cta .btn {
+        width: 100%;
+      }
+    }
+  

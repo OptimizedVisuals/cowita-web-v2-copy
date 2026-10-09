@@ -14,693 +14,48 @@
   <title>Acting — CoWiTa</title>
 
   <!-- Shared CoWiTa design system -->
+    <link rel="preload" href="/assets/fonts/inter-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/lora-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/fonts.css">
   <link rel="stylesheet" href="/css/styles.css">
 
-  <style>
-
-    /* =========================================================
-       ACTING PAGE
-       Page-specific styles only.
-       Global styles remain in /css/styles.css
-       ========================================================= */
-
-    .discipline-hero {
-      position: relative;
-      min-height: 78vh;
-      display: flex;
-      align-items: flex-end;
-      overflow: hidden;
-
-      background: var(--deep-teal);
-      color: #fff;
-
-      padding: 150px 0 85px;
+  <link rel="stylesheet" href="/css/pages/work-acting.css">
+  <link rel="canonical" href="https://cowita.org/work/acting.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CoWiTa">
+  <meta property="og:title" content="Acting — CoWiTa">
+  <meta property="og:description" content="CoWiTa Acting — developing confidence, expression, storytelling and performance skills in children and young people.">
+  <meta property="og:url" content="https://cowita.org/work/acting.html">
+  <meta property="og:image" content="https://cowita.org/assets/images/stories-hero.webp">
+  <meta property="og:image:alt" content="CoWiTa — talent into opportunity">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Acting — CoWiTa">
+  <meta name="twitter:description" content="CoWiTa Acting — developing confidence, expression, storytelling and performance skills in children and young people.">
+  <meta name="twitter:image" content="https://cowita.org/assets/images/stories-hero.webp">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/brand/cowita-favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/images/cowita-logo.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://cowita.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Acting",
+      "item": "https://cowita.org/work/acting.html"
     }
+  ]
+}
+  </script>
 
-    .discipline-hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(5, 28, 31, .97) 0%,
-          rgba(5, 28, 31, .78) 45%,
-          rgba(5, 28, 31, .25) 100%
-        );
-    }
-
-    .discipline-hero-grid {
-      position: relative;
-      z-index: 1;
-
-      display: grid;
-      grid-template-columns: 1fr .9fr;
-
-      gap: 70px;
-      align-items: end;
-    }
-
-    .discipline-hero-copy {
-      max-width: 780px;
-    }
-
-    .discipline-hero h1 {
-      margin: 20px 0 25px;
-
-      font-family: "Lora", Georgia, serif;
-      font-size: clamp(3.8rem, 8vw, 7.5rem);
-      line-height: .9;
-      letter-spacing: -.06em;
-      font-weight: 500;
-    }
-
-    .discipline-hero h1 span {
-      color: var(--gold);
-    }
-
-    .discipline-hero-text {
-      max-width: 620px;
-
-      margin: 0;
-
-      color: rgba(255,255,255,.76);
-
-      font-size: 1.08rem;
-      line-height: 1.7;
-    }
-
-    .discipline-hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-
-      margin-top: 35px;
-    }
-
-    .discipline-hero-visual {
-      position: relative;
-
-      min-height: 500px;
-    }
-
-    .discipline-hero-visual img {
-      width: 100%;
-      height: 100%;
-      min-height: 500px;
-
-      object-fit: cover;
-
-      border-radius: 30px 30px 120px 30px;
-    }
-
-    .hero-floating-card {
-      position: absolute;
-
-      left: -35px;
-      bottom: 30px;
-
-      max-width: 240px;
-
-      padding: 22px;
-
-      background: var(--gold);
-      color: #1d1b15;
-
-      border-radius: 20px;
-
-      box-shadow: var(--shadow);
-    }
-
-    .hero-floating-card strong {
-      display: block;
-
-      font-family: "Lora", Georgia, serif;
-      font-size: 1.45rem;
-      line-height: 1;
-    }
-
-    .hero-floating-card span {
-      display: block;
-
-      margin-top: 9px;
-
-      font-size: .72rem;
-      line-height: 1.5;
-    }
-
-
-    /* =========================================================
-       INTRO
-       ========================================================= */
-
-    .discipline-intro {
-      display: grid;
-      grid-template-columns: .8fr 1.2fr;
-
-      gap: 90px;
-      align-items: start;
-    }
-
-    .discipline-intro-copy {
-      max-width: 720px;
-    }
-
-    .discipline-intro-copy p {
-      margin: 0 0 22px;
-
-      color: var(--muted);
-
-      font-size: 1rem;
-      line-height: 1.75;
-    }
-
-    .discipline-intro-copy p:first-child {
-      color: var(--ink);
-
-      font-family: "Lora", Georgia, serif;
-      font-size: 1.7rem;
-      line-height: 1.25;
-      letter-spacing: -.025em;
-    }
-
-
-    /* =========================================================
-       WHY ACTING
-       ========================================================= */
-
-    .acting-belief {
-      background: var(--cream);
-    }
-
-    .acting-belief-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-
-      gap: 90px;
-      align-items: center;
-    }
-
-    .acting-belief-statement {
-      font-family: "Lora", Georgia, serif;
-
-      font-size: clamp(2.8rem, 5vw, 5.2rem);
-      line-height: .96;
-
-      letter-spacing: -.05em;
-    }
-
-    .acting-belief-statement span {
-      color: var(--teal);
-    }
-
-    .acting-belief-copy {
-      max-width: 620px;
-    }
-
-    .acting-belief-copy p {
-      color: var(--muted);
-
-      line-height: 1.75;
-
-      margin: 0 0 24px;
-    }
-
-
-    /* =========================================================
-       SKILL AREAS
-       ========================================================= */
-
-    .skill-header {
-      max-width: 750px;
-
-      margin-bottom: 55px;
-    }
-
-    .skill-header p {
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .skill-grid {
-      display: grid;
-
-      grid-template-columns: repeat(3, 1fr);
-
-      gap: 14px;
-    }
-
-    .skill-card {
-      min-height: 260px;
-
-      padding: 30px;
-
-      border: 1px solid var(--line);
-      border-radius: 22px;
-
-      background: #fff;
-
-      transition:
-        transform .3s var(--ease),
-        border-color .3s var(--ease);
-    }
-
-    .skill-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--gold);
-    }
-
-    .skill-number {
-      color: var(--gold);
-
-      font-size: .72rem;
-      font-weight: 800;
-
-      letter-spacing: .12em;
-    }
-
-    .skill-card h3 {
-      margin: 45px 0 10px;
-
-      font-family: "Lora", Georgia, serif;
-
-      font-size: 1.65rem;
-      line-height: 1.05;
-    }
-
-    .skill-card p {
-      margin: 0;
-
-      color: var(--muted);
-
-      font-size: .8rem;
-      line-height: 1.65;
-    }
-
-
-    /* =========================================================
-       PATHWAY
-       ========================================================= */
-
-    .pathway-section {
-      background: var(--deep-teal);
-      color: var(--deep-teal);
-    }
-
-    .pathway-header {
-      max-width: 760px;
-      margin-bottom: 55px;
-    }
-
-    .pathway-header h2 {
-      color: #fff;
-    }
-
-    .pathway-header p {
-      color: rgba(255,255,255,.68);
-      line-height: 1.7;
-    }
-
-    .pathway {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 18px;
-    }
-
-    .pathway-step {
-      position: relative;
-      min-height: 250px;
-      padding: 28px 24px;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      background: var(--cream);
-      color: var(--deep-teal);
-    }
-
-    .pathway-step:not(:last-child)::after {
-      content: "→";
-      position: absolute;
-      z-index: 2;
-      top: 50%;
-      right: -18px;
-      width: 36px;
-      height: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transform: translateY(-50%);
-      border-radius: 50%;
-      background: var(--gold);
-      color: var(--deep-teal);
-      font-size: 1rem;
-      font-weight: 800;
-      line-height: 1;
-    }
-
-    .pathway-step-number {
-      color: var(--gold);
-      font-size: .72rem;
-      font-weight: 800;
-      letter-spacing: .08em;
-    }
-
-    .pathway-step h3 {
-      margin: 55px 0 12px;
-      color: var(--deep-teal);
-      font-family: "Lora", Georgia, serif;
-      font-size: 1.45rem;
-    }
-
-    .pathway-step p {
-      margin: 0;
-      color: var(--muted);
-      font-size: .78rem;
-      line-height: 1.6;
-    }
-
-    /* =========================================================
-       CREATIVE OUTPUT
-       ========================================================= */
-
-    .outputs-section {
-      background: var(--paper);
-    }
-
-    .outputs-grid {
-      display: grid;
-
-      grid-template-columns: 1fr 1fr;
-
-      gap: 14px;
-    }
-
-    .output-card {
-      position: relative;
-
-      min-height: 340px;
-
-      overflow: hidden;
-
-      border-radius: 25px;
-
-      background: #172e30;
-      color: #fff;
-    }
-
-    .output-card img {
-      position: absolute;
-      inset: 0;
-
-      width: 100%;
-      height: 100%;
-
-      object-fit: cover;
-
-      opacity: .68;
-
-      transition:
-        transform .6s var(--ease),
-        opacity .4s var(--ease);
-    }
-
-    .output-card:hover img {
-      transform: scale(1.05);
-      opacity: .8;
-    }
-
-    .output-card::after {
-      content: "";
-
-      position: absolute;
-      inset: 0;
-
-      background:
-        linear-gradient(
-          to top,
-          rgba(4,20,22,.94),
-          rgba(4,20,22,.15)
-        );
-    }
-
-    .output-card-content {
-      position: absolute;
-
-      z-index: 2;
-
-      left: 30px;
-      right: 30px;
-      bottom: 30px;
-    }
-
-    .output-card-content span {
-      color: var(--gold);
-
-      font-size: .68rem;
-      font-weight: 800;
-
-      text-transform: uppercase;
-      letter-spacing: .12em;
-    }
-
-    .output-card-content h3 {
-      margin: 8px 0 7px;
-
-      font-family: "Lora", Georgia, serif;
-
-      font-size: 2rem;
-    }
-
-    .output-card-content p {
-      max-width: 500px;
-
-      margin: 0;
-
-      color: rgba(255,255,255,.68);
-
-      font-size: .78rem;
-      line-height: 1.55;
-    }
-
-
-    /* =========================================================
-       COMING SOON
-       ========================================================= */
-
-    .coming-soon-section {
-      background: var(--cream);
-    }
-
-    .coming-soon-box {
-      display: grid;
-
-      grid-template-columns: 1fr auto;
-
-      gap: 50px;
-      align-items: center;
-
-      padding: 55px;
-
-      border: 1px solid var(--line);
-      border-radius: 28px;
-
-      background: #fff;
-    }
-
-    .coming-soon-box h2 {
-      margin: 0 0 15px;
-
-      font-family: "Lora", Georgia, serif;
-
-      font-size: clamp(2.2rem, 4vw, 4rem);
-      line-height: .98;
-    }
-
-    .coming-soon-box p {
-      max-width: 650px;
-
-      margin: 0;
-
-      color: var(--muted);
-
-      line-height: 1.7;
-    }
-
-    .coming-soon-label {
-      display: inline-block;
-
-      margin-bottom: 18px;
-
-      padding: 7px 12px;
-
-      border-radius: 100px;
-
-      background: rgba(229,165,26,.15);
-
-      color: #8b650b;
-
-      font-size: .65rem;
-      font-weight: 800;
-
-      text-transform: uppercase;
-      letter-spacing: .12em;
-    }
-
-
-    /* =========================================================
-       CTA
-       ========================================================= */
-
-    .discipline-cta {
-      background: var(--gold);
-      color: #1b1a16;
-    }
-
-    .discipline-cta-inner {
-      display: grid;
-
-      grid-template-columns: 1fr auto;
-
-      gap: 50px;
-      align-items: center;
-    }
-
-    .discipline-cta h2 {
-      max-width: 850px;
-
-      margin: 0;
-
-      font-family: "Lora", Georgia, serif;
-
-      font-size: clamp(2.6rem, 5vw, 5rem);
-      line-height: .95;
-
-      letter-spacing: -.05em;
-    }
-
-    .discipline-cta p {
-      max-width: 260px;
-
-      margin: 0;
-
-      font-size: .8rem;
-      line-height: 1.6;
-    }
-
-
-    /* =========================================================
-       RESPONSIVE
-       ========================================================= */
-
-    @media (max-width: 950px) {
-
-      .discipline-hero-grid,
-      .discipline-intro,
-      .acting-belief-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .discipline-hero-visual {
-        min-height: 420px;
-      }
-
-      .discipline-hero-visual img {
-        min-height: 420px;
-      }
-
-      .hero-floating-card {
-        left: 20px;
-      }
-
-      .skill-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .pathway {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .pathway-step {
-        border-bottom: 0;
-      }
-
-      .pathway-step:not(:last-child)::after {
-        right: -19px;
-      }
-
-      .outputs-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .discipline-cta-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .discipline-cta p {
-        max-width: 500px;
-      }
-    }
-
-
-    @media (max-width: 650px) {
-
-      .discipline-hero {
-        min-height: auto;
-
-        padding-top: 125px;
-        padding-bottom: 45px;
-      }
-
-      .discipline-hero h1 {
-        font-size: clamp(3.3rem, 17vw, 5rem);
-      }
-
-      .discipline-hero-visual {
-        min-height: 350px;
-      }
-
-      .discipline-hero-visual img {
-        min-height: 350px;
-
-        border-radius: 24px 24px 80px 24px;
-      }
-
-      .discipline-intro-copy p:first-child {
-        font-size: 1.4rem;
-      }
-
-      .skill-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .pathway {
-        grid-template-columns: 1fr;
-      }
-
-      .pathway-step {
-        border-right: 0;
-      }
-
-      .pathway-step:not(:last-child)::after {
-        display: none;
-      }
-
-      .output-card {
-        min-height: 300px;
-      }
-
-      .coming-soon-box {
-        grid-template-columns: 1fr;
-
-        padding: 35px;
-      }
-
-      .discipline-cta-inner {
-        gap: 30px;
-      }
-    }
-
-  </style>
 </head>
 
 
@@ -772,11 +127,11 @@
 
       <!-- IMAGE PLACEHOLDER
            Save as:
-           /assets/images/work/acting/acting-hero.jpg
+           /assets/images/work/acting/acting-hero.webp
       -->
 
-      <img
-        src="/assets/images/work/acting/acting-hero.jpg"
+      <img fetchpriority="high" fetchpriority="high" width="1408" height="768" fetchpriority="high" decoding="async"
+        src="/assets/images/work/acting/acting-hero.webp"
         alt="Young people participating in an acting or theatre activity"
       >
 
@@ -1199,8 +554,8 @@
 
       <article class="output-card reveal">
 
-        <img
-          src="/assets/images/work/acting/acting-performance.jpg"
+        <img width="1408" height="768" decoding="async"
+          src="/assets/images/work/acting/acting-performance.webp"
           alt="Young performers presenting a stage performance"
           loading="lazy"
         >
@@ -1227,8 +582,8 @@
 
       <article class="output-card reveal">
 
-        <img
-          src="/assets/images/work/acting/acting-storytelling.jpg"
+        <img width="1408" height="768" decoding="async"
+          src="/assets/images/work/acting/acting-storytelling.webp"
           alt="Young person participating in a storytelling activity"
           loading="lazy"
         >

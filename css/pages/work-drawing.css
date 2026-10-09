@@ -1,0 +1,682 @@
+/* work/drawing.html — page-specific styles
+   (extracted from an inline <style> block for CSP compliance) */
+
+
+
+    /* =========================================================
+       DRAWING PAGE
+       Page-specific styles only.
+       Global styles remain in /css/styles.css
+       ========================================================= */
+
+    .discipline-hero {
+      position: relative;
+      min-height: 78vh;
+
+      display: flex;
+      align-items: flex-end;
+
+      overflow: hidden;
+
+      background: var(--deep-teal);
+      color: #fff;
+
+      padding: 150px 0 80px;
+    }
+
+    .discipline-hero::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        radial-gradient(
+          circle at 80% 18%,
+          rgba(229,165,26,.22),
+          transparent 30%
+        ),
+        linear-gradient(
+          120deg,
+          rgba(7,35,40,.96),
+          rgba(13,75,75,.76)
+        );
+    }
+
+    .discipline-hero-grid {
+      position: relative;
+      z-index: 1;
+
+      display: grid;
+      grid-template-columns: 1fr .9fr;
+
+      gap: 75px;
+
+      align-items: end;
+    }
+
+    .discipline-hero-copy {
+      max-width: 760px;
+    }
+
+    .discipline-hero h1 {
+      margin: 0;
+
+      font-family: "Lora", Georgia, serif;
+
+      font-size: clamp(3.5rem, 7vw, 7rem);
+      font-weight: 500;
+
+      line-height: .9;
+      letter-spacing: -.06em;
+    }
+
+    .discipline-hero h1 em {
+      color: var(--gold-on-dark);
+      font-style: normal;
+    }
+
+    .discipline-hero-description {
+      max-width: 610px;
+
+      margin: 30px 0 0;
+
+      color: rgba(255,255,255,.75);
+
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .discipline-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 35px;
+    }
+
+    .discipline-hero-visual {
+      position: relative;
+
+      min-height: 470px;
+    }
+
+    .discipline-hero-visual img {
+      width: 100%;
+      height: 100%;
+      min-height: 470px;
+
+      object-fit: cover;
+
+      border-radius: 35px 35px 120px 35px;
+
+      display: block;
+    }
+
+    .discipline-hero-tag {
+      position: absolute;
+
+      left: -30px;
+      bottom: 30px;
+
+      max-width: 245px;
+
+      padding: 20px;
+
+      background: var(--gold);
+      color: #191812;
+
+      border-radius: 18px;
+
+      box-shadow: var(--shadow);
+    }
+
+    .discipline-hero-tag strong {
+      display: block;
+
+      font-family: "Lora", Georgia, serif;
+
+      font-size: 1.35rem;
+      line-height: 1.05;
+    }
+
+    .discipline-hero-tag span {
+      display: block;
+
+      margin-top: 8px;
+
+      font-size: .7rem;
+      line-height: 1.5;
+    }
+
+
+    /* =========================================================
+       INTRO
+       ========================================================= */
+
+    .discipline-intro {
+      display: grid;
+
+      grid-template-columns: .75fr 1.25fr;
+
+      gap: 90px;
+
+      align-items: start;
+    }
+
+    .discipline-intro-copy {
+      max-width: 720px;
+    }
+
+    .discipline-intro-copy p {
+      margin: 0 0 22px;
+
+      color: var(--muted);
+
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .discipline-intro-copy p:first-child {
+      color: var(--ink);
+
+      font-family: "Lora", Georgia, serif;
+
+      font-size: 1.75rem;
+      line-height: 1.2;
+
+      letter-spacing: -.025em;
+    }
+
+
+    /* =========================================================
+       WHY DRAWING
+       ========================================================= */
+
+    .creative-purpose {
+      background: var(--cream);
+    }
+
+    .creative-purpose-header {
+      max-width: 720px;
+
+      margin-bottom: 55px;
+    }
+
+    .creative-purpose-header p {
+      color: var(--muted);
+
+      line-height: 1.7;
+    }
+
+    .purpose-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 14px;
+    }
+
+    .purpose-card {
+      min-height: 285px;
+
+      padding: 32px;
+
+      background: #fff;
+
+      border: 1px solid var(--line);
+      border-radius: 24px;
+
+      transition:
+        transform .3s var(--ease),
+        border-color .3s var(--ease);
+    }
+
+    .purpose-card:hover {
+      transform: translateY(-6px);
+
+      border-color: var(--gold-ink);
+    }
+
+    .purpose-number {
+      color: var(--gold-ink);
+
+      font-size: .72rem;
+      font-weight: 800;
+
+      letter-spacing: .1em;
+    }
+
+    .purpose-card h3 {
+      margin: 55px 0 12px;
+
+      font-family: "Lora", Georgia, serif;
+
+      font-size: 1.65rem;
+      line-height: 1.05;
+    }
+
+    .purpose-card p {
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: .82rem;
+      line-height: 1.65;
+    }
+
+
+    /* =========================================================
+       PATHWAY
+       ========================================================= */
+
+    .pathway-section {
+      background: var(--deep-teal);
+
+      color: #fff;
+    }
+
+    .pathway-header {
+      max-width: 750px;
+
+      margin-bottom: 60px;
+    }
+
+    .pathway-header h2 {
+      margin-bottom: 20px;
+    }
+
+    .pathway-header p {
+      color: rgba(255, 255, 255, 0.8);
+
+      line-height: 1.7;
+    }
+
+    .pathway {
+      display: grid;
+
+      grid-template-columns: repeat(5, 1fr);
+
+      /* Give the arrow its own visual space between cards. */
+      gap: 36px;
+
+      background: transparent;
+
+      border: 0;
+    }
+
+    .pathway-step {
+      position: relative;
+
+      min-height: 260px;
+
+      padding: 28px;
+
+      background: var(--deep-teal);
+
+      border: 1px solid rgba(255,255,255,.15);
+    }
+
+    /* Keep arrows in the gap between cards instead of over the next card. */
+    .pathway-step:not(:last-child)::after {
+      content: "→";
+
+      position: absolute;
+      z-index: 3;
+
+      top: 50%;
+      right: -36px;
+
+      width: 36px;
+      height: 36px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      transform: translateY(-50%);
+
+      border-radius: 50%;
+
+      background: var(--gold);
+      color: var(--deep-teal);
+
+      font-size: 1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .pathway-step-number {
+      color: var(--gold-ink);
+
+      font-size: .7rem;
+      font-weight: 800;
+
+      letter-spacing: .12em;
+    }
+
+    .pathway-step h3 {
+      margin: 65px 0 12px;
+
+      font-family: "Lora", Georgia, serif;
+
+      font-size: 1.5rem;
+    }
+
+    .pathway-step p {
+      margin: 0;
+
+      color: rgba(255, 255, 255, 0.8);
+
+      font-size: .76rem;
+      line-height: 1.6;
+    }
+
+
+    /* =========================================================
+       POSSIBILITIES
+       ========================================================= */
+
+    .possibilities-header {
+      max-width: 720px;
+
+      margin-bottom: 50px;
+    }
+
+    .possibilities-header p {
+      color: var(--muted);
+
+      line-height: 1.7;
+    }
+
+    .possibilities-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 14px;
+    }
+
+    .possibility {
+      position: relative;
+
+      min-height: 220px;
+
+      padding: 32px;
+
+      overflow: hidden;
+
+      border: 1px solid var(--line);
+      border-radius: 24px;
+
+      background: #fff;
+    }
+
+    .possibility::after {
+      content: "";
+
+      position: absolute;
+
+      width: 130px;
+      height: 130px;
+
+      right: -45px;
+      bottom: -55px;
+
+      border: 1px solid rgba(229,165,26,.35);
+
+      border-radius: 50%;
+    }
+
+    .possibility h3 {
+      margin: 0 0 12px;
+
+      font-family: "Lora", Georgia, serif;
+
+      font-size: 1.7rem;
+    }
+
+    .possibility p {
+      max-width: 500px;
+
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: .82rem;
+      line-height: 1.65;
+    }
+
+
+    /* =========================================================
+       COMING SOON
+       ========================================================= */
+
+    .coming-soon-section {
+      background: var(--paper);
+    }
+
+    .coming-soon-box {
+      display: grid;
+
+      grid-template-columns: 1fr auto;
+
+      gap: 40px;
+
+      align-items: center;
+
+      padding: 45px;
+
+      border: 1px solid var(--line);
+      border-radius: 28px;
+
+      background: #fff;
+    }
+
+    .coming-soon-label {
+      display: inline-block;
+
+      margin-bottom: 15px;
+
+      color: var(--teal);
+
+      font-size: .68rem;
+      font-weight: 800;
+
+      text-transform: uppercase;
+      letter-spacing: .13em;
+    }
+
+    .coming-soon-box h2 {
+      max-width: 700px;
+
+      margin: 0 0 15px;
+
+      font-family: "Lora", Georgia, serif;
+    }
+
+    .coming-soon-box p {
+      max-width: 680px;
+
+      margin: 0;
+
+      color: var(--muted);
+
+      line-height: 1.65;
+    }
+
+    .coming-soon-value {
+      min-width: 145px;
+
+      text-align: center;
+    }
+
+    .coming-soon-value strong {
+      display: block;
+
+      font-family: "Lora", Georgia, serif;
+
+      color: var(--teal);
+
+      font-size: 2.7rem;
+    }
+
+    .coming-soon-value span {
+      color: var(--muted);
+
+      font-size: .68rem;
+      text-transform: uppercase;
+
+      letter-spacing: .1em;
+    }
+
+
+    /* =========================================================
+       CTA
+       ========================================================= */
+
+    .discipline-cta {
+      background: var(--gold);
+
+      color: #1b1a16;
+    }
+
+    .discipline-cta-inner {
+      display: grid;
+
+      grid-template-columns: 1fr auto;
+
+      gap: 50px;
+
+      align-items: center;
+    }
+
+    .discipline-cta h2 {
+      max-width: 800px;
+
+      margin: 0;
+
+      font-family: "Lora", Georgia, serif;
+
+      font-size: clamp(2.4rem, 5vw, 5rem);
+
+      line-height: .98;
+
+      letter-spacing: -.05em;
+    }
+
+    .discipline-cta p {
+      max-width: 260px;
+
+      margin: 0;
+
+      font-size: .8rem;
+      line-height: 1.6;
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media (max-width: 950px) {
+
+      .discipline-hero-grid,
+      .discipline-intro {
+        grid-template-columns: 1fr;
+      }
+
+      .discipline-hero-visual {
+        min-height: 400px;
+      }
+
+      .discipline-hero-visual img {
+        min-height: 400px;
+      }
+
+      .purpose-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .pathway {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+
+      .pathway-step:not(:last-child)::after {
+        right: -30px;
+      }
+
+      .pathway-step:last-child {
+        grid-column: span 2;
+      }
+
+      .discipline-cta-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+    @media (max-width: 650px) {
+
+      .discipline-hero {
+        min-height: auto;
+
+        padding-top: 125px;
+        padding-bottom: 45px;
+      }
+
+      .discipline-hero h1 {
+        font-size: clamp(3.2rem, 16vw, 5.5rem);
+      }
+
+      .discipline-hero-visual {
+        min-height: 340px;
+      }
+
+      .discipline-hero-visual img {
+        min-height: 340px;
+
+        border-radius: 25px 25px 80px 25px;
+      }
+
+      .discipline-hero-tag {
+        left: 15px;
+      }
+
+      .discipline-hero-description {
+        font-size: .95rem;
+      }
+
+      .purpose-grid,
+      .possibilities-grid,
+      .pathway {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .pathway-step:not(:last-child)::after {
+        display: none;
+      }
+
+      .pathway-step:last-child {
+        grid-column: auto;
+      }
+
+      .coming-soon-box {
+        grid-template-columns: 1fr;
+
+        padding: 30px;
+      }
+
+      .coming-soon-value {
+        text-align: left;
+      }
+
+      .discipline-cta h2 {
+        font-size: 3rem;
+      }
+    }
+
+  

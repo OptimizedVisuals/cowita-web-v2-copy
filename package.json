@@ -1,0 +1,36 @@
+{
+  "name": "cowita-website",
+  "private": true,
+  "version": "1.0.0",
+  "description": "CoWiTa website — static site plus Vercel API for form submissions.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node tools/dev-server.mjs",
+    "build": "node tools/build-static.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check-links": "node tools/check-links.mjs",
+    "generate:legal": "node tools/generate-legal-pages.mjs",
+    "generate:seo": "node tools/seo-metadata.mjs && node tools/generate-seo-files.mjs",
+    "optimize:images": "node tools/optimize-images.mjs",
+    "fonts": "node tools/selfhost-fonts.mjs",
+    "extract:inline": "node tools/extract-inline-assets.mjs",
+    "a11y": "node tools/a11y-suite.mjs",
+    "a11y:contrast": "node tools/a11y-contrast-fix.mjs",
+    "a11y:selfcheck": "node tools/axe-rule-selfcheck.mjs",
+    "verify": "npm run check-links && node tools/generate-seo-files.mjs && npm test && npm run build && npm run a11y"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.4",
+    "resend": "^4.0.1"
+  },
+  "devDependencies": {
+    "axe-core": "^4.14.0",
+    "esbuild": "^0.28.2",
+    "playwright-core": "^1.64.0",
+    "sharp": "^0.35.5",
+    "vercel": "^37.0.0"
+  }
+}

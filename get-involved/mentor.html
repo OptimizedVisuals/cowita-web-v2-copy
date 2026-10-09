@@ -13,774 +13,50 @@
 
   <meta name="theme-color" content="#073f3b">
 
+  <link rel="preload" href="/assets/fonts/inter-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/lora-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/fonts.css">
   <link rel="stylesheet" href="/css/styles.css">
   <script src="/js/config.js" defer></script>
   <script src="/js/form-handler.js" defer></script>
 
-  <style>
-    /* =========================================================
-       COWITA — I WANT TO MENTOR
-       Page-specific styles
-    ========================================================= */
+  <link rel="stylesheet" href="/css/pages/get-involved-mentor.css">
+  <link rel="canonical" href="https://cowita.org/get-involved/mentor.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CoWiTa">
+  <meta property="og:title" content="I Want to Mentor | CoWiTa">
+  <meta property="og:description" content="Share your experience, skills and perspective with young people through CoWiTa's mentorship pathway.">
+  <meta property="og:url" content="https://cowita.org/get-involved/mentor.html">
+  <meta property="og:image" content="https://cowita.org/assets/images/stories-hero.webp">
+  <meta property="og:image:alt" content="CoWiTa — talent into opportunity">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="I Want to Mentor | CoWiTa">
+  <meta name="twitter:description" content="Share your experience, skills and perspective with young people through CoWiTa's mentorship pathway.">
+  <meta name="twitter:image" content="https://cowita.org/assets/images/stories-hero.webp">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/brand/cowita-favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/images/cowita-logo.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://cowita.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "I Want to Mentor",
+      "item": "https://cowita.org/get-involved/mentor.html"
+    }
+  ]
+}
+  </script>
 
-    .mentor-hero {
-      position: relative;
-      overflow: hidden;
-      min-height: 72vh;
-      display: flex;
-      align-items: center;
-      background:
-        linear-gradient(
-          115deg,
-          rgba(5, 48, 45, 0.97),
-          rgba(7, 63, 59, 0.84)
-        ),
-        url("/assets/images/cowita-mentor-hero.jpg") center / cover no-repeat;
-      color: var(--cream);
-    }
-
-    .mentor-hero::after {
-      content: "";
-      position: absolute;
-      width: 360px;
-      height: 360px;
-      right: -140px;
-      top: -140px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
-    .mentor-hero .container {
-      position: relative;
-      z-index: 2;
-    }
-
-    .mentor-hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
-      gap: 4.5rem;
-      align-items: center;
-    }
-
-    .mentor-hero-copy {
-      max-width: 720px;
-      padding: 105px 0 95px;
-    }
-
-    .mentor-hero .eyebrow {
-      color: var(--gold);
-      margin-bottom: 20px;
-    }
-
-    .mentor-hero h1 {
-      margin: 0 0 25px;
-      max-width: 720px;
-      color: var(--cream);
-      font-size: clamp(3rem, 6.5vw, 6rem);
-      line-height: 0.96;
-      letter-spacing: -0.02em;
-    }
-
-    .mentor-hero h1 span {
-      color: var(--gold);
-    }
-
-    .mentor-hero-copy > p {
-      max-width: 650px;
-      margin: 0;
-      color: rgba(255, 248, 235, 0.82);
-      font-size: 1.08rem;
-      line-height: 1.8;
-    }
-
-    .mentor-hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 32px;
-    }
-
-    .mentor-hero .btn-primary {
-      background: var(--gold);
-      color: var(--deep-teal);
-    }
-
-    .mentor-hero .btn-light {
-      background: rgba(255, 255, 255, 0.08);
-      color: var(--cream);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(8px);
-    }
-
-    .mentor-hero-note {
-      max-width: 620px;
-      margin-top: 30px;
-      padding: 18px 20px;
-      border-left: 3px solid var(--gold);
-      background: rgba(255, 255, 255, 0.06);
-    }
-
-    .mentor-hero-note strong {
-      display: block;
-      margin-bottom: 5px;
-      color: var(--cream);
-    }
-
-    .mentor-hero-note span {
-      color: rgba(255, 248, 235, 0.68);
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
-
-    .mentor-hero-visual {
-      position: relative;
-    }
-
-    .mentor-hero-visual img {
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      display: block;
-      border-radius: 3px;
-      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
-    }
-
-    .mentor-quote {
-      position: absolute;
-      left: -35px;
-      bottom: 35px;
-      max-width: 300px;
-      padding: 22px;
-      background: var(--gold);
-      color: var(--deep-teal);
-      box-shadow: var(--shadow);
-    }
-
-    .mentor-quote p {
-      margin: 0;
-      color: var(--deep-teal);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.15rem;
-      line-height: 1.45;
-    }
-
-    .mentor-quote small {
-      display: block;
-      margin-top: 12px;
-      color: var(--deep-teal);
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-
-    /* =========================================================
-       INTRO
-    ========================================================= */
-
-    .mentor-intro {
-      max-width: 850px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .mentor-intro h2 {
-      max-width: 760px;
-      margin: 0 auto 22px;
-    }
-
-    .mentor-intro p {
-      margin: 0 auto 18px;
-      max-width: 760px;
-      color: var(--muted);
-      font-size: 1.05rem;
-      line-height: 1.8;
-    }
-
-    .mentor-intro p:last-child {
-      margin-bottom: 0;
-    }
-
-
-    /* =========================================================
-       MENTORING AREAS
-    ========================================================= */
-
-    .mentor-areas-section {
-      background: var(--cream);
-    }
-
-    .mentor-section-header {
-      max-width: 760px;
-      margin-bottom: 48px;
-    }
-
-    .mentor-section-header h2 {
-      margin: 0 0 18px;
-    }
-
-    .mentor-section-header p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.8;
-    }
-
-    .mentor-area-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-    }
-
-    .mentor-area {
-      position: relative;
-      min-height: 180px;
-      padding: 25px;
-      border: 1px solid var(--line);
-      background: var(--paper);
-      transition:
-        transform 0.3s var(--ease),
-        box-shadow 0.3s var(--ease),
-        border-color 0.3s var(--ease);
-    }
-
-    .mentor-area:hover {
-      transform: translateY(-5px);
-      border-color: rgba(7, 63, 59, 0.25);
-      box-shadow: var(--shadow);
-    }
-
-    .mentor-area-number {
-      display: block;
-      margin-bottom: 35px;
-      color: var(--gold);
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-    }
-
-    .mentor-area h3 {
-      margin: 0 0 8px;
-      color: var(--deep-teal);
-      font-size: 1.2rem;
-    }
-
-    .mentor-area p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.88rem;
-      line-height: 1.6;
-    }
-
-
-    /* =========================================================
-       MENTOR INTAKE FORM
-    ========================================================= */
-
-    .mentor-form-section {
-      background: var(--paper);
-    }
-
-    .mentor-form-header {
-      max-width: 760px;
-      margin-bottom: 48px;
-    }
-
-    .mentor-form-header h2 {
-      margin: 0 0 18px;
-    }
-
-    .mentor-form-header p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.8;
-    }
-
-    .mentor-form {
-      max-width: 1000px;
-      padding: 46px;
-      border: 1px solid var(--line);
-      background: var(--cream);
-      box-shadow: var(--shadow);
-    }
-
-    .mentor-form-group {
-      margin-bottom: 44px;
-    }
-
-    .mentor-form-group:last-of-type {
-      margin-bottom: 0;
-    }
-
-    .mentor-form-title {
-      margin: 0 0 28px;
-      padding-bottom: 14px;
-      border-bottom: 1px solid var(--line);
-      color: var(--deep-teal);
-      font-size: 1.3rem;
-    }
-
-    .mentor-form-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 22px;
-    }
-
-    .mentor-field {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .mentor-field.full {
-      grid-column: 1 / -1;
-    }
-
-    .mentor-field label,
-    .mentor-field legend {
-      color: var(--deep-teal);
-      font-size: 0.88rem;
-      font-weight: 700;
-    }
-
-    .mentor-field label span,
-    .mentor-field legend span {
-      color: var(--muted);
-      font-weight: 400;
-    }
-
-    .mentor-field input,
-    .mentor-field select,
-    .mentor-field textarea {
-      width: 100%;
-      border: 1px solid var(--line);
-      border-radius: 3px;
-      padding: 14px 15px;
-      background: #fffdf8;
-      color: var(--deep-teal);
-      font: inherit;
-      outline: none;
-      transition:
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
-    }
-
-    .mentor-field input,
-    .mentor-field select {
-      min-height: 50px;
-    }
-
-    .mentor-field textarea {
-      min-height: 135px;
-      resize: vertical;
-      line-height: 1.65;
-    }
-
-    .mentor-field input:focus,
-    .mentor-field select:focus,
-    .mentor-field textarea:focus {
-      border-color: var(--deep-teal);
-      box-shadow: 0 0 0 3px rgba(7, 63, 59, 0.08);
-    }
-
-    .mentor-fieldset {
-      min-width: 0;
-      padding: 0;
-      border: 0;
-    }
-
-    .mentor-fieldset legend {
-      margin-bottom: 13px;
-    }
-
-    .mentor-option-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-    }
-
-    .mentor-option {
-      position: relative;
-    }
-
-    .mentor-option input {
-      position: absolute;
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .mentor-option label {
-      display: flex;
-      align-items: center;
-      min-height: 50px;
-      padding: 12px 14px;
-      border: 1px solid var(--line);
-      border-radius: 3px;
-      background: #fffdf8;
-      color: var(--deep-teal);
-      cursor: pointer;
-      font-size: 0.88rem;
-      transition:
-        background 0.25s ease,
-        border-color 0.25s ease;
-    }
-
-    .mentor-option label:hover {
-      border-color: var(--deep-teal);
-    }
-
-    .mentor-option input:checked + label {
-      background: var(--deep-teal);
-      border-color: var(--deep-teal);
-      color: var(--cream);
-    }
-
-    .mentor-consent {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      margin-top: 32px;
-      padding-top: 25px;
-      border-top: 1px solid var(--line);
-    }
-
-    .mentor-consent input {
-      width: 18px;
-      height: 18px;
-      margin-top: 3px;
-      flex: 0 0 auto;
-      accent-color: var(--deep-teal);
-    }
-
-    .mentor-consent label {
-      color: var(--muted);
-      font-size: 0.88rem;
-      line-height: 1.6;
-    }
-
-    .mentor-form-actions {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 18px;
-      margin-top: 34px;
-    }
-
-    .mentor-form-actions .btn-primary {
-      background: var(--deep-teal);
-      color: var(--cream);
-    }
-
-    .mentor-form-note {
-      max-width: 500px;
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.82rem;
-      line-height: 1.5;
-    }
-
-
-    /* =========================================================
-       WHAT HAPPENS NEXT
-    ========================================================= */
-
-    .mentor-process-section {
-      background: var(--deep-teal);
-      color: var(--cream);
-    }
-
-    .mentor-process-section .section-label {
-      color: var(--gold);
-    }
-
-    .mentor-process-header {
-      max-width: 750px;
-      margin-bottom: 55px;
-    }
-
-    .mentor-process-header h2 {
-      margin: 0 0 18px;
-      color: var(--cream);
-    }
-
-    .mentor-process-header p {
-      margin: 0;
-      color: rgba(255, 248, 235, 0.7);
-      line-height: 1.8;
-    }
-
-    .mentor-process-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: rgba(255, 255, 255, 0.14);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-    }
-
-    .mentor-process-step {
-      min-height: 260px;
-      padding: 32px;
-      background: var(--deep-teal);
-    }
-
-    .mentor-process-number {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 44px;
-      height: 44px;
-      margin-bottom: 34px;
-      border-radius: 50%;
-      background: var(--gold);
-      color: var(--deep-teal);
-      font-size: 0.8rem;
-      font-weight: 800;
-    }
-
-    .mentor-process-step h3 {
-      margin: 0 0 12px;
-      color: var(--cream);
-      font-size: 1.25rem;
-    }
-
-    .mentor-process-step p {
-      margin: 0;
-      color: rgba(255, 248, 235, 0.66);
-      line-height: 1.65;
-      font-size: 0.9rem;
-    }
-
-
-    /* =========================================================
-       EXPECTATIONS
-    ========================================================= */
-
-    .mentor-expect-section {
-      background: var(--cream);
-    }
-
-    .mentor-expect-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-
-    .mentor-expect-card {
-      padding: 28px;
-      border: 1px solid var(--line);
-      background: #fff;
-    }
-
-    .mentor-expect-card h3 {
-      margin: 0 0 12px;
-      color: var(--deep-teal);
-      font-size: 1.2rem;
-    }
-
-    .mentor-expect-card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 0.92rem;
-    }
-
-
-    /* =========================================================
-       SAFEGUARDING / NOTE
-    ========================================================= */
-
-    .mentor-safety {
-      background: var(--paper);
-    }
-
-    .mentor-safety-grid {
-      display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: 70px;
-      align-items: start;
-    }
-
-    .mentor-safety h2 {
-      margin: 0;
-    }
-
-    .mentor-safety-copy p {
-      margin: 0 0 18px;
-      color: var(--muted);
-      line-height: 1.8;
-    }
-
-    .mentor-safety-note {
-      padding: 24px 26px;
-      border-left: 3px solid var(--gold);
-      background: rgba(207, 168, 73, 0.08);
-    }
-
-    .mentor-safety-note strong {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--deep-teal);
-    }
-
-    .mentor-safety-note p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 0.92rem;
-    }
-
-
-    /* =========================================================
-       FINAL CTA
-    ========================================================= */
-
-    .mentor-final {
-      background:
-        linear-gradient(
-          120deg,
-          rgba(5, 48, 45, 0.97),
-          rgba(7, 63, 59, 0.92)
-        ),
-        url("/assets/images/cowita-mentor-community.jpg") center / cover no-repeat;
-      color: var(--cream);
-      text-align: center;
-    }
-
-    .mentor-final-inner {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .mentor-final .eyebrow {
-      color: var(--gold);
-    }
-
-    .mentor-final h2 {
-      margin: 0 0 20px;
-      color: var(--cream);
-    }
-
-    .mentor-final p {
-      max-width: 650px;
-      margin: 0 auto;
-      color: rgba(255, 248, 235, 0.74);
-      line-height: 1.8;
-    }
-
-    .mentor-final-actions {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 32px;
-    }
-
-    .mentor-final .btn-primary {
-      background: var(--gold);
-      color: var(--deep-teal);
-    }
-
-    .mentor-final .btn-light {
-      background: rgba(255, 255, 255, 0.08);
-      color: var(--cream);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-
-    /* =========================================================
-       RESPONSIVE
-    ========================================================= */
-
-    @media (max-width: 1000px) {
-
-      .mentor-hero-grid,
-      .mentor-safety-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .mentor-hero-visual {
-        max-width: 650px;
-      }
-
-      .mentor-area-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .mentor-process-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .mentor-expect-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-
-    @media (max-width: 760px) {
-
-      .mentor-hero {
-        min-height: auto;
-      }
-
-      .mentor-hero-copy {
-        padding: 90px 0 55px;
-      }
-
-      .mentor-hero-grid {
-        gap: 30px;
-      }
-
-      .mentor-quote {
-        position: relative;
-        left: 0;
-        bottom: auto;
-        max-width: none;
-        margin-top: -15px;
-      }
-
-      .mentor-area-grid,
-      .mentor-option-grid,
-      .mentor-expect-grid,
-      .mentor-process-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .mentor-form {
-        padding: 28px 20px;
-      }
-
-      .mentor-form-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .mentor-field.full {
-        grid-column: auto;
-      }
-
-      .mentor-final-actions,
-      .mentor-hero-actions,
-      .mentor-form-actions {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .mentor-final-actions .btn,
-      .mentor-hero-actions .btn,
-      .mentor-form-actions .btn {
-        width: 100%;
-        text-align: center;
-      }
-    }
-
-
-    @media (max-width: 480px) {
-
-      .mentor-hero h1 {
-        font-size: clamp(2.8rem, 14vw, 4.5rem);
-      }
-    }
-  </style>
 </head>
 
 
@@ -864,7 +140,11 @@
         <div class="mentor-hero-visual">
 
           <img
-            src="/assets/images/cowita-mentor-hero.jpg"
+            fetchpriority="high"
+            width="1408"
+            height="768"
+            decoding="async"
+            src="/assets/images/cowita-mentor-hero.webp"
             alt="Mentor guiding a young person during a creative learning session"
           >
 
@@ -1067,7 +347,9 @@
           id="mentor-interest-form"
           method="post"
           data-cowita-form
+          novalidate
           data-form-type="mentor"
+          action="/api/forms/mentor"
         >
 
 
@@ -1619,35 +901,10 @@
 
 
           <!-- =================================================
-               CONSENT
-          ================================================== -->
-
-          <div class="mentor-consent">
-
-            <input
-              type="checkbox"
-              id="mentor-consent"
-              name="consent"
-              value="yes"
-              required
-            >
-
-            <label for="mentor-consent">
-              I confirm that the information I have provided is accurate
-              and I am happy for CoWiTa to use it to understand my interest
-              in mentorship and contact me about relevant opportunities.
-            </label>
-
-          </div>
-
-
-          <!-- =================================================
                SPAM PROTECTION (hidden from humans)
           ================================================== -->
-          <div
-            style="position:absolute;left:-9999px;top:-9999px;"
-            aria-hidden="true"
-          >
+
+          <div class="honeypot-field" aria-hidden="true">
             <label>Leave this field empty
               <input
                 type="text"
@@ -1664,6 +921,19 @@
           ================================================== -->
 
           <div class="mentor-form-actions">
+
+            <div class="form-consent">
+              <input type="checkbox" id="consent-mentor" name="consent" required>
+              <label for="consent-mentor">
+                I confirm that the information I have provided is accurate
+                and I am happy for CoWiTa to use it to understand my interest
+                in mentorship and contact me about relevant opportunities.
+                I have read and agree to the CoWiTa
+                <a href="/legal/privacy.html">Privacy Policy</a>, including how
+                information about children and young people is collected and
+                protected. <span aria-hidden="true">*</span>
+              </label>
+            </div>
 
             <button
               type="submit"

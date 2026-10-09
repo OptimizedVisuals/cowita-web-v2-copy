@@ -1,0 +1,521 @@
+/* get-involved/partner.html — page-specific styles
+   (extracted from an inline <style> block for CSP compliance) */
+
+    /* =========================================================
+       PARTNER WITH COWITA — PAGE-SPECIFIC STYLES
+       ========================================================= */
+
+    .partner-page {
+      --partner-line: rgba(8, 48, 47, 0.14);
+      --partner-soft: rgba(13, 75, 75, 0.05);
+      --partner-gold-soft: rgba(196, 151, 61, 0.1);
+    }
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .partner-hero {
+      min-height: calc(100svh - 80px);
+      padding: 48px 0 55px;
+      background: var(--cream);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    .partner-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 0.82fr);
+      gap: 55px;
+      align-items: center;
+    }
+
+    .partner-hero h1 {
+      max-width: 700px;
+      margin: 0 0 22px;
+      font-size: clamp(2.7rem, 4.7vw, 4.8rem);
+      line-height: 0.98;
+      letter-spacing: -0.015em;
+      color: var(--deep-teal);
+    }
+
+    .partner-hero h1 em {
+      color: var(--gold-ink);
+      font-style: normal;
+    }
+
+    .partner-hero .eyebrow {
+      margin-bottom: 16px;
+      color: var(--gold-ink);
+    }
+
+    .partner-hero-copy {
+      max-width: 620px;
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.65;
+      color: var(--muted);
+    }
+
+    .partner-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .partner-hero-visual {
+      min-width: 0;
+      max-height: calc(100svh - 150px);
+      overflow: hidden;
+      aspect-ratio: 4 / 4.5;
+    }
+
+    .partner-hero-visual img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* =========================================================
+       SECTION HEADERS
+       ========================================================= */
+
+    .partner-section-header {
+      max-width: 820px;
+      margin: 0 auto 50px;
+      text-align: center;
+    }
+
+    .partner-section-header h2 {
+      margin: 0 0 18px;
+    }
+
+    .partner-section-header p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    /* =========================================================
+       PARTNER TYPES
+       ========================================================= */
+
+    .partner-type-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .partner-type-card {
+      position: relative;
+      min-width: 0;
+      padding: 30px;
+      background: var(--cream);
+      border: 1px solid var(--partner-line);
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .partner-type-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(13, 75, 75, 0.3);
+    }
+
+    .partner-type-card input {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .partner-type-card label {
+      display: block;
+      cursor: pointer;
+    }
+
+    .partner-type-number {
+      display: block;
+      margin-bottom: 22px;
+      color: var(--gold-ink);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+    }
+
+    .partner-type-card h3 {
+      margin: 0 0 10px;
+      color: var(--deep-teal);
+      font-size: 1.15rem;
+    }
+
+    .partner-type-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .partner-type-card:has(input:checked) {
+      background: var(--partner-gold-soft);
+      border-color: var(--gold-ink);
+      box-shadow: inset 0 0 0 1px var(--gold);
+    }
+
+    /* =========================================================
+       CONTRIBUTION / NEEDS
+       ========================================================= */
+
+    .partner-options-section {
+      background: var(--cream);
+    }
+
+    .partner-options-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 70px;
+    }
+
+    .partner-option-group h3 {
+      margin: 0 0 10px;
+      color: var(--deep-teal);
+    }
+
+    .partner-option-group > p {
+      margin: 0 0 25px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .partner-option-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .partner-option {
+      position: relative;
+    }
+
+    .partner-option input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .partner-option label {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-height: 56px;
+      padding: 15px 18px;
+      background: var(--cream);
+      border: 1px solid var(--partner-line);
+      color: var(--deep-teal);
+      cursor: pointer;
+      transition:
+        border-color 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .partner-option label::before {
+      content: "";
+      width: 18px;
+      height: 18px;
+      flex: 0 0 18px;
+      border: 1px solid rgba(8, 48, 47, 0.3);
+      border-radius: 4px;
+      background: transparent;
+    }
+
+    .partner-option input:checked + label {
+      border-color: rgba(8, 48, 47, 0.92);
+      background: var(--partner-gold-soft);
+    }
+
+    .partner-option input:checked + label::before {
+      border-color: rgba(8, 48, 47, 0.92);
+      background: var(--gold);
+      box-shadow: inset 0 0 0 4px var(--cream);
+    }
+
+    /* =========================================================
+       PARTNERSHIP FORM
+       ========================================================= */
+
+    .partner-form-section {
+      background: var(--deep-teal);
+      color: var(--cream);
+    }
+
+    .partner-form-header {
+      max-width: 780px;
+      margin-bottom: 45px;
+    }
+
+    .partner-form-header .section-label {
+      color: var(--gold-on-dark);
+    }
+
+    .partner-form-header h2 {
+      margin: 0 0 18px;
+      color: var(--cream);
+    }
+
+    .partner-form-header p {
+      max-width: 700px;
+      margin: 0;
+      color: rgba(255, 248, 235, 0.78);
+      line-height: 1.75;
+    }
+
+    .partner-form {
+      padding: 45px;
+      background: var(--cream);
+      color: var(--deep-teal);
+    }
+
+    .partner-form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .partner-form-field {
+      min-width: 0;
+    }
+
+    .partner-form-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .partner-form-field label {
+      display: block;
+      margin-bottom: 9px;
+      color: var(--deep-teal);
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .partner-form-field label span {
+      color: var(--gold-ink);
+    }
+
+    .partner-form-field input,
+    .partner-form-field select,
+    .partner-form-field textarea {
+      display: block;
+      width: 100%;
+      min-height: 52px;
+      padding: 14px 16px;
+      border: 1px solid rgba(8, 48, 47, 0.2);
+      border-radius: 0;
+      background: #fff;
+      color: var(--deep-teal);
+      font: inherit;
+      outline: none;
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .partner-form-field textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .partner-form-field input:focus,
+    .partner-form-field select:focus,
+    .partner-form-field textarea:focus {
+      border-color: var(--deep-teal);
+      box-shadow: 0 0 0 3px rgba(13, 75, 75, 0.08);
+    }
+
+    .partner-form-note {
+      margin: 28px 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .partner-form-actions {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+      padding-top: 28px;
+      border-top: 1px solid var(--partner-line);
+    }
+
+    /* =========================================================
+       WHAT HAPPENS NEXT
+       ========================================================= */
+
+    .partner-process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .partner-process-step {
+      min-width: 0;
+      padding: 30px;
+      border-top: 2px solid var(--deep-teal);
+      background: var(--cream);
+    }
+
+    .partner-process-step-number {
+      display: block;
+      margin-bottom: 24px;
+      color: var(--gold-ink);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+    }
+
+    .partner-process-step h3 {
+      margin: 0 0 12px;
+      color: var(--deep-teal);
+    }
+
+    .partner-process-step p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* =========================================================
+       FINAL CTA
+       ========================================================= */
+
+    .partner-cta {
+      background: var(--cream);
+    }
+
+    .partner-cta-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .partner-cta-copy {
+      max-width: 760px;
+    }
+
+    .partner-cta-copy h2 {
+      margin: 0 0 18px;
+    }
+
+    .partner-cta-copy p {
+      max-width: 650px;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .partner-cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      flex: 0 0 auto;
+    }
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media (max-width: 1000px) {
+      .partner-hero {
+        min-height: auto;
+        padding: 70px 0 75px;
+      }
+
+      .partner-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .partner-hero-visual {
+        max-width: 620px;
+        max-height: none;
+      }
+
+      .partner-type-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .partner-options-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .partner-process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .partner-cta-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .partner-hero {
+        padding: 65px 0 70px;
+      }
+
+      .partner-hero h1 {
+        font-size: clamp(2.5rem, 11vw, 3.8rem);
+      }
+
+      .partner-hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .partner-hero-actions .btn {
+        text-align: center;
+      }
+
+      .partner-type-grid,
+      .partner-process-grid,
+      .partner-form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .partner-form-field.full {
+        grid-column: auto;
+      }
+
+      .partner-form {
+        padding: 30px 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .partner-type-card,
+      .partner-process-step {
+        padding: 26px;
+      }
+
+      .partner-form {
+        padding: 25px 20px;
+      }
+
+      .partner-cta-actions {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+      }
+
+      .partner-cta-actions .btn {
+        text-align: center;
+      }
+    }
+  
