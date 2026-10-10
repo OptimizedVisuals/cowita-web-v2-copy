@@ -15,10 +15,13 @@ import { recordAudit, requireAdmin } from '../../_lib/auth.mjs';
 import { getServiceClient } from '../../_lib/supabase.mjs';
 import { cleanMultiline } from '../../_lib/sanitize.mjs';
 import { logEvent } from '../../_lib/logger.mjs';
+import { initErrorTracking, captureError } from '../../_lib/sentry.mjs';
 
 const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 export default async function handler(req, res) {
+  initErrorTracking();
+
   const id = String(req.query?.id || '');
 
   if (!UUID_PATTERN.test(id)) {
@@ -39,7 +42,7 @@ export default async function handler(req, res) {
       .maybeSingle();
 
     if (error) {
-      console.error('admin get failed:', error.message);
+      await captureError(error, { stage: 'admin_get', actor: auth.email, id });
       return sendError(res, 500, 'Could not load the submission.');
     }
     if (!data) return sendError(res, 404, 'Submission not found.');
@@ -72,7 +75,10 @@ export default async function handler(req, res) {
       .eq('id', id)
       .maybeSingle();
 
-    if (readError) return sendError(res, 500, 'Could not load the submission.');
+    if (readError) {
+      await captureError(readError, { stage: 'admin_update_read', actor: auth.email, id });
+      return sendError(res, 500, 'Could not load the submission.');
+    }
     if (!existing) return sendError(res, 404, 'Submission not found.');
     fromStatus = existing.status;
 
@@ -102,7 +108,7 @@ export default async function handler(req, res) {
       .maybeSingle();
 
     if (error) {
-      console.error('admin update failed:', error.message);
+      await captureError(error, { stage: 'admin_update', actor: auth.email, id });
       return sendError(res, 500, 'Could not update the submission.');
     }
 
@@ -143,7 +149,10 @@ export default async function handler(req, res) {
       .select('*')
       .maybeSingle();
 
-    if (error) return sendError(res, 500, 'Could not restore the submission.');
+    if (error) {
+      await captureError(error, { stage: 'admin_restore', actor: auth.email, id });
+      return sendError(res, 500, 'Could not restore the submission.');
+    }
 
     await recordAudit(auth, {
       submissionId: id,
@@ -164,7 +173,7 @@ export default async function handler(req, res) {
     if (hard) {
       const { error } = await supabase.from('submissions').delete().eq('id', id);
       if (error) {
-        console.error('admin hard delete failed:', error.message);
+        await captureError(error, { stage: 'admin_hard_delete', actor: auth.email, id });
         return sendError(res, 500, 'Could not delete the submission.');
       }
 
@@ -181,7 +190,7 @@ export default async function handler(req, res) {
       .eq('id', id);
 
     if (error) {
-      console.error('admin soft delete failed:', error.message);
+      await captureError(error, { stage: 'admin_soft_delete', actor: auth.email, id });
       return sendError(res, 500, 'Could not delete the submission.');
     }
 

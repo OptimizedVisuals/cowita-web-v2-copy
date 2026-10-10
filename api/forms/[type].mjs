@@ -43,10 +43,13 @@ import { consume } from '../_lib/ratelimit.mjs';
 import { verifyTurnstile } from '../_lib/turnstile.mjs';
 import { logEvent, logSubmission } from '../_lib/logger.mjs';
 import { sendAdminNotification, sendUserConfirmation } from '../_lib/email.mjs';
+import { initErrorTracking, captureError } from '../_lib/sentry.mjs';
 
 const CAPTCHA_FIELDS = ['turnstile_token', 'cf-turnstile-response', 'captchaToken'];
 
 export default async function handler(req, res) {
+  initErrorTracking();
+
   const env = getEnv();
 
   if (req.method !== 'POST') {
@@ -84,7 +87,7 @@ export default async function handler(req, res) {
     if (error.badJson || error.badType) {
       return sendError(res, 400, 'The submission could not be read. Please try again.');
     }
-    console.error('body read failed:', error);
+    await captureError(error, { form_type: formType, stage: 'read_body' });
     return sendError(res, 400, 'The submission could not be read. Please try again.');
   }
 
@@ -126,7 +129,7 @@ export default async function handler(req, res) {
       );
     }
   } catch (error) {
-    console.error('rate limiting unavailable:', error);
+    await captureError(error, { form_type: formType, stage: 'rate_limit' });
   }
 
   // ---- 6. CAPTCHA --------------------------------------------------------
@@ -192,7 +195,11 @@ export default async function handler(req, res) {
       ip_hash: ipHash,
       reason: 'insert_failed',
     });
-    console.error('submission insert failed:', insertError.message);
+    await captureError(insertError, {
+      form_type: formType,
+      stage: 'insert',
+      ip_hash: ipHash,
+    });
     return sendError(
       res,
       500,
@@ -235,7 +242,11 @@ export default async function handler(req, res) {
 
   for (const settled of emailResults) {
     if (settled.status === 'rejected') {
-      console.error('email send threw:', settled.reason);
+      await captureError(settled.reason, {
+        form_type: formType,
+        stage: 'email',
+        submission_id: submissionId,
+      });
     }
   }
 

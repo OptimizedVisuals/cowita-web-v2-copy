@@ -16,8 +16,11 @@ import { sendError, sendJson } from '../_lib/http.mjs';
 import { getServiceClient } from '../_lib/supabase.mjs';
 import { logEvent } from '../_lib/logger.mjs';
 import { getEnv } from '../_lib/config.mjs';
+import { initErrorTracking, captureError } from '../_lib/sentry.mjs';
 
 export default async function handler(req, res) {
+  initErrorTracking();
+
   if (req.method !== 'POST' && req.method !== 'GET') {
     res.setHeader('Allow', 'POST, GET');
     return sendError(res, 405, 'Method not allowed.');
@@ -47,7 +50,10 @@ export default async function handler(req, res) {
   );
 
   if (purgeError) {
-    console.error('retention purge failed:', purgeError.message);
+    await captureError(purgeError, {
+      stage: 'retention_purge',
+      retention_days: retentionDays,
+    });
     return sendError(res, 500, 'Retention job failed.');
   }
 
@@ -58,7 +64,7 @@ export default async function handler(req, res) {
     .lt('window_start', cutoff);
 
   if (rateError) {
-    console.error('rate limit purge failed:', rateError.message);
+    await captureError(rateError, { stage: 'retention_rate_purge' });
   }
 
   logEvent('info', 'retention_run', {

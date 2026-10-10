@@ -20,8 +20,11 @@ import { sendError, sendJson } from '../_lib/http.mjs';
 import { requireAdmin } from '../_lib/auth.mjs';
 import { getServiceClient } from '../_lib/supabase.mjs';
 import { logEvent } from '../_lib/logger.mjs';
+import { initErrorTracking, captureError } from '../_lib/sentry.mjs';
 
 export default async function handler(req, res) {
+  initErrorTracking();
+
   const auth = await requireAdmin(req, res, { role: 'viewer' });
   if (!auth) return;
 
@@ -88,7 +91,7 @@ export default async function handler(req, res) {
     .range(from, to);
 
   if (error) {
-    console.error('admin list failed:', error.message);
+    await captureError(error, { stage: 'admin_list', actor: auth.email });
     return sendError(res, 500, 'Could not load submissions.');
   }
 

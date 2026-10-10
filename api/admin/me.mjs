@@ -8,8 +8,11 @@
 
 import { sendError, sendJson } from '../_lib/http.mjs';
 import { authenticate } from '../_lib/auth.mjs';
+import { initErrorTracking } from '../_lib/sentry.mjs';
 
 export default async function handler(req, res) {
+  initErrorTracking();
+
   if (req.method !== 'GET') {
     res.setHeader('Allow', 'GET');
     return sendError(res, 405, 'Method not allowed.');

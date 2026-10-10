@@ -24,7 +24,9 @@
     "verify": "npm run check-links && npm run check-ids && node tools/generate-seo-files.mjs && npm test && npm run build && npm run a11y"
   },
   "dependencies": {
+    "@sentry/node": "^8.47.0",
     "@supabase/supabase-js": "^2.45.4",
+    "@vercel/functions": "^1.5.0",
     "resend": "^4.0.1"
   },
   "devDependencies": {

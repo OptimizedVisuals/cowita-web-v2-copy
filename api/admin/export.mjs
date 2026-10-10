@@ -12,6 +12,7 @@ import { requireAdmin, recordAudit } from '../_lib/auth.mjs';
 import { getServiceClient } from '../_lib/supabase.mjs';
 import { escapeCsv } from '../_lib/sanitize.mjs';
 import { logEvent } from '../_lib/logger.mjs';
+import { initErrorTracking, captureError } from '../_lib/sentry.mjs';
 
 const META_COLUMNS = [
   'id',
@@ -42,6 +43,8 @@ function cell(value) {
 }
 
 export default async function handler(req, res) {
+  initErrorTracking();
+
   const auth = await requireAdmin(req, res, { role: 'viewer' });
   if (!auth) return;
 
@@ -90,7 +93,7 @@ export default async function handler(req, res) {
     .limit(MAX_ROWS);
 
   if (error) {
-    console.error('export failed:', error.message);
+    await captureError(error, { stage: 'admin_export', actor: auth.email });
     return sendError(res, 500, 'Could not build the export.');
   }
 
